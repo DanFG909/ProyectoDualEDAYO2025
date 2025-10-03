@@ -10,7 +10,11 @@
 </head>
 <body>
     <section>
+<<<<<<< HEAD
     HOla mundo
+=======
+        <h1>hola daniel</h1>
+>>>>>>> cb33eff43738661944efe9a2b09e6319e7711da8
     <form method="POST" action="">
         <label>Nombre completo:</label>
         <input class="controls" type="text" name="nomb" id="nomb" placeholder="ingrese su nombre completo" required>
