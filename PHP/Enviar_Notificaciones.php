@@ -23,7 +23,7 @@
     <h2>Enviar notificación a todos</h2>
 
     <?php
-    include("conexion.php");
+    include("Admin/conexion.php");
     $resultado = $conexion->query("SELECT * FROM users WHERE estado = '0'");
 
     $correos = [];

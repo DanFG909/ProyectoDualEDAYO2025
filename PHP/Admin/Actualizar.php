@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error al actualizar el registro.";
     }
 
-    header("Location: index_admin.php");
+    header("Location: backend/index_admin.php");
     exit();
 }
 ?>
