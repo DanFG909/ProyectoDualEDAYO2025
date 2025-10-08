@@ -1,9 +1,10 @@
 <?php 
-    $conexion = new mysqli("localhost","root","","t_noviembre");
+    $conexion = new mysqli("localhost","root","","main");
 
-   // if($conexion) {
-    //    echo "Conectado :D"; 
-    //}else {
-   //     echo "No se encontró la base de datos"; 
-    //}
+    if($conexion) {
+       echo "Conectado :D"; 
+    }else {
+        echo "No se encontró la base de datos"; 
+    }
+    //cambienle el nombre :,3
 ?>

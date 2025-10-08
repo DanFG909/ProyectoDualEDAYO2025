@@ -3,113 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Cursos CEA 2025 con Precios</title>
-  <link rel="stylesheet" href="CSS/Menu.css">
-  <style>
-    :root {
-      --rojo: #C8102E;
-      --vino: #8B0000;
-      --dorado: #D4AF37;
-      --gris-fondo: #F7F6F4;
-      --gris-texto: #2E2E2E;
-    }
-
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: var(--gris-fondo);
-      color: var(--gris-texto);
-      margin: 0;
-      padding: 0;
-    }
-
-    h1 {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(90deg, var(--vino), var(--rojo));
-      color: white;
-      margin: 0;
-      border-bottom: 5px solid var(--dorado);
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .categoria {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      margin-bottom: 1.5rem;
-      overflow: hidden;
-      transition: transform 0.3s;
-    }
-
-    .categoria:hover {
-      transform: translateY(-3px);
-    }
-
-    .categoria-header {
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      background: var(--rojo);
-      color: white;
-    }
-
-    .categoria-header img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-right: 4px solid var(--dorado);
-    }
-
-    .categoria-header h2 {
-      flex: 1;
-      padding: 0 1.2rem;
-      font-size: 1.4rem;
-      letter-spacing: 0.5px;
-    }
-
-    .lista-cursos {
-      display: none;
-      padding: 1rem 2rem;
-    }
-
-    .lista-cursos ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
-
-    .lista-cursos li {
-      margin-bottom: 0.5rem;
-    }
-
-    .precio {
-      font-weight: bold;
-      color: var(--dorado);
-    }
-
-    .enlace {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      padding: 1rem 2rem;
-      background: var(--dorado);
-      color: var(--vino);
-      font-weight: bold;
-      border-radius: 8px;
-      width: fit-content;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .enlace:hover {
-      background: var(--vino);
-      color: white;
-    }
-  </style>
+  <link rel="stylesheet" href="../CSS/Menu.css">
+  <link rel="stylesheet" href="../CSS/cursos.css">
 </head>
 <body>
 
@@ -134,7 +29,7 @@
   <!-- 🧵 ARTESANÍAS -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/artesanias.jpeg" alt="Artesanías y Manualidades">
+      <img src="../Images/Cursos/artesanias.jpeg" alt="Artesanías y Manualidades">
       <h2>🧵 Artesanías y Manualidades</h2>
     </div>
     <div class="lista-cursos">
@@ -181,7 +76,7 @@
   <!-- 💇‍♀ BELLEZA -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/belleza.jpeg" alt="Belleza y Bienestar">
+      <img src="../Images/Cursos/belleza.jpeg" alt="Belleza y Bienestar">
       <h2>💇‍♀ Belleza y Bienestar Personal</h2>
     </div>
     <div class="lista-cursos">
@@ -215,7 +110,7 @@
   <!-- 💻 COMPUTACIÓN -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/computacion.jpeg" alt="Computación">
+      <img src="../Images/Cursos/computacion.jpeg" alt="Computación">
       <h2>💻 Computación</h2>
     </div>
     <div class="lista-cursos">
@@ -237,7 +132,7 @@
   <!-- 🌐 IDIOMAS -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/idiomas.jpeg" alt="Idiomas y Lenguas">
+      <img src="../Images/Cursos/idiomas.jpeg" alt="Idiomas y Lenguas">
       <h2>🌐 Idiomas y Lenguas Maternas</h2>
     </div>
     <div class="lista-cursos">
@@ -254,7 +149,7 @@
   <!-- 👗 CORTE Y CONFECCIÓN -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/confeccion.jpeg" alt="Corte y Confección">
+      <img src="../Images/Cursos/confeccion.jpeg" alt="Corte y Confección">
       <h2>👗 Corte y Confección de Prendas</h2>
     </div>
     <div class="lista-cursos">
@@ -287,7 +182,7 @@
   <!-- 🍽 ALIMENTOS -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/alimentos.jpeg" alt="Preparación de alimentos">
+      <img src="../Images/Cursos/alimentos.jpeg" alt="Preparación de alimentos">
       <h2>🍽 Preparación de Alimentos y Bebidas</h2>
     </div>
     <div class="lista-cursos">
@@ -338,7 +233,7 @@
    <!-- 🧾 Área Contable / Administrativa -->
    <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/administrativa.jpeg" alt="Area Contable">
+      <img src="../Images/Cursos/administrativa.jpeg" alt="Area Contable">
       <h2>🧾 Área Contable / Administrativa</h2>
     </div>
     <div class="lista-cursos">
@@ -355,7 +250,7 @@
   <!-- 🛠 Otros (Misceláneos) -->
   <div class="categoria">
     <div class="categoria-header" onclick="toggleLista(this)">
-      <img src="Images/Cursos/miscelaneos.jpeg" alt="Miscelaneos">
+      <img src="../Images/Cursos/miscelaneos.jpeg" alt="Miscelaneos">
       <h2>🛠 Otros (Misceláneos)</h2>
     </div>
     <div class="lista-cursos">

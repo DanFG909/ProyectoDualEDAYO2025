@@ -85,7 +85,7 @@ input[type="checkbox"] {
   transform: scale(1.2);
 }
 
-.panel {
+.Panel {
     display: none;
   padding: 20px;
   border: 1px solid #ddd;
@@ -117,7 +117,16 @@ input[type="checkbox"] {
 }
 
 .panel {
-  animation: fadeIn 0.5s ease;
+    display: none;
+  padding: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  animation: fadeIn 0.4s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-image: url('panel.png');
+  background-size: cover;
 }
 
 
