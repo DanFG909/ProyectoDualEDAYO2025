@@ -56,7 +56,7 @@
         <tbody>
         <?php
             $query ="SELECT * FROM inscripciones";
-            $resultado = $conn->query($query);
+            $resultado = $conexioon->query($query);
             while($row=$resultado->fetch_assoc()){
         ?>   
                 <tr>
@@ -68,8 +68,8 @@
                     <td><?php echo $row['Forma_de_Pago'];  ?></td>
                     <td><?php echo $row['Documentos'];  ?></td>
                     <td>
-                        <a href="editar.php?id=<?php echo $row['id']; ?>">Modificar</a> |
-                        <a href="eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
+                        <a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> 
+                        <a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
                     </td>
                 </tr>
         <?php } ?>

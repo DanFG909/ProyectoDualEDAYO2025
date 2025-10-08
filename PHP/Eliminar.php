@@ -1,11 +1,11 @@
 <?php
-include("conexion.php"); 
+$conexioon = new mysqli("localhost","root","","main");
 
-if (isset($_GET['Id'])) {
-    $id = $_GET['ID'];
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
 
     $query = "DELETE FROM inscripciones WHERE id = '$id'";
-    $resultado = $conn->query($query);
+    $resultado = $conexioon->query($query);
 
     if ($resultado) {
         echo "Registro eliminado correctamente.";
