@@ -1,5 +1,6 @@
 <?php
 include("conexion.php");
+$conexioon = new mysqli("localhost","root","","main");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
@@ -19,13 +20,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               Documentos='$documentos' 
               WHERE id=$id";
 
-    if ($conn->query($query)) {
+    if ($conexioon->query($query)) {
         echo "Registro actualizado correctamente.";
     } else {
         echo "Error al actualizar el registro.";
     }
 
-    header("Location: index.php");
+    header("Location: index_admin.php");
     exit();
 }
 ?>
