@@ -7,12 +7,7 @@
     <link href="../CSS/Style3.css" rel="stylesheet">
     <script src="../JS/desc.js"></script>
     <script src="../JS/Mostrar_panel.js"></script>
-    <style>
-  .Panel {
-    display: none;
-  }
-</style>
-
+    
     <title>Registro de usuario</title>
 </head>
 <body>
@@ -56,20 +51,12 @@
              <option value="Mecanica automotriz">Mecanica automotriz</option>
 </select>
 <br>
-<div id="especificaciones"></div>
-
-          <label>Quieres recibir informacion de nosotros:</label>
-         <input type="radio" id="si" name="not" value="si">si
-         <input type="radio" id="no" name="not" value="no">no
-         <br>
-         <br>
-         <input class="button" name="Registrar" type="submit" value="Registrar">
 
 <div id="pagos" ></div>
 
     <label>
-        <input  type="checkbox" id="presencial">Presencial
-        <input type="checkbox" id="check1" onchange="mostraPanel('panel1', this)">Tranferencia
+        <input   type="checkbox" id="presencial" value="Presencial">Presencial
+        <input  type="checkbox" id="check1" value="Transferencia" onchange="mostraPanel('panel1', this)">Tranferencia
 </label>
     <div id="panel1" class="Panel">
 
@@ -80,6 +67,17 @@
         <input type="file" name="archivo_pComprobante" accept="application/pdf">
 
      </div>
+
+<div id="especificaciones"></div>
+
+          <label>Quieres recibir informacion de nosotros:</label>
+         <input type="radio" id="si" name="not" value="si">si
+         <input type="radio" id="no" name="not" value="no">no
+         <br>
+         <br>
+         <input class="button" name="Registrar" type="submit" value="Registrar">
+
+
     </form>
 
 </section>
@@ -93,6 +91,7 @@ session_start();
 if (isset($_POST['Registrar'])) {
     $tiempo_espera = 30;
 
+    // Anti-spam temporal
     if (isset($_SESSION['ultimo_registro'])) {
         $segundos_transcurridos = time() - $_SESSION['ultimo_registro'];
         if ($segundos_transcurridos < $tiempo_espera) {
@@ -102,28 +101,65 @@ if (isset($_POST['Registrar'])) {
         }
     }
     $_SESSION['ultimo_registro'] = time();
+
+    // Obtener datos del formulario
     $nombre = $_POST['nomb'];
-    $municipio = $_POST['municipio'];   
-    $Actividad = $_POST['Actividad'];
+    $municipio = $_POST['municipio'];
+    $actividad = $_POST['Actividad'];
     $telefono = $_POST['Telefono'];
     $correo = $_POST['Correo'];
     $notificacion = $_POST['not'];
-    $verificar = "SELECT * FROM users WHERE Correo = '$correo' AND Telefono='$telefono ' AND Nombre='$nombre'" ;
+    $estado = 0;
+
+    // Verificar duplicado
+    $verificar = "SELECT * FROM users WHERE Correo = '$correo' AND Telefono='$telefono' AND Nombre='$nombre'";
     $resultado = mysqli_query($conexion, $verificar);
+
     if (mysqli_num_rows($resultado) > 0) {
-        echo "<script>alert('Este correo, Telefono o nombre ya está registrado. Solo puedes registrarte una vez.');</script>";
+        echo "<script>alert('Este correo, teléfono o nombre ya está registrado.');</script>";
         exit;
     }
-    $estado=0;
-    $insertar = "INSERT INTO users (Nombre, Correo, Municipio ,Telefono, Taller, Estado) 
-                 VALUES ('$nombre', '$correo', '$municipio', '$sexo', '$capacidad', '$telefono', '$Actividad', '$estado')";
+
+    // Preparar nombres de archivo (si existen)
+    $ruta_ine = null;
+    $ruta_comprobante = null;
+
+    // Guardar archivo INE
+    if (isset($_FILES['Ine']) && $_FILES['Ine']['error'] === 0) {
+        if (mime_content_type($_FILES['Ine']['tmp_name']) === 'application/pdf') {
+            $nombre_ine = uniqid() . '_ine.pdf';
+            $ruta_ine = 'uploads/' . $nombre_ine;
+            move_uploaded_file($_FILES['Ine']['tmp_name'], $ruta_ine);
+        } else {
+            echo "<script>alert('El archivo INE no es un PDF válido.');</script>";
+            exit;
+        }
+    }
+
+    // Guardar archivo Comprobante
+    if (isset($_FILES['archivo_pComprobante']) && $_FILES['archivo_pComprobante']['error'] === 0) {
+        if (mime_content_type($_FILES['archivo_pComprobante']['tmp_name']) === 'application/pdf') {
+            $nombre_comprobante = uniqid() . '_comprobante.pdf';
+            $ruta_comprobante = 'uploads/' . $nombre_comprobante;
+            move_uploaded_file($_FILES['archivo_pComprobante']['tmp_name'], $ruta_comprobante);
+        } else {
+            echo "<script>alert('El archivo Comprobante no es un PDF válido.');</script>";
+            exit;
+        }
+    }
+
+    // Insertar en la base de datos
+    $insertar = "INSERT INTO users 
+        (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion, ine_pdf, comprobante_pdf) 
+        VALUES 
+        ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion', '$ruta_ine', '$ruta_comprobante')";
 
     $sql = mysqli_query($conexion, $insertar);
+
     if ($sql) {
         echo "<script>alert('Registrado exitosamente.');</script>";
     } else {
-        echo "<script>alert('Hubo un error al registrar esto puede deverse a que su nombre,correo electronico o numero telefonico ya se a registrado con anteriodidad.');</script>";
+        echo "<script>alert('Error al registrar. Verifica que los datos no estén duplicados.');</script>";
     }
-} 
+}
 ?>
-
