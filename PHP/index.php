@@ -128,7 +128,7 @@ if (isset($_POST['Registrar'])) {
     if (isset($_FILES['Ine']) && $_FILES['Ine']['error'] === 0) {
         if (mime_content_type($_FILES['Ine']['tmp_name']) === 'application/pdf') {
             $nombre_ine = uniqid() . '_ine.pdf';
-            $ruta_ine = 'uploads/' . $nombre_ine;
+            $ruta_ine = __DIR__ . '/../uploads/' . $nombre_ine; 
             move_uploaded_file($_FILES['Ine']['tmp_name'], $ruta_ine);
         } else {
             echo "<script>alert('El archivo INE no es un PDF válido.');</script>";
@@ -140,7 +140,7 @@ if (isset($_POST['Registrar'])) {
     if (isset($_FILES['archivo_pComprobante']) && $_FILES['archivo_pComprobante']['error'] === 0) {
         if (mime_content_type($_FILES['archivo_pComprobante']['tmp_name']) === 'application/pdf') {
             $nombre_comprobante = uniqid() . '_comprobante.pdf';
-            $ruta_comprobante = 'uploads/' . $nombre_comprobante;
+            $ruta_comprobante = __DIR__ . '/../uploads/' . $nombre_comprobante;
             move_uploaded_file($_FILES['archivo_pComprobante']['tmp_name'], $ruta_comprobante);
         } else {
             echo "<script>alert('El archivo Comprobante no es un PDF válido.');</script>";
@@ -148,7 +148,7 @@ if (isset($_POST['Registrar'])) {
         }
     }
 
-    // Insertar en la base de datos
+    
     $insertar = "INSERT INTO users 
         (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion, ine_pdf, comprobante_pdf) 
         VALUES 

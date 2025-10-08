@@ -1,5 +1,5 @@
 <?php 
-    $conexion = new mysqli("localhost","root","","main");
+    $conexion = new mysqli("localhost","root","","t_noviembre");
 
     if($conexion) {
        echo "Conectado :D"; 
