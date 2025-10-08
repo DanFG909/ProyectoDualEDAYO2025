@@ -6,4 +6,5 @@
     }else {
         echo "No se encontró la base de datos"; 
     }
+    //cambienle el nombre :,3
 ?>
