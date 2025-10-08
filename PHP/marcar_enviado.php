@@ -1,5 +1,5 @@
 <?php
-include("conexion.php");
+include("Admin/conexion.php");
 if ($conexion->connect_error) {
     http_response_code(500);
     echo "Error de conexión";
