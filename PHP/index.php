@@ -7,6 +7,12 @@
     <link href="../CSS/Style3.css" rel="stylesheet">
     <script src="../JS/desc.js"></script>
     <script src="../JS/Mostrar_panel.js"></script>
+    <style>
+  .Panel {
+    display: none;
+  }
+</style>
+
     <title>Registro de usuario</title>
 </head>
 <body>
