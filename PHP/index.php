@@ -6,6 +6,13 @@
     <link rel="shortcut icon" href="../Images/logo.jpg" type="image/jpeg">
     <link href="../CSS/Style3.css" rel="stylesheet">
     <script src="../JS/desc.js"></script>
+    <script src="../JS/Mostrar_panel.js"></script>
+    <style>
+  .Panel {
+    display: none;
+  }
+</style>
+
     <title>Registro de usuario</title>
 </head>
 <body>
@@ -61,13 +68,18 @@
 <div id="pagos" ></div>
 
     <label>
-        <input id="presencial">Presencial
+        <input  type="checkbox" id="presencial">Presencial
         <input type="checkbox" id="check1" onchange="mostraPanel('panel1', this)">Tranferencia
-    </label>
-     <div id="panel1" class="panel">
-    <label for="opciones-1">
-    <b>Subir archivos</b></label>
-      
+</label>
+    <div id="panel1" class="Panel">
+
+    <b>Subir archivos si es por transferencia</b>
+        <label>Ine </label>
+        <input type="file" name="Ine" accept="application/pdf">
+        <label>Comprobante</label>
+        <input type="file" name="archivo_pComprobante" accept="application/pdf">
+
+     </div>
     </form>
 
 </section>
