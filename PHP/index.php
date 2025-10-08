@@ -91,7 +91,6 @@ session_start();
 if (isset($_POST['Registrar'])) {
     $tiempo_espera = 30;
 
-    // Anti-spam temporal
     if (isset($_SESSION['ultimo_registro'])) {
         $segundos_transcurridos = time() - $_SESSION['ultimo_registro'];
         if ($segundos_transcurridos < $tiempo_espera) {
@@ -155,6 +154,10 @@ if (isset($_POST['Registrar'])) {
         ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion', '$ruta_ine', '$ruta_comprobante')";
 
     $sql = mysqli_query($conexion, $insertar);
+    if (!$sql) {
+    die("Error al insertar: " . mysqli_error($conexion));
+}
+
 
     if ($sql) {
         echo "<script>alert('Registrado exitosamente.');</script>";
