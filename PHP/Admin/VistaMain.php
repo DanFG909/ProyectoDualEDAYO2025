@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Aqui va un menu</h1>
+    </header>
+    <section>
+        <div>
+            <button name="Cursos"> </button>
+        </div>
+    </section>
 </body>
 </html>

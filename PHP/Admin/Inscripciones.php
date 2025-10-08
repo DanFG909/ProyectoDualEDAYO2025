@@ -33,6 +33,11 @@ acomodar bien el select
     </div>
 
     <div>
+        <button>aqui</button>
+        aqui coloca tu boton para descargas
+    </div>
+
+    <div>
         <button name="buscar">
             // Imagen referencial a busqueda - css
         </button>
@@ -53,6 +58,7 @@ acomodar bien el select
                 <th>Forma de pago</th>
                 <th>Documentos</th>
                 <th>    </th>
+                <th>Notificacion</th>
             </thead>
         
         <tbody>
