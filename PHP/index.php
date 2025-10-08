@@ -124,27 +124,20 @@ if (isset($_POST['Registrar'])) {
     $ruta_comprobante = null;
 
     // Guardar archivo INE
-    if (isset($_FILES['Ine']) && $_FILES['Ine']['error'] === 0) {
-        if (mime_content_type($_FILES['Ine']['tmp_name']) === 'application/pdf') {
-            $nombre_ine = uniqid() . '_ine.pdf';
-            $ruta_ine = __DIR__ . '/../uploads/' . $nombre_ine; 
-            move_uploaded_file($_FILES['Ine']['tmp_name'], $ruta_ine);
-        } else {
-            echo "<script>alert('El archivo INE no es un PDF válido.');</script>";
-            exit;
-        }
-    }
+    $nombre_ine = uniqid() . '_ine.pdf';
+    $ruta_ine = 'uploads/' . $nombre_ine; 
+    $destino_fisico_ine = __DIR__ . '/../' . $ruta_ine;
+
+     move_uploaded_file($_FILES['Ine']['tmp_name'], $destino_fisico_ine);
+   
 
     // Guardar archivo Comprobante
-    if (isset($_FILES['archivo_pComprobante']) && $_FILES['archivo_pComprobante']['error'] === 0) {
-        if (mime_content_type($_FILES['archivo_pComprobante']['tmp_name']) === 'application/pdf') {
-            $nombre_comprobante = uniqid() . '_comprobante.pdf';
-            $ruta_comprobante = __DIR__ . '/../uploads/' . $nombre_comprobante;
-            move_uploaded_file($_FILES['archivo_pComprobante']['tmp_name'], $ruta_comprobante);
-        } else {
-            echo "<script>alert('El archivo Comprobante no es un PDF válido.');</script>";
-            exit;
-        }
+    $nombre_comprobante = uniqid() . '_comprobante.pdf';
+    $ruta_comprobante = 'uploads/' . $nombre_comprobante;
+    $destino_fisico_comprobante = __DIR__ . '/../' . $ruta_comprobante;
+
+    move_uploaded_file($_FILES['archivo_pComprobante']['tmp_name'], $destino_fisico_comprobante);
+
     }
 
     
@@ -164,5 +157,5 @@ if (isset($_POST['Registrar'])) {
     } else {
         echo "<script>alert('Error al registrar. Verifica que los datos no estén duplicados.');</script>";
     }
-}
+
 ?>
