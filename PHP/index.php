@@ -10,7 +10,7 @@
 </head>
 <body>
     <section>
-    <form method="POST" action="">
+    <form method="POST" action="" enctype="multipart/form-data">
         <label>Nombre completo:</label>
         <input class="controls" type="text" name="nomb" id="nomb" placeholder="ingrese su nombre completo" required>
         <br>
@@ -57,6 +57,17 @@
          <br>
          <br>
          <input class="button" name="Registrar" type="submit" value="Registrar">
+
+<div id="pagos" ></div>
+
+    <label>
+        <input id="presencial">Presencial
+        <input type="checkbox" id="check1" onchange="mostraPanel('panel1', this)">Tranferencia
+    </label>
+     <div id="panel1" class="panel">
+    <label for="opciones-1">
+    <b>Subir archivos</b></label>
+      
     </form>
 
 </section>
@@ -81,9 +92,7 @@ if (isset($_POST['Registrar'])) {
     $_SESSION['ultimo_registro'] = time();
     $nombre = $_POST['nomb'];
     $municipio = $_POST['municipio'];   
-    $sexo = $_POST['sexo'];
     $Actividad = $_POST['Actividad'];
-    $capacidad = $_POST['capacidad'];
     $telefono = $_POST['Telefono'];
     $correo = $_POST['Correo'];
     $notificacion = $_POST['not'];
@@ -94,7 +103,7 @@ if (isset($_POST['Registrar'])) {
         exit;
     }
     $estado=0;
-    $insertar = "INSERT INTO users (Nombre, Correo, Municipio, Sexo, Capacidad ,Telefono, Taller, Estado) 
+    $insertar = "INSERT INTO users (Nombre, Correo, Municipio ,Telefono, Taller, Estado) 
                  VALUES ('$nombre', '$correo', '$municipio', '$sexo', '$capacidad', '$telefono', '$Actividad', '$estado')";
 
     $sql = mysqli_query($conexion, $insertar);
