@@ -28,14 +28,6 @@
              <option value="Tenango">Tenango del valle</option>
          </select>
          <br>
-         <label>Sexo:</label>
-         <input type="radio" id="Maculino" name="sexo" value="Masculino" required>Masculino
-         <input type="radio" id="Femenino" name="sexo" value="Femenino">Femenino
-         <br>
-         <label>Capacidad:</label>
-         <input type="radio" id="si" name="capacidad" value="si" required>si
-         <input type="radio" id="no" name="capacidad" value="no">no
-         <br>
           <label>Ingrese su Telefono:</label>
          <input class="controls" type="text"name="Telefono" id="Telefono" placeholder="Ingrese su Telefono " required>
          <br>
