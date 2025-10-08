@@ -7,12 +7,37 @@
 </head>
 <body>
     <header>
-        <h1>Aqui va un menu</h1>
-    </header>
-    <section>
+        <h1>Aqui va un menu en la parte superios con lo siguiente</h1>
+
         <div>
-            <button name="Cursos"> </button>
+            <div>
+            <button name="interesados"><a href="Interesados.php">Interesados</a></button>
         </div>
+        <div>s
+            <button name="inicio"><a href="index.php">Inicio</a></button>
+        </div>
+        <div>
+            <button name="inscripciones"><a href="Inscripcioness.php">Inscripciones</a></button>
+        </div>
+        <div>
+            <button name="cursos"><a href="Cursos.php">Cursos</a></button>
+        </div>
+        <div>
+            <button name="contacto"><a href="Contacto.php">Contacto</a></button>
+        </div>
+         <div>
+            <button name="cerrar_sesion" onclick="">Cerrar sesion</button>
+        </div>
+         <div>
+            <button name="perfil"><a href="Perfil.php">Perfil</a></button>
+        </div>
+
+        </div>
+    </header>
+
+    <section>
+        foto referente a edayo
     </section>
+
 </body>
 </html>
