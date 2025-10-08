@@ -12,27 +12,29 @@
 <body>
     <div>
         <section>
-           <select name="opciones_periodo">
-                <option value="periodo_1">Periodo 1</option>
-                <option value="periodo_2">Periodo 1</option>
-                <option value="periodo_3" selected>Periodo 3</option>
-                <option value="periodo_4" disabled>Periodo 4</option>
+           <select name="opciones_periodo">  
+                <option value="periodos" disabled>Periodos</option>
+                <option value="periodo_mensual"selected>Mensual</option>
+                <option value="periodo_anual" selected>Anual</option>
+<!--
+acomodar bien el select                
+-->
             </select>
         </section>
 
         <section>
            <select name="opciones_modalidad">
-                <option value="modalidad_1">Modalidad 1</option>
-                <option value="modalidad_2">Modalidad 2</option>
-                <option value="modalidad_3" selected>Modalidad 3</option>
-                <option value="modalidad_4" disabled>Modalidad 4</option>
+                <option value="modalidad_cea">CEA</option>
+                <option value="modalidad_cem">CEM</option>
+                <option value="modalidad_cae">CAE</option>
+                <option value="modalidad_escolarisado" selected>Escolarisado</option>
             </select>
         </section>
     </div>
 
     <div>
         <button name="buscar">
-            // Imagen referencial a busqueda
+            // Imagen referencial a busqueda - css
         </button>
         <input type="text" name="buscar_input">
     </div>
