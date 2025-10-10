@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2025 a las 21:09:08
+-- Tiempo de generación: 11-10-2025 a las 00:07:26
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -44,9 +44,24 @@ CREATE TABLE `archivos` (
 --
 
 CREATE TABLE `cursos` (
-  `id` int(10) NOT NULL,
-  `Nombre` varchar(100) NOT NULL,
-  `Informacion` varchar(250) NOT NULL
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `informacion` text NOT NULL,
+  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenes_cursos`
+--
+
+CREATE TABLE `imagenes_cursos` (
+  `id` int(11) NOT NULL,
+  `curso_id` int(11) NOT NULL,
+  `nombre_original` varchar(255) DEFAULT NULL,
+  `tipo_mime` varchar(100) DEFAULT NULL,
+  `contenido` longblob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -61,6 +76,8 @@ CREATE TABLE `inscripciones` (
   `Nombre` varchar(100) NOT NULL,
   `Correo` varchar(200) NOT NULL,
   `Telefono` varchar(15) NOT NULL,
+  `Periodo` varchar(100) NOT NULL,
+  `Modalidad` varchar(100) NOT NULL,
   `Forma_de_Pago` varchar(50) NOT NULL,
   `Documentos` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -69,8 +86,12 @@ CREATE TABLE `inscripciones` (
 -- Volcado de datos para la tabla `inscripciones`
 --
 
-INSERT INTO `inscripciones` (`id`, `CURP`, `Nombre`, `Correo`, `Telefono`, `Forma_de_Pago`, `Documentos`) VALUES
-(3, 'Ejemplo de curp 2', 'Pacoo', 'Alguien@ejemplo.com', '7293701356', 'efectivo', 'no hay');
+INSERT INTO `inscripciones` (`id`, `CURP`, `Nombre`, `Correo`, `Telefono`, `Periodo`, `Modalidad`, `Forma_de_Pago`, `Documentos`) VALUES
+(3, 'Ejemplo de curp 2', 'Pacoo', 'Alguien@ejemplo.com', '7293701356', 'Mensual', 'CEM', 'efectivo', 'no hay'),
+(5, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY'),
+(6, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO'),
+(7, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY'),
+(8, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO');
 
 -- --------------------------------------------------------
 
@@ -135,6 +156,13 @@ ALTER TABLE `cursos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `imagenes_cursos`
+--
+ALTER TABLE `imagenes_cursos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `curso_id` (`curso_id`);
+
+--
 -- Indices de la tabla `inscripciones`
 --
 ALTER TABLE `inscripciones`
@@ -153,7 +181,8 @@ ALTER TABLE `users`
 -- Indices de la tabla `usuarios_admin`
 --
 ALTER TABLE `usuarios_admin`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `Nombre_2` (`Nombre`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -169,13 +198,19 @@ ALTER TABLE `archivos`
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `imagenes_cursos`
+--
+ALTER TABLE `imagenes_cursos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `inscripciones`
 --
 ALTER TABLE `inscripciones`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
@@ -198,6 +233,12 @@ ALTER TABLE `usuarios_admin`
 --
 ALTER TABLE `archivos`
   ADD CONSTRAINT `archivos_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`ID`) ON DELETE CASCADE;
+
+--
+-- Filtros para la tabla `imagenes_cursos`
+--
+ALTER TABLE `imagenes_cursos`
+  ADD CONSTRAINT `imagenes_cursos_ibfk_1` FOREIGN KEY (`curso_id`) REFERENCES `cursos` (`ID`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
