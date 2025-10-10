@@ -39,7 +39,7 @@ acomodar bien el select
 
    <div>
     //colocar imagen de buscar porfa
-    <form action="Buscar.php" method="GET">
+    <form action="Buscar_ins.php" method="GET">
         <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
         <button type="submit">Buscar</button>
     </form>
@@ -56,9 +56,10 @@ acomodar bien el select
                 <th>Nombre<br>(Completo)</th>
                 <TH>Correo</TH>
                 <th>Telefono</th>
+                <th>Periodo</th>
+                <th>Modalidad</th>
                 <th>Forma de pago</th>
                 <th>Documentos</th>
-                <th>    </th>
                 <th>Notificacion</th>
             </thead>
         
@@ -74,11 +75,13 @@ acomodar bien el select
                     <td><?php echo $row['Nombre'];  ?></td>
                     <td><?php echo $row['Correo'];  ?></td>
                     <td><?php echo $row['Telefono'];  ?></td>
+                    <td><?php echo $row['Periodo'];  ?></td>
+                    <td><?php echo $row['Modalidad'];  ?></td>
                     <td><?php echo $row['Forma_de_Pago'];  ?></td>
                     <td><?php echo $row['Documentos'];  ?></td>
                     <td>
-                        <a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> 
-                        <a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
+                        <a href="Validacion.php">Validacion</a>
+                        <a href="Notificacion.php">Notificacion</a>
                     </td>
                 </tr>
         <?php } ?>
