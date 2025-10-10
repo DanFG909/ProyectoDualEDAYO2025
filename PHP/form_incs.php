@@ -100,7 +100,6 @@ if (isset($_POST['Registrar'])) {
     }
     $_SESSION['ultimo_registro'] = time();
 
-    // Recoger datos del formulario
     $nombre = $_POST['nomb'];
     $municipio = $_POST['municipio'];
     $actividad = $_POST['Actividad'];
@@ -127,7 +126,7 @@ if (isset($_POST['Registrar'])) {
 
     // Si está marcada transferencia, subir archivos como BLOBs
     if (isset($_POST['transferencia'])) {
-        // INE
+        
         if (!empty($_FILES['Ine']['tmp_name'])) {
             $nombre_ine = $_FILES['Ine']['name'];
             $tipo_ine = $_FILES['Ine']['type'];
