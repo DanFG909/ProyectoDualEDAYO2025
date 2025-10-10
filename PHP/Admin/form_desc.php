@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Descargar archivos</title>
 </head>
 <body>
-    <form action="descargar.php" method="get">
+    <form action="descarga.php" method="get">
         <label>ID del usuario:</label>
-        <input type="number" name="id" required>
+        <input type="number" name="user_id" required>
 
         <label>Archivo:</label>
         <select name="tipo" required>
