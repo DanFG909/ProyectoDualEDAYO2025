@@ -37,6 +37,7 @@
 
     <section>
         foto referente a edayo
+        aqui tambien se mostraran las diversas ventanas de mi apartado
     </section>
 
 </body>

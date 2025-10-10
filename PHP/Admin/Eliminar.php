@@ -4,7 +4,7 @@ $conexioon = new mysqli("localhost","root","","main");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    $query = "DELETE FROM inscripciones WHERE id = '$id'";
+    $query = "DELETE FROM usuarios_admin WHERE id = '$id'";
     $resultado = $conexioon->query($query);
 
     if ($resultado) {
