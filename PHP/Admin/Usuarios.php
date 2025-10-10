@@ -34,7 +34,6 @@ acomodar bien el select
 
     <div>
         <button>aqui va el formulario de acali de crear nuevos administradores</button>
-       
     </div>
 
    <div>

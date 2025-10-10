@@ -1,6 +1,6 @@
 <?php 
     $conexioon = new mysqli("localhost","root","","main")
-    //Cambiar el nombre de la base de datos pls
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,11 +37,12 @@ acomodar bien el select
       
     </div>
 
-    <div>
-        <button name="buscar">
-            // Imagen referencial a busqueda - css
-        </button>
-        <input type="text" name="buscar_input">
+   <div>
+    //colocar imagen de buscar porfa
+    <form action="Buscar.php" method="GET">
+        <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
+        <button type="submit">Buscar</button>
+    </form>
     </div>
 
     <div>
@@ -52,7 +53,7 @@ acomodar bien el select
             <thead>
                 <th>ID</th>
                 <th>CURP</th>
-                <th>Nombre /n (Completo)</th>
+                <th>Nombre<br>(Completo)</th>
                 <TH>Correo</TH>
                 <th>Telefono</th>
                 <th>Forma de pago</th>
