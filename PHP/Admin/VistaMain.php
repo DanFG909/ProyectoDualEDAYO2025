@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <h1>Aqui va un menu en la parte superios con lo siguiente</h1>
+        <h1>Aqui va un menu en la parte superios con lo siguient</h1>
 
         <div>
             <div>
