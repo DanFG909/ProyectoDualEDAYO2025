@@ -12,18 +12,20 @@
         <section>
             <form method="post" action="" >
              <label>Nombre(s)</label>
-             <input class="controls" type="text" name="nomb" id="nomb" placeholder="Ingrese su nombre completo" required>
+             <input class="controls" type="text" name="nomb" id="nomb" placeholder="Ingrese su nombre completo" >
              <br>
              <label>Apeliido(s)</label>
-             <input class="controls" type="text" name="apell" id="apell" placeholder="Ingrese sus apellidos por favor" required>
+             <input class="controls" type="text" name="apell" id="apell" placeholder="Ingrese sus apellidos por favor" >
              <br>
              <label>Contraseña</label>
-             <input class="controls" type="password" name="cont" id="cont" placeholder="Ingrese una Contraseña" required>
+             <input class="controls" type="password" name="cont" id="cont" placeholder="Ingrese una Contraseña" >
              <br>
-             <label style="color:white; background-color: #000000ff;">Seleccione el rol del usuario</label>
+             <label style="color:white; background-color: #000000ff;   width: 30%;   height: 30px;">Seleccione el rol del usuario</label>
              <input type="checkbox" id="Administrador" name="Administrador">Administrador
              <br>
               <input class="button" name="Registrar" type="submit" value="Registrar">
+              <a href="../../PHP/Admin/Usuarios.php" ><button >Regresar</button></a>
+
             </form>
         </section>
         <?php 

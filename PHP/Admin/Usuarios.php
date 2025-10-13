@@ -26,7 +26,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </div>
 
 <div>
-    <button>aquí va el formulario de Acali para crear nuevos administradores</button>
+    <button href="form_user.php">Agregar nuevos usuarios</button>
 </div>
 
 <div>

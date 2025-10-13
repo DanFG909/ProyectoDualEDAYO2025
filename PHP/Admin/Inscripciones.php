@@ -42,6 +42,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
             <button type="submit">Buscar</button>
         </form>
+        <button href="form_desc.php">Descargar</button>
     </div>
 
     <div>
