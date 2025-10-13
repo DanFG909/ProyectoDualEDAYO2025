@@ -15,6 +15,13 @@
                      <label>Informacion del curso</label>
                     <input class="controls" type="text" name="info" id="info" placeholder="Ingrese la Informacion del curso " required>
                     <br>
+                    <label name="Modalidad">Modalidad</label> 
+                    <select name="Modalidad">
+                     <option values="CEM">CEM</option> 
+                     <option values="CAE">CAE</option> 
+                     <option values="CEA">CEA</option>    
+                    </select>
+
                       <label>Imagen para el curso</label> 
                        <input type="file" name="imagen" accept="image/*" required>
                        <br><br>
@@ -28,6 +35,7 @@ include("conexion.php");
 if (isset($_POST['agregar'])) {
     $nombre = $_POST['nomb'];
     $info = $_POST['info'];
+    $mod= $_POST['Modalidad'];
     $imagen = $_FILES['imagen'];
 
     // Validar la imagen
@@ -40,8 +48,8 @@ if (isset($_POST['agregar'])) {
     $nombre_img = $imagen['name'];
 
     // Insertar curso
-    $stmtCurso = $conexion->prepare("INSERT INTO cursos (nombre, informacion) VALUES (?, ?)");
-    $stmtCurso->bind_param("ss", $nombre, $info);
+    $stmtCurso = $conexion->prepare("INSERT INTO cursos (Nombre, Informacion, Modalidad) VALUES (?, ?, ?)");
+    $stmtCurso->bind_param("sss", $nombre, $info, $mod);
     $stmtCurso->execute();
 
     if ($stmtCurso->affected_rows > 0) {
