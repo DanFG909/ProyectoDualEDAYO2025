@@ -116,7 +116,6 @@ if (isset($_POST['Registrar'])) {
         exit;
     }
 
-    // Insertar el usuario sin archivos primero
     $insertar = "INSERT INTO users (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion) VALUES ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion')";
     $sql = mysqli_query($conexion, $insertar);
     if (!$sql) {
@@ -124,7 +123,6 @@ if (isset($_POST['Registrar'])) {
     }
     $user_id = mysqli_insert_id($conexion);
 
-    // Si está marcada transferencia, subir archivos como BLOBs
     if (isset($_POST['transferencia'])) {
         
         if (!empty($_FILES['Ine']['tmp_name'])) {
@@ -140,7 +138,6 @@ if (isset($_POST['Registrar'])) {
             $stmt->close();
         }
 
-        // Comprobante
         if (!empty($_FILES['archivo_pComprobante']['tmp_name'])) {
             $nombre_comprobante = $_FILES['archivo_pComprobante']['name'];
             $tipo_comprobante = $_FILES['archivo_pComprobante']['type'];
