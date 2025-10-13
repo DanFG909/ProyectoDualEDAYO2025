@@ -1,6 +1,8 @@
 <?php 
-    $conexioon = new mysqli("localhost","root","","main")
+$conexioon = new mysqli("localhost", "root", "", "main");
 
+$tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
+$tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,45 +13,41 @@
 </head>
 <body>
     <div>
-        <section>
-           <select name="opciones_periodo">  
-                <option value="periodos" disabled>Periodos</option>
-                <option value="periodo_mensual"selected>Mensual</option>
-                <option value="periodo_anual" selected>Anual</option>
-<!--
-acomodar bien el select                
--->
-            </select>
+         <section>
+            <form method="GET" action="">
+                <select name="opciones_periodo" onchange="this.form.submit()">
+                    <option value="" disabled selected hidden>Periodos</option>
+                    <option value="Mensual" <?php if($tipoSeleccionado2 == "Mensual") echo "selected"; ?>>Mensual</option>
+                    <option value="Anual" <?php if($tipoSeleccionado2 == "Anual") echo "selected"; ?>>Anual</option>
+                </select>
+            </form>
         </section>
 
         <section>
-           <select name="opciones_modalidad">
-                <option value="modalidad_cea">CEA</option>
-                <option value="modalidad_cem">CEM</option>
-                <option value="modalidad_cae">CAE</option>
-                <option value="modalidad_escolarisado" selected>Escolarisado</option>
-            </select>
+            <form method="GET" action="">
+                <select name="opciones_modalidad" onchange="this.form.submit()">
+                    <option value="" disabled selected hidden>Modalidad</option>
+                    <option value="CEA" <?php if($tipoSeleccionado == "CEA") echo "selected"; ?>>CEA</option>
+                    <option value="CEM" <?php if($tipoSeleccionado == "CEM") echo "selected"; ?>>CEM</option>
+                    <option value="CAE" <?php if($tipoSeleccionado == "CAE") echo "selected"; ?>>CAE</option>
+                </select>
+            </form>
         </section>
-    </div>
 
-    <div>
-        <button></button>
-      
     </div>
 
    <div>
     //colocar imagen de buscar porfa
-    <form action="Buscar_ins.php" method="GET">
-        <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
-        <button type="submit">Buscar</button>
-    </form>
+        <form action="Buscar_ins.php" method="GET">
+            <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
+            <button type="submit">Buscar</button>
+        </form>
     </div>
 
     <div>
         <h2>Usuarios Inscritos</h2>
 
         <table border="1">
-
             <thead>
                 <th>ID</th>
                 <th>CURP</th>
@@ -62,12 +60,28 @@ acomodar bien el select
                 <th>Documentos</th>
                 <th>Notificacion</th>
             </thead>
-        
         <tbody>
-        <?php
+<!--
             $query ="SELECT * FROM inscripciones";
             $resultado = $conexioon->query($query);
-            while($row=$resultado->fetch_assoc()){
+            while($row=$resultado->fetch_assoc()){        
+-->
+        <?php
+             if ($tipoSeleccionado) {
+                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
+                $stmt->bind_param("s", $tipoSeleccionado);
+                $stmt->execute();
+                $resultado = $stmt->get_result();
+            } else if($tipoSeleccionado2){
+                $stmt2 = $conexioon->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
+                $stmt2->bind_param("s", $tipoSeleccionado2);
+                $stmt2->execute();
+                $resultado = $stmt2->get_result();
+            } else{
+                $resultado = $conexioon->query("SELECT * FROM inscripciones");
+            }
+
+            while ($row = $resultado->fetch_assoc()) {
         ?>   
                 <tr>
                     <td><?php echo $row['id'];  ?></td>

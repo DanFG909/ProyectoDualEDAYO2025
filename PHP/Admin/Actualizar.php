@@ -7,11 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['Nombre'];
     $apellidos = $_POST['Apellidos'];
     $correo = $_POST['Correo'];
+    $tipo = $_POST['Tipo'];
 
     $query = "UPDATE usuarios_admin SET 
               Nombre='$nombre', 
               Apellidos='$apellidos', 
-              Correo='$correo'
+              Correo='$correo',
+              Tipo='$tipo'
               WHERE id=$id";
 
     if ($conexioon->query($query)) {
