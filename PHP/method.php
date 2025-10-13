@@ -1,5 +1,5 @@
 <?php
-    $conn= new mysqli ("localhost","root","","t_noviembre");
+    $conn= new mysqli ("localhost","root","","main");
 
     $AQLJ = "SELECT COUNT(*) AS total_usuarios FROM users";
     $result = $conn->query($AQLJ);

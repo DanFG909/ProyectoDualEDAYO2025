@@ -1,13 +1,13 @@
 <?php 
     $conexioon = new mysqli("localhost","root","","main")
-    //Cambiar el nombre de la base de datos pls
+    //El nombre de la base dejenseloooo
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabla Inscripciones</title>
+    <title>Tabla Usuarios</title>
 </head>
 <body>
     <div>
@@ -45,7 +45,7 @@ acomodar bien el select
 
 
     <div>
-        <h2>Usuarios Inscritos</h2>
+        <h2>Usuarios Registrados</h2>
 
         <table border="1">
 
