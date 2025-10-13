@@ -12,7 +12,7 @@
 </body>
 </html>
 <?php
-    $conn= new mysqli ("localhost","root","","t_noviembre");
+    $conn= new mysqli ("localhost","root","","main");
     if ($conn) {
         echo "Conexión exitosa: ";
     }

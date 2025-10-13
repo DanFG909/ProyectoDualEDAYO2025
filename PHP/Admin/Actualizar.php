@@ -4,20 +4,14 @@ $conexioon = new mysqli("localhost","root","","main");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id = $_POST['id'];
-    $curp = $_POST['CURP'];
     $nombre = $_POST['Nombre'];
+    $apellidos = $_POST['Apellidos'];
     $correo = $_POST['Correo'];
-    $telefono = $_POST['Telefono'];
-    $forma_pago = $_POST['Forma_de_Pago'];
-    $documentos = $_POST['Documentos'];
 
-    $query = "UPDATE inscripciones SET 
-              CURP='$curp',
+    $query = "UPDATE usuarios_admin SET 
               Nombre='$nombre', 
-              Correo='$correo', 
-              Telefono='$telefono', 
-              Forma_de_Pago='$forma_pago', 
-              Documentos='$documentos' 
+              Apellidos='$apellidos', 
+              Correo='$correo'
               WHERE id=$id";
 
     if ($conexioon->query($query)) {

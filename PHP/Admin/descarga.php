@@ -5,7 +5,7 @@ echo "<h3>Depuración de descarga</h3>";
 
 // 1. Verifica parámetros GET
 if (!isset($_GET['user_id']) || !isset($_GET['tipo'])) {
-    die("❌ Parámetros faltantes. user_id o tipo no recibidos.<br>");
+    die(" Parámetros faltantes. user_id o tipo no recibidos.<br>");
 }
 
 $user_id = intval($_GET['user_id']);

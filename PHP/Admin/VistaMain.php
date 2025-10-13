@@ -1,44 +1,74 @@
+<!--después voy a implementar un sistema de sesiones aquí-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../CSS/VistaMain.css">
 </head>
 <body>
-    <header>
-        <h1>Aqui va un menu en la parte superios con lo siguient</h1>
 
-        <div>
-            <div>
-            <button name="interesados"><a href="Interesados.php">Interesados</a></button>
-        </div>
-        <div>s
-            <button name="inicio"><a href="index.php">Inicio</a></button>
-        </div>
-        <div>
-            <button name="inscripciones"><a href="Inscripcioness.php">Inscripciones</a></button>
-        </div>
-        <div>
-            <button name="cursos"><a href="Cursos.php">Cursos</a></button>
-        </div>
-        <div>
-            <button name="contacto"><a href="Contacto.php">Contacto</a></button>
-        </div>
-         <div>
-            <button name="cerrar_sesion" onclick="">Cerrar sesion</button>
-        </div>
-         <div>
-            <button name="perfil"><a href="Perfil.php">Perfil</a></button>
-        </div>
+    <div id="arriba">
+        <header>
+            <img src="../../Images/expoaprende.png" alt="">
+        </header>
+    </div>
 
-        </div>
-    </header>
+ 
+    <section id="menu">
 
-    <section>
-        foto referente a edayo
-        aqui tambien se mostraran las diversas ventanas de mi apartado
+
+        <H3>Bienvenido Usuario</H3>
+        <!---->
+        <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
+
+        <br><br>
+
+
+
+        <a href="index.php">
+            Inicio
+        </a>
+        
+        <br><br>
+
+        <a href="Interesados.php">
+            Interesados
+        </a>
+
+        <br><br>
+
+        <a href="Inscripcioness.php">
+            Inscripciones
+        </a>
+
+        <br><br>
+
+
+        <a href="Cursos.php">
+            Cursos
+        </a>
+
+        <br><br>
+
+        <a href="Contacto.php">
+            Contacto
+        </a>
+
+        <br><br>
+
+        <a href="cerrar_sesion">
+            Cerrar Sesion
+        </a>
+        
+        <br><br>
+        
+        <a href="Perfiles.php">
+            Perfiles
+        </a>
     </section>
-
+        
+   
 </body>
 </html>

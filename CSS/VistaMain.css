@@ -1,0 +1,74 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    color: white;
+}
+body{
+    background: black;
+    color: white;
+    background-image: url("../Images/edayo.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-attachment: scroll; 
+    background-size: auto 100%;
+}
+
+
+#arriba {
+    width: auto;
+    margin: auto;
+    overflow: hidden;
+    background: white;
+}
+
+header {
+    height: auto;
+    background: #ffffff;
+    color: black;
+}
+header img{
+    height: 150px;
+    float: left;
+}
+
+#menu{
+    width: 160px;
+    height: 920px;
+    float: left;
+    background: rgb(136,32,53);;
+    text-align: left;
+    text-box: border-box;
+    padding: 20px;
+   
+   
+}
+#menu h2{
+    font-size: 40px;
+    background: rgb(0, 0, 0);
+    
+   /* float: inline-start;*/
+
+}
+aside{
+    width: 500px;
+    height: 500px;
+    float: left;
+    background: rgb(136,32,53);
+    text-align: left;
+}
+aside h2{
+    font-size: 40px;
+    text-align: center;
+    line-height: 500px;
+}
+
+img.Perfil {
+    align-items: right;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover; 
+    display: inline-block;   
+    margin: 8px 12px; 
+    border: 2px solid rgba(255,255,255,0.9); 
+}
