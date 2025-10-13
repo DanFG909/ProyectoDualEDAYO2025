@@ -18,7 +18,7 @@
         </select>
 
         <button type="submit">Descargar</button>
-        <button href="Inscripciones.php">Regresar</button>
+       <a href="Inscripciones.php"> <button>Regresar</button></a>
 
     </form>
 </section>
