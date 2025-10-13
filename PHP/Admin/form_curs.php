@@ -10,10 +10,10 @@
             <section>
                 <form method="post" action="" enctype="multipart/form-data">
                     <label>Nombre del curso</label>
-                    <input class="controls" type="text" name="nomb" id="nomb" placeholder="Ingrese el nombre del curso " required>
+                    <input class="controls" type="text" name="nomb" id="nomb" placeholder="Ingrese el nombre del curso " >
                     <br>
                      <label>Informacion del curso</label>
-                    <input class="controls" type="text" name="info" id="info" placeholder="Ingrese la Informacion del curso " required>
+                    <input class="controls" type="text" name="info" id="info" placeholder="Ingrese la Informacion del curso " >
                     <br>
                     <label name="Modalidad">Modalidad</label> 
                     <select name="Modalidad">
@@ -26,7 +26,7 @@
                        <input type="file" name="imagen" accept="image/*" required>
                        <br><br>
                        <input class="button" type="submit" name="agregar" placeholder="Agregar curso">
-                       <button href=>Regresar</button>
+                       <button href="Cursos.php">Regresar</button>
                     </form>
             </section>
             <?php
