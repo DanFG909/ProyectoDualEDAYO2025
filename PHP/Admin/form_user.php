@@ -24,9 +24,8 @@
              <input type="checkbox" id="Administrador" name="Administrador">Administrador
              <br>
               <input class="button" name="Registrar" type="submit" value="Registrar">
-              <a href="../../PHP/Admin/Usuarios.php" ><button >Regresar</button></a>
-
             </form>
+              <a href="Usuarios.php"><button >Regresar</button></a>
         </section>
         <?php 
         include("conexion.php");

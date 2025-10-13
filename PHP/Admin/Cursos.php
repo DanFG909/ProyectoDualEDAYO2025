@@ -22,7 +22,9 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                 </select>
             </form>
         </section>
-</div>
+</div> 
+ <a href="form_curs.php"><button>Agregar cursos</button></a>
+ <a href="form_edit_c.php"><button>Editar cursos</button></a>
 
 <div>
     <form action="Buscar_Curso.php" method="GET">
