@@ -25,8 +25,8 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 </div>
 
 <div>
-    <form action="Buscar.php" method="GET">
-        <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
+    <form action="Buscar_Curso.php" method="GET">
+        <input type="text" name="buscar_input" placeholder="Buscar por nombre y ID.">
         <button type="submit">Buscar</button>
     </form>
 </div>
