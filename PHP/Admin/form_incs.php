@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <title>Registro a cursos</title>
     <link rel="shortcut icon" href="../Images/logo.jpg" type="image/jpeg">
-    <link href="../CSS/Style3.css" rel="stylesheet">
-    <script>
-   
-    function mostraPanel(panelId, checkbox) {
-        var panel = document.getElementById(panelId);
-        panel.style.display = checkbox.checked ? 'block' : 'none';
-    }
-    </script>
+    <link href="../../CSS/Style3.css" rel="stylesheet">
+        <script src="../../JS/desc.js"></script>
+            <script src="../../JS/Mostrar_Panel.js"></script>
+
+    
 </head>
 <body>
 <section>
@@ -59,9 +56,9 @@
          <option value="Mecanica automotriz">Mecanica automotriz</option>
       </select>
       <br>
-
+      <div id="especificaciones" ></div>
     <label>
-        <input type="checkbox" id="presencial" name="presencial" value="Presencial">Presencial
+        <input type="radio" id="presencial" name="presencial" value="Presencial">Presencial
         <input type="checkbox" id="check1" name="transferencia" value="Transferencia" onchange="mostraPanel('panel1', this)">Transferencia
     </label>
 

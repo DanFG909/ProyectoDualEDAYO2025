@@ -29,12 +29,6 @@ footer {
   padding: 20px;
 }
 
-footer img {
-  max-height: 200px;
-  object-fit: cover;
-  width: 100%;
-  display: block;
-}
 div{
     text-align: center;
     padding: 10px;
@@ -78,11 +72,24 @@ input[type="text"], select {
   color: #f1f1f1;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
+input[type="file"] {
+  margin-right: 5px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+color: #B98E58;}
+button{
+background-color: #B98E58;
+  color: #f1f1f1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  background-image: url('boton.jpg');
+  background-size: cover;
 }
-
 .Panel {
     display: none;
   padding: 20px;

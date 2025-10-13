@@ -2,6 +2,8 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
+    <link href="../../CSS/Style_curs.css" rel="stylesheet">
+
         <title>Agregar cursos</title>
     </head>
      <body>
@@ -16,8 +18,8 @@
                       <label>Imagen para el curso</label> 
                        <input type="file" name="imagen" accept="image/*" required>
                        <br><br>
-                       <input type="submit" name="agregar" placeholder="Agregar curso">
-                       <button>Regresar</button>
+                       <input class="button" type="submit" name="agregar" placeholder="Agregar curso">
+                       <button href=>Regresar</button>
                     </form>
             </section>
             <?php
