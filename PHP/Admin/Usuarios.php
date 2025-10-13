@@ -26,7 +26,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </div>
 
 <div>
-    <button href="form_user.php">Agregar nuevos usuarios</button>
+    <button href="form_user.php"><img src="../../Images/agregar.png" alt=""></button>
 </div>
 
 <div>

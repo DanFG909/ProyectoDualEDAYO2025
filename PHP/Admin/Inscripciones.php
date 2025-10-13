@@ -42,6 +42,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
             <button type="submit">Buscar</button>
         </form>
+
         <button href="form_desc.php">Descargar</button>
     </div>
 
@@ -59,6 +60,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                 <th>Modalidad</th>
                 <th>Forma de pago</th>
                 <th>Documentos</th>
+                <th>Estatus</th>
                 <th>Notificacion</th>
             </thead>
         <tbody>
@@ -95,7 +97,16 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                     <td><?php echo $row['Forma_de_Pago'];  ?></td>
                     <td><?php echo $row['Documentos'];  ?></td>
                     <td>
-                        <a href="Validacion.php">Validacion</a>
+                        <?php if ($row['Estatus'] == 0) { ?>
+                        <form method="GET" action="Validacion.php">
+                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                            <button type="submit">Validar</button>
+                        </form>
+                    <?php } else { ?>
+                        <span style="color: green; font-size: 24px;">✓</span>
+                    <?php } ?>
+                    </td>
+                    <td>
                         <a href="Notificacion.php">Notificacion</a>
                     </td>
                 </tr>

@@ -39,8 +39,14 @@
 
         <br><br>
 
-        <a href="Inscripcioness.php">
+        <a href="inscripciones.php">
             Inscripciones
+        </a>
+
+        <br><br>
+
+         <a href="Usuarios.php">
+            Usuarios
         </a>
 
         <br><br>
