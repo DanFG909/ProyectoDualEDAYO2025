@@ -37,7 +37,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     </div>
 
    <div>
-    //colocar imagen de buscar porfa
+    //colocar imagen de buscar porfa j
         <form action="Buscar_ins.php" method="GET">
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
             <button type="submit">Buscar</button>
