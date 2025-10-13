@@ -73,6 +73,17 @@ input[type="password"] {
 color: #B98E58;
 background-color: #7F0D31;
 }
+input[type="number"]{
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #d4b00e;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #7F0D31;
+  color: #f1f1f1;
+}
 button{
 background-color: #B98E58;
   color: #f1f1f1;
