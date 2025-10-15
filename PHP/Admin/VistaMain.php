@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Ventana Princiál | Administrativa</title>
     <link rel="stylesheet" href="../../CSS/VistaMain.css">
     <script>
         function cerrarContenedor(id) {
@@ -30,9 +30,7 @@
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
 
         <br><br>
-        //ya
-
-
+       
         <a href="index.php">
             Inicio
         </a>

@@ -14,7 +14,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 <body>
 
 <button onclick="window.parent.cerrarContenedor('contenedor3')">
-  Cerrar Usuarios
+  Cerrar
 </button>
 
 <div>
@@ -30,7 +30,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </div>
 
 <div>
-   <a href="form_user.php"><button >Agregar nuevos usuarios</button></a>
+   <a href="form_user.php"><button >Agregar a nuevos usuarios</button></a>
 </div>
 
 <div>

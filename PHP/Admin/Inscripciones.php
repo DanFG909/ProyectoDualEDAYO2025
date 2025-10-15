@@ -41,7 +41,6 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     </div>
 
    <div>
-    //colocar imagen de buscar porfa j
         <form action="Buscar_ins.php" method="GET">
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
             <button type="submit">Buscar</button>
@@ -67,7 +66,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                 <th>Notificacion</th>
             </thead>
         <tbody>
-            
+
         <?php
              if ($tipoSeleccionado) {
                 $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
@@ -109,11 +108,9 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                         <a href="Notificacion.php">Notificacion</a>
                     </td>
                 </tr>
-        <?php } ?>
+            <?php } ?>
             </tbody>
         </table>
-
     </div>
-    
-</body>
+  </body>
 </html>
