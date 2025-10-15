@@ -37,7 +37,6 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                 </select>
             </form>
         </section>
-
     </div>
 
    <div>
@@ -81,7 +80,6 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
             } else{
                 $resultado = $conexioon->query("SELECT * FROM inscripciones");
             }
-
             while ($row = $resultado->fetch_assoc()) {
         ?>   
                 <tr>

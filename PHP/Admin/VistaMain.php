@@ -20,21 +20,16 @@
             <img src="../../Images/expoaprende.png" alt="">
         </header>
     </div>
-
  
     <section id="menu">
 
-
         <H3>Bienvenido Usuario</H3>
-        <!---->
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
-
         <br><br>
        
         <a href="index.php">
             Inicio
         </a>
-        
         <br><br>
 
         <div>
@@ -88,7 +83,6 @@
             <div id="contenedor3" style="margin-top:20px;"></div>
         </div>
         <br><br>
-
 
         <div>
             <script>
