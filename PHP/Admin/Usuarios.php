@@ -10,8 +10,14 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Usuarios</title>
+    
 </head>
 <body>
+
+<button onclick="window.parent.cerrarContenedor('contenedor3')">
+  Cerrar Usuarios
+</button>
+
 
 <div>
   <section>
@@ -28,6 +34,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 <div>
    <a href="form_user.php"><button >Agregar nuevos usuarios</button></a>
 </div>
+
 
 <div>
     <form action="Buscar.php" method="GET">

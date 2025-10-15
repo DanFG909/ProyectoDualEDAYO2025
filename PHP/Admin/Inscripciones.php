@@ -12,6 +12,10 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <title>Tabla Inscripciones</title>
 </head>
 <body>
+    <button onclick="window.parent.cerrarContenedor('contenedor')">
+        Cerrar 
+    </button>
+
     <div>
          <section>
             <form method="GET" action="">
