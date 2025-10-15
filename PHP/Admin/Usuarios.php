@@ -1,6 +1,5 @@
 <?php 
 $conexioon = new mysqli("localhost", "root", "", "main");
-// El nombre de la base dejenseloooo
 
 $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 ?>
@@ -15,9 +14,8 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 <body>
 
 <button onclick="window.parent.cerrarContenedor('contenedor3')">
-  Cerrar Usuarios
+  Cerrar
 </button>
-
 
 <div>
   <section>
@@ -32,9 +30,8 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </div>
 
 <div>
-   <a href="form_user.php"><button >Agregar nuevos usuarios</button></a>
+   <a href="form_user.php"><button >Agregar a nuevos usuarios</button></a>
 </div>
-
 
 <div>
     <form action="Buscar.php" method="GET">

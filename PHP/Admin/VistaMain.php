@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Ventana Princiál | Administrativa</title>
     <link rel="stylesheet" href="../../CSS/VistaMain.css">
     <script>
         function cerrarContenedor(id) {
@@ -20,19 +20,20 @@
             <img src="../../Images/expoaprende.png" alt="">
         </header>
     </div>
-
  
     <section id="menu">
-        <H3>Bienvenido Usuario</H3>
-        <!---->
-        <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
 
+
+        <H3>Bienvenido Usuario</H3>
+        <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
         <br><br>
 
-        <button class="botones"> <a href="index.php">
+
+
+        <a href="index.php">
             Inicio
-        </a></button>
-            
+        </a>
+        
         <br><br>
 
         <div>
@@ -84,7 +85,7 @@
              <button onclick="mostrarPagina3()" class="botones">Usuarios</button>
            
         </div>
-        <br>
+        <br><br>
 
 
         <div>
