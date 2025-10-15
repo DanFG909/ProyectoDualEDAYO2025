@@ -15,7 +15,6 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
   Cerrar 
 </button>
 
-
 <div>
         <section>
             <form method="GET" action="">

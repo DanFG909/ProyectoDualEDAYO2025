@@ -67,12 +67,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                 <th>Notificacion</th>
             </thead>
         <tbody>
-<!--
-        a
-            $query ="SELECT * FROM inscripciones";
-            $resultado = $conexioon->query($query);
-            while($row=$resultado->fetch_assoc()){        
--->
+            
         <?php
              if ($tipoSeleccionado) {
                 $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
