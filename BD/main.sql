@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-10-2025 a las 19:58:21
+-- Tiempo de generación: 16-10-2025 a las 00:39:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -90,19 +90,20 @@ CREATE TABLE `inscripciones` (
   `Periodo` varchar(100) NOT NULL,
   `Modalidad` varchar(100) NOT NULL,
   `Forma_de_Pago` varchar(50) NOT NULL,
-  `Documentos` varchar(200) NOT NULL
+  `Documentos` varchar(200) NOT NULL,
+  `Estatus` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `inscripciones`
 --
 
-INSERT INTO `inscripciones` (`id`, `CURP`, `Nombre`, `Correo`, `Telefono`, `Periodo`, `Modalidad`, `Forma_de_Pago`, `Documentos`) VALUES
-(3, 'Ejemplo de curp 2', 'Pacoo', 'Alguien@ejemplo.com', '7293701356', 'Mensual', 'CEM', 'efectivo', 'no hay'),
-(5, 'CURP 2', 'JUANITO', 'JUANITO@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY'),
-(6, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO'),
-(7, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'Anual', 'CEM', 'efectivo', 'SI HAY'),
-(8, 'CURP3', 'FORD', 'FORD@GMAILCOM', '598598', 'Anual', 'CAE', 'NO HAY', 'NO');
+INSERT INTO `inscripciones` (`id`, `CURP`, `Nombre`, `Correo`, `Telefono`, `Periodo`, `Modalidad`, `Forma_de_Pago`, `Documentos`, `Estatus`) VALUES
+(3, 'Ejemplo de curp 2', 'Pacoo', 'Alguien@ejemplo.com', '7293701356', 'Mensual', 'CEM', 'efectivo', 'no hay', 1),
+(5, 'CURP 2', 'JUANITO', 'JUANITO@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY', 1),
+(6, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO', 1),
+(7, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'Anual', 'CEM', 'efectivo', 'SI HAY', 1),
+(8, 'CURP3', 'FORD', 'FORD@GMAILCOM', '598598', 'Anual', 'CAE', 'NO HAY', 'NO', 1);
 
 -- --------------------------------------------------------
 
