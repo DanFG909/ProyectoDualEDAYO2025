@@ -67,6 +67,7 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                 <td><?php echo $row['Modalidad']; ?></td>
                 <td><?php echo $row['fecha_creacion']; ?></td>
                 <td>
+                    <a href="form_info_c.php?id=<?php echo $row['id']; ?>">Ver Información</a>
                     <a href="form_curs.php?id=<?php echo $row['id']; ?>">Modificar</a> 
                     <a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
                 </td>

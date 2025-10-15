@@ -26,7 +26,6 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </div>
 
 <div>
-   <a href="form_user.php"><button >Agregar nuevos usuarios</button></a>
 </div>
 
 <div>
@@ -47,7 +46,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <th>Correo</th>
                 <th>Tipo</th>
                 <th>Acciones</th>
-                <<th>   </th>
+                <th>  </th>
             </tr>
         </thead>
         <tbody>
