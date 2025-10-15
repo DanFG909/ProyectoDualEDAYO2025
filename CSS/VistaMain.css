@@ -1,16 +1,21 @@
 *{
     margin: 0px;
+    margin-top: 0px;
     padding: 0px;
     color: black;
+    font-style: Arial;
+    font-size: medium;
 }
 body{
     background: black;
     color: black;
     background-image: url("../Images/edayo.jpg");
     background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: scroll; 
-    background-size: auto 100%;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    z-index: -1;
+    position: relative;
 }
 
 
@@ -22,6 +27,7 @@ body{
 }
 
 header {
+    margin-top: none;
     height: auto;
     background: #ffffff;
     color: black;
@@ -30,8 +36,15 @@ header img{
     height: 150px;
     float: left;
 }
+.botones{
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    
+}
 
 #menu{
+    font-size: medium;
     width: 160px;
     height: 920px;
     float: left;
@@ -43,24 +56,25 @@ header img{
    
 }
 #menu h2{
-    font-size: 40px;
+   
     background: rgb(0, 0, 0);
     
    /* float: inline-start;*/
 
 }
-aside{
+aside #contenedor {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 10px;
     width: 500px;
     height: 500px;
     float: left;
     background: rgb(136,32,53);
     text-align: left;
+    background-color: white;
 }
-aside h2{
-    font-size: 40px;
-    text-align: center;
-    line-height: 500px;
-}
+
 
 img.Perfil {
     align-items: right;

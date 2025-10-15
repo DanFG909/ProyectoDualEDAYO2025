@@ -10,6 +10,8 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Inscripciones</title>
+    <link rel="stylesheet" href="../../CSS/Inscripciones.css">
+
 </head>
 <body>
     <button onclick="window.parent.cerrarContenedor('contenedor')">
