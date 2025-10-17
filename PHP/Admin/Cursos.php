@@ -11,6 +11,10 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 </head>
 <body>
 
+<button onclick="window.parent.cerrarContenedor('contenedor4')">
+  Cerrar 
+</button>
+
 <div>
         <section>
             <form method="GET" action="">
@@ -43,7 +47,7 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                 <th>Nombre</th>
                 <th>Informacion</th>
                 <th>Modalidad</th>
-                <th>Fecha de Creacion</th>
+                <th>Fecha de creacion</th>
                 <th>Acciones</th>
             </tr>
         </thead>

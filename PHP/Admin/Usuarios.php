@@ -1,6 +1,5 @@
 <?php 
 $conexioon = new mysqli("localhost", "root", "", "main");
-// El nombre de la base dejenseloooo
 
 $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 ?>
@@ -10,8 +9,13 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Usuarios</title>
+    
 </head>
 <body>
+
+<button onclick="window.parent.cerrarContenedor('contenedor3')">
+  Cerrar
+</button>
 
 <div>
   <section>
