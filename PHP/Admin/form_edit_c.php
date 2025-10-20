@@ -4,16 +4,22 @@
     <meta charset="UTF-8">
     <link href="../../CSS/Style_curs.css" rel="stylesheet">
     <title>Actualizar curso</title>
+    <?php
+     $id =$_GET['id'];
+     $sql="SELECT * FROM cursos WHERE id=$id";
+     $resultado=$conexion->query($sql);
+     $usuario=$resultado->fetch_Assoc();
+    ?>
 </head>
 <body>
 <section>
     <form method="post" action="" enctype="multipart/form-data">
         <label>ID del curso:</label>
-        <input type="number" name="id_curso" required>
+        <input type="hidden" name="id_curso" value="<?= $usuario['id']?>" >
         <label>Nombre del curso</label>
-        <input class="controls" type="text" name="nomb" id="nomb" placeholder="Ingrese el nombre del curso " required>
+        <input class="controls" type="text" name="nomb" id="nomb" value="<?= $usuario['id']?>" placeholder="Ingrese el nombre del curso " required>
         <label>Información del curso</label>
-        <input class="controls" type="text" name="info" id="info" placeholder="Ingrese la información del curso " required>
+        <input class="controls" type="text" name="info" id="info" value="<?= $usuario['id']?>" placeholder="Ingrese la información del curso " required>
         <label>Modalidad</label> 
         <select name="Modalidad">
             <option value="CEM">CEM</option> 

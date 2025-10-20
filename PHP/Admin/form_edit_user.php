@@ -2,11 +2,14 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-    <link href="../../CSS/Style_user.css" rel="stylesheet">
-
+        <link href="../../CSS/Style_user.css" rel="stylesheet">
         <title>Actualizar usuario</title>
-        
-
+        <?php
+        $id =$_GET['id'];
+        $sql="SELECT * FROM usuarios_admin WHERE id=$id";
+        $resultado=$conexion->query($sql);
+        $usuario=$resultado->fetch_Assoc();
+    ?>
     </head>
     <body>
         <section>
@@ -29,14 +32,14 @@
              <label style="color:white; background-color: #000000ff;   width: 30%;   height: 30px;">Seleccione el rol del usuario</label>
              <input type="checkbox" id="Administrador" name="Administrador">Administrador
              <br>
-              <input class="button" name="Registrar" type="submit" value="Registrar">
+              <input class="button" name="Actualizar" type="submit" value="Actualizar">
             </form>
               <a href="Usuarios.php"><button >Regresar</button></a>
         </section>
         <?php 
         include("conexion.php");
         session_start();
-        if (isset($_POST['Registrar'])){
+        if (isset($_POST['Actualizar'])){
             $tiempo_espera = 30;
             if(isset($_SESSION['ultimo_registro'])){
                 $segundos_transcurridos = time() - $_SESSION['ultimo_registro'];
