@@ -1,6 +1,5 @@
 <?php 
 $conexioon = new mysqli("localhost", "root", "", "main");
-
 $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 ?>
 <!DOCTYPE html>
@@ -51,7 +50,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <th>Correo</th>
                 <th>Tipo</th>
                 <th>Acciones</th>
-                <<th>   </th>
+                <th>   </th>
             </tr>
         </thead>
         <tbody>

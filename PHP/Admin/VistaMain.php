@@ -42,7 +42,7 @@
                     fetch('Interesados.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor').innerHTML = html;
+                    document.getElementById('contenedor1').innerHTML = html;
                     }
                    );
                  }
@@ -77,7 +77,7 @@
                     fetch('Usuarios.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor3').innerHTML = html;
+                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
