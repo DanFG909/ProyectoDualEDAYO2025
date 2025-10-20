@@ -52,6 +52,7 @@
         <br>
 
         <div>
+            
             <script>
                 function mostrarPagina() {
                     fetch('Inscripciones.php')
