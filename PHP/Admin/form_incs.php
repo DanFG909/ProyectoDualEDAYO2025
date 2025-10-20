@@ -105,6 +105,16 @@ if (isset($_POST['Registrar'])) {
     $notificacion = $_POST['not'];
     $estado = 0;
 
+    // Determinar si hay documentación o no, según método
+    if (isset($_POST['transferencia'])) {
+    $documentacion = "Documentación enviada en línea";
+    } elseif (isset($_POST['presencial'])) {
+    $documentacion = "Se entregará en oficina";
+    } else {
+    $documentacion = "No especificado";
+    }
+    
+
     // Verificar duplicados
     $verificar = "SELECT * FROM users WHERE Correo = '$correo' AND Telefono='$telefono' AND Nombre='$nombre'";
     $resultado = mysqli_query($conexion, $verificar);
@@ -113,7 +123,9 @@ if (isset($_POST['Registrar'])) {
         exit;
     }
 
-    $insertar = "INSERT INTO users (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion) VALUES ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion')";
+    $insertar = "INSERT INTO users (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion, Documentos
+) 
+    VALUES ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion', '$documentacion')";
     $sql = mysqli_query($conexion, $insertar);
     if (!$sql) {
         die("Error al insertar usuario: " . mysqli_error($conexion));
