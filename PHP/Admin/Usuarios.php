@@ -12,7 +12,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </head>
 <body>
 
-<button onclick="window.parent.cerrarContenedor('contenedor3')">
+<button onclick="window.parent.cerrarContenedor('contenedor')">
   Cerrar
 </button>
 
