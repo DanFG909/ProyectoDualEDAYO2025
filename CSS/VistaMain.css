@@ -52,11 +52,12 @@ header img{
 
 /* Contenedor principal donde se cargan las tablas dinámicas */
 aside #contenedor {
-  margin-left: 25px;
+    margin-top: 25px;
+    margin-left: 25px;
     margin-right: 25px;
     border-radius: 10px;
     width: 700px;
-    height: 500px;
+    height: 50px;
     float: left;
     background: rgb(136,32,53);
     text-align: left;
