@@ -43,18 +43,7 @@ header img{
     
 }
 
-#menu{
-    font-size: medium;
-    width: 160px;
-    height: 920px;
-    float: left;
-    background: rgb(136,32,53);;
-    text-align: left;
-    text-box: border-box;
-    padding: 20px;
-   
-   
-}
+
 #menu h2{
    
     background: rgb(0, 0, 0);
