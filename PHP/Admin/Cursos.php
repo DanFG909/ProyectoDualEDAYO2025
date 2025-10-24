@@ -11,12 +11,16 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 </head>
 <body>
 
+<<<<<<< Updated upstream
 <button onclick="window.parent.cerrarContenedor('contenedor4')">
   Cerrar 
 </button>
 
 <div>
         <section>
+=======
+  <section>
+>>>>>>> Stashed changes
             <form method="GET" action="">
                 <select name="opciones_modalidad" onchange="this.form.submit()">
                     <option value="" disabled selected hidden>Modalidad</option>
@@ -26,6 +30,7 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                 </select>
             </form>
         </section>
+<<<<<<< Updated upstream
 </div> 
  <a href="form_curs.php"><button>Agregar cursos</button></a>
  <a href="form_edit_c.php"><button>Editar cursos</button></a>
@@ -39,6 +44,19 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 
 <div>
     <h2>Cursos Registrados</h2>
+=======
+
+<div>
+    <form action="Buscar.php" method="GET">
+        <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
+        <button type="submit">Buscar</button>
+    </form>
+    //pendiente
+</div>
+
+<div>
+    <h2>Listado de cursos</h2>
+>>>>>>> Stashed changes
 
     <table border="1">
         <thead>
@@ -47,8 +65,13 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                 <th>Nombre</th>
                 <th>Informacion</th>
                 <th>Modalidad</th>
+<<<<<<< Updated upstream
                 <th>Fecha de creacion</th>
                 <th>Acciones</th>
+=======
+                <th>Fecha de Creacion</th>
+                <<th>   </th>
+>>>>>>> Stashed changes
             </tr>
         </thead>
         <tbody>
@@ -71,7 +94,10 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                 <td><?php echo $row['Modalidad']; ?></td>
                 <td><?php echo $row['fecha_creacion']; ?></td>
                 <td>
+<<<<<<< Updated upstream
                     <a href="form_info_c.php?id=<?php echo $row['id']; ?>">Ver Información</a>
+=======
+>>>>>>> Stashed changes
                     <a href="form_curs.php?id=<?php echo $row['id']; ?>">Modificar</a> 
                     <a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
                 </td>

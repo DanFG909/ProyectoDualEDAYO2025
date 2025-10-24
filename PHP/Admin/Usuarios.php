@@ -8,36 +8,36 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Usuarios</title>
-    
+    <link rel="stylesheet" href="../../CSS/Estilo_usuarios.css">
 </head>
 <body>
 
-<button onclick="window.parent.cerrarContenedor('contenedor3')">
-  Cerrar
+<button class="cerrar" onclick="window.parent.cerrarContenedor('contenedor')">
+    ⓧ
 </button>
 
-<div>
-  <section>
-    <form method="GET" action="">
-      <select name="opciones_usuario" onchange="this.form.submit()">
-        <option value="" disabled selected hidden>Tipo</option>
-        <option value="Administrador" <?php if($tipoSeleccionado == "Administrador") echo "selected"; ?>>Administrador</option>
-        <option value="Normal" <?php if($tipoSeleccionado == "Normal") echo "selected"; ?>>Normal</option>
-      </select>
-    </form>
-  </section>
+<div class="contenedor">
+    <div class="filtro">
+        <section>
+            <form method="GET" action="">
+                <select name="opciones_usuario" onchange="this.form.submit()">
+                    <option value="" disabled selected hidden>Tipo</option>
+                    <option value="Administrador" <?php if($tipoSeleccionado == "Administrador") echo "selected"; ?>>Administrador</option>
+                    <option value="Normal" <?php if($tipoSeleccionado == "Normal") echo "selected"; ?>>Normal</option>
+                </select>
+            </form>
+        </section>
+    </div>
+
+    <div class="formulario">
+        <form action="Buscar.php" method="GET">
+            <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
 </div>
 
-<div>
-</div>
-
-<div>
-    <form action="Buscar.php" method="GET">
-        <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
-        <button type="submit">Buscar</button>
-    </form>
-</div>
-<div>
+<div class="tabla">
     <h2>Usuarios Registrados</h2>
 
     <table border="1">
