@@ -1,0 +1,36 @@
+body {
+  background-color: #9f0438;
+}
+
+table {
+  background-color: antiquewhite;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cerrar {
+    background-color: #9f0438;
+    color: aliceblue;
+}
+
+h2 {
+  text-align: center;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: row; 
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; 
+  padding: 20px;
+}
+
+.filtro, .formulario {
+  background-color: #d24f7b; 
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  width: 300px; 
+}
+
