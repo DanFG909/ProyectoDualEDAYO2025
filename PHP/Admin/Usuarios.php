@@ -12,7 +12,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </head>
 <body>
 
-<button onclick="window.parent.cerrarContenedor('contenedor3')">
+<button class="cerrar" onclick="window.parent.cerrarContenedor('contenedor3')">
     ⓧ 
 </button>
 
@@ -30,7 +30,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     </div>
 
     <div class="formulario">
-        <form action="Buscar.php" method="GET">
+        <form action="Buscar.php" method="GET" class="buscar">
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
             <button type="submit">Buscar</button>
         </form>
@@ -72,8 +72,8 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <td><?php echo $row['Correo']; ?></td>
                 <td><?php echo $row['Tipo']; ?></td>
                 <td>
-                    <a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> 
-                    <a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
+                    <button><a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> </button>
+                    <button><a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a></button>
                 </td>
             </tr>
         <?php } ?>
