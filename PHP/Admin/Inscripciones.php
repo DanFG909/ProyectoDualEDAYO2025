@@ -11,11 +11,11 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Inscripciones</title>
     <link rel="stylesheet" href="../../CSS/Inscripciones.css">
-
 </head>
 <body>
+
     <button onclick="window.parent.cerrarContenedor('contenedor')">
-        Cerrar 
+        ⓧ
     </button>
 
     <form method="GET" action="">
@@ -48,7 +48,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <div>
     <h2>Usuarios Inscritos</h2>
 
-    <table border="1">
+    <table border="1" cellpadding="6" cellspcing="0">
         <thead>
             <tr>
                 <th>ID</th>
@@ -108,7 +108,9 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                         <?php } ?>
                     </td>
                     <td>
-                        <a href="Notificacion.php">Notificación</a>
+                        <form action="Notificacion_inscripciones" method="post" onsubmit="return confirm('Enviar Notficacion a <?php echo htmlspecialchars(addslashes($r['Nombre'])); ?> )">
+                            <input type="hidden" >
+                        </form>
                     </td>
                 </tr>
             <?php } ?>
