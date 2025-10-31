@@ -28,7 +28,9 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
             </form>
         </section>
     </div>
-
+    <div>
+    <button><a href="form_user.php">Agregar</a> </button>
+    </div>
     <div class="formulario">
         <form action="Buscar.php" method="GET" class="buscar">
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
@@ -72,6 +74,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <td><?php echo $row['Correo']; ?></td>
                 <td><?php echo $row['Tipo']; ?></td>
                 <td>
+                   
                     <button><a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> </button>
                     <button><a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a></button>
                 </td>
