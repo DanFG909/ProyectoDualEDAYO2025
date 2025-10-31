@@ -86,9 +86,10 @@
     
      <main class="contenido">
     <section class="cursos-disp">
-      <h1>Cursos Disponibles</h1>
 
-       <div class="grid-cursos">
+   <h1>Cursos Disponibles</h1>
+
+  <div class="grid-cursos">
     <?php
       $sql = "SELECT * FROM cursos_disponibles";
       $resultado = $conn->query($sql);
@@ -99,7 +100,6 @@
           <div class="class">
             <img src="'.$curso['Imagen'].'" alt="'.$curso['Nombre'].'">
             <h2>'.$curso['Nombre'].'</h2>
-          
             <p>'.$curso['Descripcion'].'</p>
             <span><b>Duración:</b> '.$curso['Duracion'].'</span>
           </div>';
