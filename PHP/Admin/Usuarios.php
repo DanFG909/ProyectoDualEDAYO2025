@@ -12,7 +12,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </head>
 <body>
 
-<button onclick="window.parent.cerrarContenedor('contenedor3')">
+<button onclick="window.parent.cerrarContenedor('contenedor')">
   Cerrar
 </button>
 
@@ -49,7 +49,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <th>Correo</th>
                 <th>Tipo</th>
                 <th>Acciones</th>
-                <<th>   </th>
+                
             </tr>
         </thead>
         <tbody>

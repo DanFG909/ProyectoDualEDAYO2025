@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ventana Princiál | Administrativa</title>
+    <title>Ventana Principal | Administrativa</title>
     <link rel="stylesheet" href="../../CSS/VistaMain.css">
     <script>
         function cerrarContenedor(id) {
@@ -39,10 +39,11 @@
         <div>
             <script>
                 function mostrarPagina2() {
+                    window.parent.cerrarContenedor('contenedor')
                     fetch('Interesados.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor1').innerHTML = html;
+                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
@@ -55,19 +56,17 @@
             
             <script>
                 function mostrarPagina() {
+                    window.parent.cerrarContenedor('contenedor')
                     fetch('Inscripciones.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor2').innerHTML = html;
+                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
             </script>
              <button onclick="mostrarPagina()" class="botones">Inscripciones</button>
 
-             <div id="contenedor2"></div>
-           <!--
-                -->
         </div>
 
         <br>
@@ -75,6 +74,7 @@
         <div>
             <script>
                 function mostrarPagina3() {
+                    window.parent.cerrarContenedor('contenedor')
                     fetch('Usuarios.php')
                     .then(response => response.text())
                     .then(html => {
@@ -86,16 +86,17 @@
              <button onclick="mostrarPagina3()" class="botones">Usuarios</button>
            
         </div>
-        <br><br>
+        <br>
 
 
         <div>
             <script>
                 function mostrarPagina4() {
+                    window.parent.cerrarContenedor('contenedor')
                     fetch('Cursos.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor4').innerHTML = html;
+                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
@@ -103,8 +104,7 @@
              <button onclick="mostrarPagina4()" class="botones">Cursos</button>
             <div id="contenedor4"></div>
             </div>
-        
-        <br>
+         <br>
         <button class="botones"><a href="Contacto.php">
                 Contacto
         </a></button>
@@ -119,12 +119,11 @@
             Perfiles
             </a>
         </button>
+       
     </section>
 
     <aside>
         <div id="contenedor"></div>
-        
-      
     </aside>
     
 

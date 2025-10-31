@@ -11,7 +11,7 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 </head>
 <body>
 
-<button onclick="window.parent.cerrarContenedor('contenedor4')">
+<button onclick="window.parent.cerrarContenedor('contenedor')">
   Cerrar 
 </button>
 

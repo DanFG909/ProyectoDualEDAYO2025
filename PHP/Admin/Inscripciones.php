@@ -48,7 +48,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <div>
     <h2>Usuarios Inscritos</h2>
 
-    <table border="1">
+    <table border ="1" >
         <thead>
             <tr>
                 <th>ID</th>
