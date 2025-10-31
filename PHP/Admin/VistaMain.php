@@ -68,7 +68,7 @@
         <br><br>
 
         <div>
-            <script>
+            <script> 
                 function mostrarPagina3() {
                     fetch('Usuarios.php')
                     .then(response => response.text())

@@ -34,7 +34,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     <div class="formulario">
         <form action="Buscar.php" method="GET" class="buscar">
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
-            <button type="submit">Buscar</button>
+            <button type="submit"><img src="lupa16PX.png" alt=""></button>
         </form>
     </div>
 </div>
