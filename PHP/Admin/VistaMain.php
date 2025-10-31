@@ -23,17 +23,13 @@
  
     <section id="menu">
 
-
         <H3>Bienvenido Usuario</H3>
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
         <br><br>
-
-
-
+       
         <a href="index.php">
             Inicio
         </a>
-        
         <br><br>
 
         <div>
@@ -48,12 +44,13 @@
                    );
                  }
             </script>
-             <button onclick="mostrarPagina2()" class="botones">Interesados</button>
-       </div>
-        <br>
+             <button onclick="mostrarPagina2()">Interesados</button>
+
+            <div id="contenedor2" style="margin-top:20px;"></div>
+        </div>
+        <br><br>
 
         <div>
-            
             <script>
                 function mostrarPagina() {
                     window.parent.cerrarContenedor('contenedor')
@@ -61,30 +58,32 @@
                     .then(response => response.text())
                     .then(html => {
                     document.getElementById('contenedor').innerHTML = html;
-                    }
-                   );
-                 }
-            </script>
-             <button onclick="mostrarPagina()" class="botones">Inscripciones</button>
-
-        </div>
-
-        <br>
-
-        <div>
-            <script>
-                function mostrarPagina3() {
-                    window.parent.cerrarContenedor('contenedor')
-                    fetch('Usuarios.php')
-                    .then(response => response.text())
-                    .then(html => {
                     document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
             </script>
-             <button onclick="mostrarPagina3()" class="botones">Usuarios</button>
-           
+             <button onclick="mostrarPagina()">Inscripciones</button>
+
+        </div>
+
+        <br><br>
+
+        <div>
+            <script> 
+                function mostrarPagina3() {
+                    window.parent.cerrarContenedor('contenedor')
+                    fetch('Usuarios.php')
+                    .then(response => response.text())
+                    .then(html => {
+                    document.getElementById('contenedor3').innerHTML = html;
+                    }
+                   );
+                 }
+            </script>
+             <button onclick="mostrarPagina3()">Usuarios</button>
+
+            <div id="contenedor3" style="margin-top:20px;"></div>
         </div>
         <br>
 
@@ -110,20 +109,22 @@
         </a></button>
 
         <br><br>
-        <button class="botones"><a href="cerrar_sesion">
-                Cerrar Sesion
-        </a></button>
+
+        <a href="cerrar_sesion">
+            Cerrar Sesion
+        </a>
         
         <br><br>
-        <button class="botones"><a href="Perfiles.php">
+        
+        <a href="Perfiles.php">
             Perfiles
-            </a>
-        </button>
-       
+        </a>
     </section>
 
     <aside>
         <div id="contenedor"></div>
+        
+      
     </aside>
     
 

@@ -78,8 +78,7 @@ input[type="file"] {
   border-radius: 5px;
 color: #B98E58;}
 button{
-background-color: #B98E58;
-  color: #f1f1f1;
+   color: #f1f1f1;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -87,7 +86,7 @@ background-color: #B98E58;
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  background-image: url('boton.jpg');
+  background-image: url('boton.jpg'); 
   background-size: cover;
 }
 .Panel {

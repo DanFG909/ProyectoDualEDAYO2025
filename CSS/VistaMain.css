@@ -62,10 +62,15 @@ aside {
 }
 
 aside #contenedor {
-    
-    display: block;
-    width: 1000px; /* ancho fijo para formar un cuadro junto al menú */
-    height: 460px; /* mantener proporción cuadrada */
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+    float: left;
+    background: rgb(136,32,53);
+    text-align: left;
     background-color: white;
     border-radius: 20px;
     

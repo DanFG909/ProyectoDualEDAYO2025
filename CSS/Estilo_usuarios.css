@@ -1,0 +1,98 @@
+body {
+  background-color: #882035;
+}
+h2 {
+  text-align: center;
+  color: white;
+}
+.contenedor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+}
+.filtro,
+.formulario {
+  background-color: #882035;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgb(0, 0, 0);
+  width: 300px;
+  cursor: pointer;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+  background-color: #ffffff;
+  overflow-x: auto;
+  cursor: pointer;
+}
+tr:hover {
+  background-color: #ffc36e;
+}
+@media (max-width: 600px) {
+  th,
+  td {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+img{
+  background-color: #882035;
+}
+.editar {
+    background-color: transparent; 
+    border: none;                
+    padding: 0;                   
+    font: inherit;                 
+    color: #000000;                
+    cursor: pointer;               
+    text-decoration: underline;    
+}
+.borrar {
+    background-color: transparent; 
+    border: none;                
+    padding: 0;                   
+    font: inherit;                 
+    color: #000000;                
+    cursor: pointer;               
+    text-decoration: underline;    
+}
+.cerrar {
+  background-color: #882035;
+  color: #ffffff;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.buscar {
+  background-color: #882035;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+select {
+  width: 150px;
+  padding: 1px;
+  font-size: 16px;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+}

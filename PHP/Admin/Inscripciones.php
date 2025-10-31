@@ -11,30 +11,33 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Inscripciones</title>
     <link rel="stylesheet" href="../../CSS/Inscripciones.css">
-
 </head>
 <body>
+
     <button onclick="window.parent.cerrarContenedor('contenedor')">
-        Cerrar 
+        ⓧ
     </button>
 
     <form method="GET" action="">
-    <select name="opciones_periodo">
-        <option value="" disabled selected hidden>Periodos</option>
-        <option value="Mensual" <?php if($tipoSeleccionado2 == "Mensual") echo "selected"; ?>>Mensual</option>
-        <option value="Anual" <?php if($tipoSeleccionado2 == "Anual") echo "selected"; ?>>Anual</option>
-    </select>
+        <select name="opciones_periodo">
+            <option value="" disabled selected hidden>Periodos</option>
+            <option value="Mensual" <?php if($tipoSeleccionado2 == "Mensual") echo "selected"; ?>>Mensual</option>
+            <option value="Anual" <?php if($tipoSeleccionado2 == "Anual") echo "selected"; ?>>Anual</option>
+        </select>
 
-    <select name="opciones_modalidad">
-        <option value="" disabled selected hidden>Modalidad</option>
-        <option value="CEA" <?php if($tipoSeleccionado == "CEA") echo "selected"; ?>>CEA</option>
-        <option value="CEM" <?php if($tipoSeleccionado == "CEM") echo "selected"; ?>>CEM</option>
-        <option value="CAE" <?php if($tipoSeleccionado == "CAE") echo "selected"; ?>>CAE</option>
-    </select>
+        <select name="opciones_modalidad">
+            <option value="" disabled selected hidden>Modalidad</option>
+            <option value="CEA" <?php if($tipoSeleccionado == "CEA") echo "selected"; ?>>CEA</option>
+            <option value="CEM" <?php if($tipoSeleccionado == "CEM") echo "selected"; ?>>CEM</option>
+            <option value="CAE" <?php if($tipoSeleccionado == "CAE") echo "selected"; ?>>CAE</option>
+        </select>
 
-    <button type="submit">Filtrar</button>
-    <a href="inscripciones.php"><button type="button">Borrar Filtros</button></a>
-</form>
+        <button type="submit">Filtrar</button>
+
+        <a href="inscripciones.php">
+            <button type="button">Borrar Filtros</button>
+        </a>
+    </form>
 
 
    <div>
@@ -42,13 +45,16 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
             <button type="submit">Buscar</button>
         </form>
-        <a href="form_desc.php"><button>Descargar</button></a>
+        <a href="form_desc.php">
+            <button>Descargar</button>
+        </a>
     </div>
 
     <div>
-    <h2>Usuarios Inscritos</h2>
 
-    <table border ="1" >
+        <h2>Usuarios Inscritos</h2>
+
+    <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
@@ -108,13 +114,14 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                         <?php } ?>
                     </td>
                     <td>
-                        <a href="Notificacion.php">Notificación</a>
+                        <form action="Notificacion_inscripciones" method="post" onsubmit="return confirm('Enviar Notficacion a <?php echo htmlspecialchars(addslashes($r['Nombre'])); ?> )">
+                            <input type="hidden" >
+                        </form>
                     </td>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
-</div>
-
-  </body>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>
