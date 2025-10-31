@@ -39,28 +39,35 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
             </form>
         </div>   
     </div>
-<div class="contenedor">
-    <div class="filtro">
-        <section>
-            <form method="GET" action="">
-                <select name="opciones_usuario" onchange="this.form.submit()">
-                    <option value="" disabled selected hidden>Tipo</option>
-                    <option value="Administrador" <?php if($tipoSeleccionado == "Administrador") echo "selected"; ?>>Administrador</option>
-                    <option value="Normal" <?php if($tipoSeleccionado == "Normal") echo "selected"; ?>>Normal</option>
-                </select>
+
+    <div class="contenedor">
+        <div class="filtro">
+            <section>
+                <form method="GET" action="">
+                    <select name="opciones_usuario" onchange="this.form.submit()">
+                        <option value="" disabled selected hidden>Tipo</option>
+                        <option value="Administrador" <?php if($tipoSeleccionado == "Administrador") echo "selected"; ?>>Administrador</option>
+                        <option value="Normal" <?php if($tipoSeleccionado == "Normal") echo "selected"; ?>>Normal</option>
+                    </select>
+                </form>
+            </section>
+        </div>
+        
+        <div>
+            <button>
+                <a href="form_user.php">Agregar</a> 
+            </button>
+        </div>
+
+        <div class="formulario">
+            <form action="Buscar.php" method="GET" class="buscar">
+                <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
+                <button type="submit">
+                    <img src="lupa16PX.png" alt="">
+                </button>
             </form>
-        </section>
+        </div>
     </div>
-    <div>
-    <button><a href="form_user.php">Agregar</a> </button>
-    </div>
-    <div class="formulario">
-        <form action="Buscar.php" method="GET" class="buscar">
-            <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
-            <button type="submit"><img src="lupa16PX.png" alt=""></button>
-        </form>
-    </div>
-</div>
 
     <div class="tabla">
         <h2>Usuarios Registrados</h2>
@@ -120,6 +127,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <<th>   </th>
             </tr>
         </thead>
+
         <tbody>
         <?php
             if ($tipoSeleccionado) {
@@ -140,7 +148,6 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <td><?php echo $row['Correo']; ?></td>
                 <td><?php echo $row['Tipo']; ?></td>
                 <td>
-                   
                     <button><a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> </button>
                     <button><a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a></button>
                 </td>
