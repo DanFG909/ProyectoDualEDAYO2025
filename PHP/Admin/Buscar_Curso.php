@@ -22,7 +22,7 @@ if ($resultado && $resultado->num_rows > 0) {
         echo "Fecha: " . $fila['fecha_creacion'] . "<br>";
     }
 } else {
-    echo "NO_ENCONTRADO";
+    echo "NO ENCONTRADO";
 }
 
 $conexion->close();
