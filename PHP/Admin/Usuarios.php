@@ -32,7 +32,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     <div class="formulario">
         <form action="Buscar.php" method="GET" class="buscar">
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
-            <button type="submit">Buscar</button>
+            <button type="submit"><img src="lupa16PX.png" alt=""></button>
         </form>
     </div>
 </div>
@@ -72,8 +72,8 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <td><?php echo $row['Correo']; ?></td>
                 <td><?php echo $row['Tipo']; ?></td>
                 <td>
-                    <button><a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> </button>
-                    <button><a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a></button>
+                    <button class="editar"><a href="Editar.php?id=<?php echo $row['id']; ?>"> ✏️ </a> </button>
+                    <button class="borrar"><a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');"> 🗑 </a></button>
                 </td>
             </tr>
         <?php } ?>
