@@ -9,7 +9,6 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  <link rel="stylesheet" href="../../../CSS/Style_VistaInfo.css">
 
-
 </head>
 <body>
   <!-- Encabezado -->
