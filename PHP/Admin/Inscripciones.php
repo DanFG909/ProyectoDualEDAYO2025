@@ -54,45 +54,45 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 
         <h2>Usuarios Inscritos</h2>
 
-        <table border="1" cellpadding="6" cellspcing="0">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>CURP</th>
-                    <th>Nombre<br>(Completo)</th>
-                    <th>Correo</th>
-                    <th>Teléfono</th>
-                    <th>Periodo</th>
-                    <th>Modalidad</th>
-                    <th>Forma de pago</th>
-                    <th>Documentos</th>
-                    <th>Estatus</th>
-                    <th>Notificación</th>
-                </tr>
-            </thead>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>CURP</th>
+                <th>Nombre<br>(Completo)</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Periodo</th>
+                <th>Modalidad</th>
+                <th>Forma de pago</th>
+                <th>Documentos</th>
+                <th>Estatus</th>
+                <th>Notificación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            if ($tipoSeleccionado && $tipoSeleccionado2) {
+                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ? AND Periodo = ?");
+                $stmt->bind_param("ss", $tipoSeleccionado, $tipoSeleccionado2);
+                $stmt->execute();
+                $resultado = $stmt->get_result();
+            } elseif ($tipoSeleccionado) {
+                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
+                $stmt->bind_param("s", $tipoSeleccionado);
+                $stmt->execute();
+                $resultado = $stmt->get_result();
+            } elseif ($tipoSeleccionado2) {
+                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
+                $stmt->bind_param("s", $tipoSeleccionado2);
+                $stmt->execute();
+                $resultado = $stmt->get_result();
+            } else {
+                $resultado = $conexioon->query("SELECT * FROM inscripciones");
+            }
 
-            <tbody>
-                <?php
-                if ($tipoSeleccionado && $tipoSeleccionado2) {
-                    $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ? AND Periodo = ?");
-                    $stmt->bind_param("ss", $tipoSeleccionado, $tipoSeleccionado2);
-                    $stmt->execute();
-                    $resultado = $stmt->get_result();
-                } elseif ($tipoSeleccionado) {
-                    $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
-                    $stmt->bind_param("s", $tipoSeleccionado);
-                    $stmt->execute();
-                    $resultado = $stmt->get_result();
-                } elseif ($tipoSeleccionado2) {
-                    $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
-                    $stmt->bind_param("s", $tipoSeleccionado2);
-                    $stmt->execute();
-                    $resultado = $stmt->get_result();
-                } else {
-                    $resultado = $conexioon->query("SELECT * FROM inscripciones");
-                }
-                while ($row = $resultado->fetch_assoc()) {
-                ?>
+            while ($row = $resultado->fetch_assoc()) {
+            ?>
                 <tr>
                     <td><?php echo $row['id']; ?></td>
                     <td><?php echo $row['CURP']; ?></td>

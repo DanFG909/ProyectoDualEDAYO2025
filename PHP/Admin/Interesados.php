@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <button onclick="window.parent.cerrarContenedor('contenedor2')">
+    <button onclick="window.parent.cerrarContenedor('contenedor')">
         Cerrar 
     </button>
 

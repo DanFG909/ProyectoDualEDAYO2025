@@ -11,9 +11,9 @@
 </head>
 <body>
 
-    <button onclick="window.parent.cerrarContenedor('contenedor4')">
-        Cerrar 
-    </button>
+<button onclick="window.parent.cerrarContenedor('contenedor')">
+  Cerrar 
+</button>
 
     <div>
         <section>
