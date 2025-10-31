@@ -1,4 +1,4 @@
-<?php include('conexion.php'); ?>
+<?php include('Conexion.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,13 +9,12 @@
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  <link rel="stylesheet" href="../../../CSS/Style_VistaInfo.css">
 
-
 </head>
 <body>
   <!-- Encabezado -->
   <header class="encabezado">
     <div class="logo">
-      <img src="images/logo.png" alt="Logo EDAYO">
+      <img src="../../../Images/logo.png" alt="Logo EDAYO">
       <div class="texto">
         <h2>EXPOAPRENDE</h2>
         <p>EDAYO ZINACANTEPEC</p>
@@ -37,7 +36,7 @@
       <a href="#" class="boton">¡Infórmate Ya!</a>
     </div>
     <div class="hero-img">
-      <img src="images/edayo.jpg" alt="EDAYO Imagen">
+      <img src="../../../Images/edayo.jpg" alt="EDAYO Imagen">
     </div>
   </section>
 
@@ -52,28 +51,28 @@
     <div class="cursos-contenedor">
 
       <div class="curso">
-        <img src="images/cea-logo.png" alt="Curso 1">
+        <img src="../../../Images/cea-logo.png" alt="Curso 1">
         <p>CEA</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
       </div>
       
       <div class="curso">
-        <img src="images/cem-logo.png" alt="Curso 2">
+        <img src="../../../Images/cem-logo.png" alt="Curso 2">
         <p>CEM</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
       </div>
       
       <div class="curso">
-        <img src="images/cae-logo.png" alt="Curso 3">
+        <img src="../../../Images/cae-logo.png" alt="Curso 3">
         <p>CAE</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
       </div>
 
       <div class="curso">
-        <img src="images/escolarizado-logo.png" alt="Curso 4">
+        <img src="../../../Images/escolarizado-logo.png" alt="Curso 4">
         <p>Escolarizado</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
@@ -91,7 +90,7 @@
 
        <div class="grid-cursos">
     <?php
-      $sql = "SELECT * FROM cursos";
+      $sql = "SELECT * FROM cursos_disponibles";
       $resultado = $conn->query($sql);
 
       if ($resultado->num_rows > 0) {

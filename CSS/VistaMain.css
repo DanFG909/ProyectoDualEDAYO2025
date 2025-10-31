@@ -44,13 +44,23 @@ header img{
 }
 
 
-#menu h2{
-   
-    background: rgb(0, 0, 0);
+ #menu{
+    width: 200px;
+    height: 620px;
+    background: rgb(136,32,53);
+    float: left; /* menú a la izquierda */
+    box-sizing: border-box;
    
 }
 
-/* Contenedor principal donde se cargan las tablas dinámicas */
+aside {
+    width: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    /* dejar espacio a la izquierda para el menú flotante */
+    margin-left: 200px; /* ancho del menú (200) + margen */
+}
+
 aside #contenedor {
     margin-top: 25px;
     margin-left: 25px;
@@ -62,8 +72,30 @@ aside #contenedor {
     background: rgb(136,32,53);
     text-align: left;
     background-color: white;
+    border-radius: 20px;
+    
+    margin-top: 15px ;
+    margin-left: 15px;
+
 
 }
+
+@media (max-width: 700px) {
+    #menu {
+        float: none;
+        width: 100%;
+        margin: 10px 0;
+    }
+    aside {
+        margin-left: 0;
+        padding: 10px;
+    }
+    aside #contenedor {
+        width: 90%;
+        aspect-ratio: auto; 
+    }
+}
+
 
 img.Perfil {
     align-items: right;
@@ -74,4 +106,12 @@ img.Perfil {
     display: inline-block;   
     margin: 8px 12px; 
     border: 2px solid rgba(255,255,255,0.9); 
+}
+table {
+    border-color: black;
+    color: rgb(255, 255, 255);
+    background-color: #cc3654;
+}
+table th{
+    background-color: #882035;
 }
