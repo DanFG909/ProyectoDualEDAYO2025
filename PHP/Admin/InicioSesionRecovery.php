@@ -6,6 +6,7 @@ use Brevo\Client\Api\TransactionalEmailsApi;
 use Brevo\Client\Model\SendSmtpEmail;
 
 // API Key de Brevo
+$apiKey = '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';
 
 if (!isset($_POST['correo'])) {
     die("Por favor ingresa un correo.");
