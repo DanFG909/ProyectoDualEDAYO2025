@@ -1,3 +1,4 @@
+<?php include('conexion.php'); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,10 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EDAYO Zinacantepec</title>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <style>
-   
+       
 * {
   margin: 0;
   padding: 0;
@@ -401,32 +401,28 @@ transform: translateY(-10px);
     <section class="cursos-disp">
       <h1>Cursos Disponibles</h1>
 
-      <div class="grid-cursos">
-        <div class="class">
-          <img src="images/carpinteria.jpeg" alt="Carpintería">
-          <p>Carpintería</p>
-        </div>
-        <div class="class">
-          <img src="images/electricidad.jpeg" alt="Electricidad">
-          <p>Electricidad</p>
-        </div>
-        <div class="class">
-          <img src="images/electronica.jpeg" alt="Electrónica">
-          <p>Electrónica</p>
-        </div>
-        <div class="class">
-          <img src="images/fotografia.jpeg" alt="Fotografía">
-          <p>Fotografía</p>
-        </div>
-        <div class="class">
-          <img src="images/gastronomia.jpeg" alt="Gastronomía">
-          <p>Gastronomía</p>
-        </div>
-        <div class="class">
-          <img src="images/serigrafia.jpeg" alt="Serigrafía">
-          <p>Serigrafía</p>
-        </div>
-      </div>
+       <div class="grid-cursos">
+    <?php
+      $sql = "SELECT * FROM cursos";
+      $resultado = $conn->query($sql);
+
+      if ($resultado->num_rows > 0) {
+        while($curso = $resultado->fetch_assoc()) {
+          echo '
+          <div class="class">
+            <img src="'.$curso['Imagen'].'" alt="'.$curso['Nombre'].'">
+            <h2>'.$curso['Nombre'].'</h2>
+            <p>'.$curso['Descripcion'].'</p>
+            <span><b>Duración:</b> '.$curso['Duracion'].'</span>
+          </div>';
+        }
+      } else {
+        echo "<p>No hay cursos disponibles.</p>";
+      }
+
+      $conn->close();
+    ?>
+  </div>
     </section>
   </main>
 
