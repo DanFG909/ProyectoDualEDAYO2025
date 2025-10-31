@@ -6,10 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-
-    <button onclick="window.parent.cerrarContenedor('contenedor2')">
-        Cerrar 
-    </button>
-
+    
 </body>
 </html>

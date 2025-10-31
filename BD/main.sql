@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2025 a las 00:07:26
+-- Tiempo de generación: 16-10-2025 a las 00:39:47
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -45,10 +45,21 @@ CREATE TABLE `archivos` (
 
 CREATE TABLE `cursos` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `informacion` text NOT NULL,
+  `Nombre` varchar(100) NOT NULL,
+  `Informacion` text NOT NULL,
+  `Modalidad` varchar(20) NOT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cursos`
+--
+
+INSERT INTO `cursos` (`id`, `Nombre`, `Informacion`, `Modalidad`, `fecha_creacion`) VALUES
+(1, 'Carpinteria', 'Curso de carpinteria', 'CEM', '2025-10-13 17:24:26'),
+(2, 'ELECTRONICA', 'CURSO DE ELCTRONICA', 'CAE', '2025-10-13 17:24:26'),
+(3, 'INGLES', 'CURSO DE INGLES', 'CEA', '2025-10-13 17:25:14'),
+(4, 'GASTRONOMIA', 'CURSO DE GASTRONOMIA', 'CAE', '2025-10-13 17:25:14');
 
 -- --------------------------------------------------------
 
@@ -79,19 +90,20 @@ CREATE TABLE `inscripciones` (
   `Periodo` varchar(100) NOT NULL,
   `Modalidad` varchar(100) NOT NULL,
   `Forma_de_Pago` varchar(50) NOT NULL,
-  `Documentos` varchar(200) NOT NULL
+  `Documentos` varchar(200) NOT NULL,
+  `Estatus` tinyint(4) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `inscripciones`
 --
 
-INSERT INTO `inscripciones` (`id`, `CURP`, `Nombre`, `Correo`, `Telefono`, `Periodo`, `Modalidad`, `Forma_de_Pago`, `Documentos`) VALUES
-(3, 'Ejemplo de curp 2', 'Pacoo', 'Alguien@ejemplo.com', '7293701356', 'Mensual', 'CEM', 'efectivo', 'no hay'),
-(5, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY'),
-(6, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO'),
-(7, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY'),
-(8, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO');
+INSERT INTO `inscripciones` (`id`, `CURP`, `Nombre`, `Correo`, `Telefono`, `Periodo`, `Modalidad`, `Forma_de_Pago`, `Documentos`, `Estatus`) VALUES
+(3, 'Ejemplo de curp 2', 'Pacoo', 'Alguien@ejemplo.com', '7293701356', 'Mensual', 'CEM', 'efectivo', 'no hay', 1),
+(5, 'CURP 2', 'JUANITO', 'JUANITO@GMAIL.COM', '729370156', 'MENSUAL', 'CEM', 'efectivo', 'SI HAY', 1),
+(6, 'CURP3', 'PEÑANIETO', 'PEÑA@NIETO.COM', '598598', 'MENSUAL', 'CAE', 'NO HAY', 'NO', 1),
+(7, 'CURP 2', 'JUANES', 'JUANES@GMAIL.COM', '729370156', 'Anual', 'CEM', 'efectivo', 'SI HAY', 1),
+(8, 'CURP3', 'FORD', 'FORD@GMAILCOM', '598598', 'Anual', 'CAE', 'NO HAY', 'NO', 1);
 
 -- --------------------------------------------------------
 
@@ -107,16 +119,15 @@ CREATE TABLE `users` (
   `Telefono` varchar(15) DEFAULT NULL,
   `Taller` varchar(100) DEFAULT NULL,
   `Estado` tinyint(1) DEFAULT NULL,
-  `ine_pdf` varchar(255) NOT NULL,
-  `comprobante_pdf` varchar(255) NOT NULL
+  `Notificacion` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`ID`, `Nombre`, `Correo`, `Municipio`, `Telefono`, `Taller`, `Estado`, `ine_pdf`, `comprobante_pdf`) VALUES
-(1, 'Acali Alexander hernandez escalona', 'alex1108hdz@gmail.com', 'Almoloya de Juarez', '7262461963', 'Carpinteria', 0, '', '');
+INSERT INTO `users` (`ID`, `Nombre`, `Correo`, `Municipio`, `Telefono`, `Taller`, `Estado`, `Notificacion`) VALUES
+(1, 'Acali Alexander hernandez escalona', 'alex1108hdz@gmail.com', 'Almoloya de Juarez', '7262461963', 'Carpinteria', 0, '');
 
 -- --------------------------------------------------------
 
@@ -128,15 +139,16 @@ CREATE TABLE `usuarios_admin` (
   `id` int(10) NOT NULL,
   `Nombre` varchar(100) NOT NULL,
   `Apellidos` varchar(100) NOT NULL,
-  `Correo` varchar(250) NOT NULL
+  `Correo` varchar(250) NOT NULL,
+  `Tipo` varchar(20) NOT NULL DEFAULT 'Normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `usuarios_admin`
 --
 
-INSERT INTO `usuarios_admin` (`id`, `Nombre`, `Apellidos`, `Correo`) VALUES
-(1, 'Juan', 'pacomemo', 'alguien');
+INSERT INTO `usuarios_admin` (`id`, `Nombre`, `Apellidos`, `Correo`, `Tipo`) VALUES
+(1, 'Juan', 'Garcia Mendez', 'Alguien@ejemplo.com', 'Administrador');
 
 --
 -- Índices para tablas volcadas
@@ -198,7 +210,7 @@ ALTER TABLE `archivos`
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `imagenes_cursos`

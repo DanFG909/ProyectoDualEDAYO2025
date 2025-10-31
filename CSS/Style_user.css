@@ -1,4 +1,4 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,7 +6,6 @@
 
 body {
   font-family: 'Open Sans', sans-serif;
- 
   background-size: cover;
   background-attachment: fixed;
   background-color: #7F0D31;
@@ -27,21 +26,6 @@ footer {
   color: #B98E58;
   text-align: center;
   padding: 20px;
-}
-
-footer img {
-  max-height: 200px;
-  object-fit: cover;
-  width: 100%;
-  display: block;
-}
-div{
-    text-align: center;
-    padding: 10px;
-    background-color: #7F0D31;
-    color: #d4b00e;
-    font-family: 'Open Sans', 'sans-serif';
-    border: 2px solid #7F0D31;
 }
 section {
   max-width: 800px;
@@ -78,26 +62,30 @@ input[type="text"], select {
   color: #f1f1f1;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
-  transform: scale(1.2);
-}
-
-.Panel {
-    display: none;
-  padding: 20px;
-  border: 1px solid #d4b00e;
+input[type="password"] {
+    width: 100%;
+  height: 40px;
   margin-bottom: 20px;
-  background-color: #7F0D31;
-  border-radius: 10px;
-  animation: fadeIn 0.4s ease-in-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-image: url('panel.png');
-  background-size: cover;
+  padding: 10px;
+  margin-right: 5px;
+  border: 1px solid #B98E58;
+  border-radius: 5px;
+color: #B98E58;
+background-color: #7F0D31;
 }
-
-.button {
-  background-color: #B98E58;
+input[type="number"]{
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #d4b00e;
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #7F0D31;
+  color: #f1f1f1;
+}
+button{
+background-color: #B98E58;
   color: #f1f1f1;
   padding: 10px 20px;
   border: none;
@@ -110,47 +98,21 @@ input[type="checkbox"] {
   background-size: cover;
 }
 
-.button:hover {
-  background-color: #B98E58;
-}
-
-.panel {
-    display: none;
-  padding: 20px;
-  border: 1px solid #d4b00e;
-  margin-bottom: 20px;
-  background-color: #f2f2f2;
-  border-radius: 10px;
-  animation: fadeIn 0.4s ease-in-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-image: url('panel.png');
-  background-size: cover;
-}
-select{
-  border : 2px solid #d4b00e;
-  color :#f2f2f2;
-  background-size: cover;
-
-}
-input[type="email"] {
-  width: 100%;
-  height: 40px;
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 1px solid #d4b00e;
-  border-radius: 5px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #7F0D31;
+.button{
+     background-color: #B98E58;
   color: #f1f1f1;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  background-image: url('boton.jpg');
+  background-size: cover;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
 }
 
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}

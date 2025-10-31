@@ -2,9 +2,11 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <link href="../../CSS/Style_desc.css" rel="stylesheet">
     <title>Descargar archivos</title>
 </head>
 <body>
+    <section>
     <form action="descarga.php" method="get">
         <label>ID del usuario:</label>
         <input type="number" name="user_id" required>
@@ -16,6 +18,9 @@
         </select>
 
         <button type="submit">Descargar</button>
+       <a href="Inscripciones.php"> <button>Regresar</button></a>
+
     </form>
+</section>
 </body>
 </html>

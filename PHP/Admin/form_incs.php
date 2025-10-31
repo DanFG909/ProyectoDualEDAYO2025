@@ -4,14 +4,11 @@
     <meta charset="UTF-8">
     <title>Registro a cursos</title>
     <link rel="shortcut icon" href="../Images/logo.jpg" type="image/jpeg">
-    <link href="../CSS/Style3.css" rel="stylesheet">
-    <script>
-   
-    function mostraPanel(panelId, checkbox) {
-        var panel = document.getElementById(panelId);
-        panel.style.display = checkbox.checked ? 'block' : 'none';
-    }
-    </script>
+    <link href="../../CSS/Style3.css" rel="stylesheet">
+        <script src="../../JS/desc.js"></script>
+            <script src="../../JS/Mostrar_Panel.js"></script>
+
+    
 </head>
 <body>
 <section>
@@ -59,9 +56,9 @@
          <option value="Mecanica automotriz">Mecanica automotriz</option>
       </select>
       <br>
-
+      <div id="especificaciones" ></div>
     <label>
-        <input type="checkbox" id="presencial" name="presencial" value="Presencial">Presencial
+        <input type="radio" id="presencial" name="presencial" value="Presencial">Presencial
         <input type="checkbox" id="check1" name="transferencia" value="Transferencia" onchange="mostraPanel('panel1', this)">Transferencia
     </label>
 
@@ -108,6 +105,16 @@ if (isset($_POST['Registrar'])) {
     $notificacion = $_POST['not'];
     $estado = 0;
 
+    // Determinar si hay documentación o no, según método
+    if (isset($_POST['transferencia'])) {
+    $documentacion = "Documentación enviada en línea";
+    } elseif (isset($_POST['presencial'])) {
+    $documentacion = "Se entregará en oficina";
+    } else {
+    $documentacion = "No especificado";
+    }
+    
+
     // Verificar duplicados
     $verificar = "SELECT * FROM users WHERE Correo = '$correo' AND Telefono='$telefono' AND Nombre='$nombre'";
     $resultado = mysqli_query($conexion, $verificar);
@@ -116,7 +123,9 @@ if (isset($_POST['Registrar'])) {
         exit;
     }
 
-    $insertar = "INSERT INTO users (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion) VALUES ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion')";
+    $insertar = "INSERT INTO users (Nombre, Correo, Municipio, Telefono, Taller, Estado, Notificacion, Documentos
+) 
+    VALUES ('$nombre', '$correo', '$municipio', '$telefono', '$actividad', '$estado', '$notificacion', '$documentacion')";
     $sql = mysqli_query($conexion, $insertar);
     if (!$sql) {
         die("Error al insertar usuario: " . mysqli_error($conexion));

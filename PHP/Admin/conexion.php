@@ -1,10 +1,6 @@
 <?php 
     $conexion = new mysqli("localhost","root","","main");
-
-    if($conexion) {
-       echo "Conectado :D"; 
-    }else {
-        echo "No se encontró la base de datos"; 
-    }
-    //cambienle el nombre :,3
+    if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
 ?>
