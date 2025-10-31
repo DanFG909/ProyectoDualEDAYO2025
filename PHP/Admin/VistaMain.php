@@ -46,7 +46,7 @@
             </script>
              <button onclick="mostrarPagina2()">Interesados</button>
 
-            <div id="contenedor2" style="margin-top:20px;"></div>
+            
         </div>
         <br><br>
 
@@ -57,7 +57,6 @@
                     fetch('Inscripciones.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor').innerHTML = html;
                     document.getElementById('contenedor').innerHTML = html;
                     }
                    );
@@ -76,14 +75,14 @@
                     fetch('Usuarios.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor3').innerHTML = html;
+                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
             </script>
              <button onclick="mostrarPagina3()">Usuarios</button>
 
-            <div id="contenedor3" style="margin-top:20px;"></div>
+            
         </div>
         <br>
 
@@ -101,30 +100,39 @@
                  }
             </script>
              <button onclick="mostrarPagina4()" class="botones">Cursos</button>
-            <div id="contenedor4"></div>
+           
             </div>
          <br>
         <button class="botones"><a href="Contacto.php">
                 Contacto
         </a></button>
 
-        <br><br>
+        <br>
+
+                Contacto
+        </a></button>
+
+        <br>
 
         <a href="cerrar_sesion">
             Cerrar Sesion
         </a>
+        <button class="botones"><a href="cerrar_sesion">
+                Cerrar Sesion
+        </a></button>
         
-        <br><br>
+        <br>
         
         <a href="Perfiles.php">
+        <button class="botones"><a href="Perfiles.php">
             Perfiles
         </a>
+            </a>
+        </button>
     </section>
 
     <aside>
         <div id="contenedor"></div>
-        
-      
     </aside>
     
 
