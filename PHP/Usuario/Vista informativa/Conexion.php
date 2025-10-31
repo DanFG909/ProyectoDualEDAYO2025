@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root"; // usuario por defecto en XAMPP
 $password = ""; // vacío por defecto
-$dbname = "icati pruebas";
+$dbname = "main";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
