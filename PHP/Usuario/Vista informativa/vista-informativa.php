@@ -8,6 +8,7 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  <link rel="stylesheet" href="../../../CSS/Style_VistaInfo.css">
+ <link rel="stylesheet" href="/CSS/vista.css">
 
 </head>
 <body>
@@ -115,8 +116,61 @@
 
   </section>
 
-  <section>
-    <h2>Acerca de la feria</h2>
+  <section class="icati">
+     <div class="container">
+    <header>
+      <h1>Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI)</h1>
+    </header>
+
+    <section id="info">
+      <h2>¿Qué es el ICATI?</h2>
+      <p>
+        El <strong>Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI)</strong>
+        es un organismo público descentralizado del Gobierno del Estado de México,
+        dedicado a la formación, capacitación y adiestramiento laboral de la población.
+        Su labor busca fortalecer las competencias técnicas y profesionales de las personas,
+        para facilitar su inserción o permanencia en el mercado laboral y promover el desarrollo económico del estado.
+      </p>
+    </section>
+
+    <section id="info">
+      <h2>Propósitos del ICATI</h2>
+      <ul>
+        <li>Proporcionar servicios de capacitación para y en el trabajo con base en las necesidades productivas de la región.</li>
+        <li>Fomentar la competitividad laboral mediante el desarrollo de habilidades técnicas y humanas.</li>
+        <li>Impulsar la formación de capital humano calificado para fortalecer el desarrollo económico y social.</li>
+        <li>Promover oportunidades de superación personal y profesional en la población mexiquense.</li>
+      </ul>
+    </section>
+
+    <section id="info">
+      <h2>Misión</h2>
+      <p>
+        Proporcionar servicios de capacitación laboral de calidad que contribuyan al desarrollo de competencias y habilidades en la población mexiquense,
+        con el propósito de mejorar su desempeño, productividad y condiciones de vida, fortaleciendo al mismo tiempo la economía del Estado de México.
+      </p>
+    </section>
+
+    <section id="info">
+      <h2>Visión</h2>
+      <p>
+        Ser un organismo líder en la formación y capacitación laboral, reconocido por la calidad y pertinencia de sus programas,
+        su innovación pedagógica y su impacto positivo en la empleabilidad y el desarrollo sostenible del Estado de México.
+      </p>
+    </section>
+
+    <section id="info">
+      <h2>Objetivo General</h2>
+      <p>
+        Brindar capacitación integral que permita a las personas adquirir o actualizar conocimientos, habilidades y actitudes,
+        favoreciendo su incorporación, permanencia o promoción en el ámbito laboral, y coadyuvando al fortalecimiento del desarrollo productivo y social del estado.
+      </p>
+    </section>
+
+    <footer>
+      <p><em>Fuente: Catálogo de Cursos CEA 2025 — ICATI, Gobierno del Estado de México.</em></p>
+    </footer>
+  </div>
   </section>
   
   <footer class="footer">
