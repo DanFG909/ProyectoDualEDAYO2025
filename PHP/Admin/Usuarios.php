@@ -35,9 +35,9 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                 <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
                 <button type="submit">
                     <img src="lupa16PX.png" alt="">
-                </button>
+                </button>   
             </form>
-        </div>
+        </div>   
     </div>
 
     <div class="contenedor">
