@@ -87,9 +87,10 @@
     
      <main class="contenido">
     <section class="cursos-disp">
-      <h1>Cursos Disponibles</h1>
 
-       <div class="grid-cursos">
+   <h1>Cursos Disponibles</h1>
+
+  <div class="grid-cursos">
     <?php
       $sql = "SELECT * FROM cursos_disponibles";
       $resultado = $conn->query($sql);
