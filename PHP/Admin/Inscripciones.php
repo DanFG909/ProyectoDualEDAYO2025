@@ -19,22 +19,25 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     </button>
 
     <form method="GET" action="">
-    <select name="opciones_periodo">
-        <option value="" disabled selected hidden>Periodos</option>
-        <option value="Mensual" <?php if($tipoSeleccionado2 == "Mensual") echo "selected"; ?>>Mensual</option>
-        <option value="Anual" <?php if($tipoSeleccionado2 == "Anual") echo "selected"; ?>>Anual</option>
-    </select>
+        <select name="opciones_periodo">
+            <option value="" disabled selected hidden>Periodos</option>
+            <option value="Mensual" <?php if($tipoSeleccionado2 == "Mensual") echo "selected"; ?>>Mensual</option>
+            <option value="Anual" <?php if($tipoSeleccionado2 == "Anual") echo "selected"; ?>>Anual</option>
+        </select>
 
-    <select name="opciones_modalidad">
-        <option value="" disabled selected hidden>Modalidad</option>
-        <option value="CEA" <?php if($tipoSeleccionado == "CEA") echo "selected"; ?>>CEA</option>
-        <option value="CEM" <?php if($tipoSeleccionado == "CEM") echo "selected"; ?>>CEM</option>
-        <option value="CAE" <?php if($tipoSeleccionado == "CAE") echo "selected"; ?>>CAE</option>
-    </select>
+        <select name="opciones_modalidad">
+            <option value="" disabled selected hidden>Modalidad</option>
+            <option value="CEA" <?php if($tipoSeleccionado == "CEA") echo "selected"; ?>>CEA</option>
+            <option value="CEM" <?php if($tipoSeleccionado == "CEM") echo "selected"; ?>>CEM</option>
+            <option value="CAE" <?php if($tipoSeleccionado == "CAE") echo "selected"; ?>>CAE</option>
+        </select>
 
-    <button type="submit">Filtrar</button>
-    <a href="inscripciones.php"><button type="button">Borrar Filtros</button></a>
-</form>
+        <button type="submit">Filtrar</button>
+
+        <a href="inscripciones.php">
+            <button type="button">Borrar Filtros</button>
+        </a>
+    </form>
 
 
    <div>
@@ -42,51 +45,54 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
             <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
             <button type="submit">Buscar</button>
         </form>
-        <a href="form_desc.php"><button>Descargar</button></a>
+        <a href="form_desc.php">
+            <button>Descargar</button>
+        </a>
     </div>
 
     <div>
-    <h2>Usuarios Inscritos</h2>
 
-    <table border="1" cellpadding="6" cellspcing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>CURP</th>
-                <th>Nombre<br>(Completo)</th>
-                <th>Correo</th>
-                <th>Teléfono</th>
-                <th>Periodo</th>
-                <th>Modalidad</th>
-                <th>Forma de pago</th>
-                <th>Documentos</th>
-                <th>Estatus</th>
-                <th>Notificación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($tipoSeleccionado && $tipoSeleccionado2) {
-                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ? AND Periodo = ?");
-                $stmt->bind_param("ss", $tipoSeleccionado, $tipoSeleccionado2);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } elseif ($tipoSeleccionado) {
-                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
-                $stmt->bind_param("s", $tipoSeleccionado);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } elseif ($tipoSeleccionado2) {
-                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
-                $stmt->bind_param("s", $tipoSeleccionado2);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } else {
-                $resultado = $conexioon->query("SELECT * FROM inscripciones");
-            }
+        <h2>Usuarios Inscritos</h2>
 
-            while ($row = $resultado->fetch_assoc()) {
-            ?>
+        <table border="1" cellpadding="6" cellspcing="0">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CURP</th>
+                    <th>Nombre<br>(Completo)</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Periodo</th>
+                    <th>Modalidad</th>
+                    <th>Forma de pago</th>
+                    <th>Documentos</th>
+                    <th>Estatus</th>
+                    <th>Notificación</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <?php
+                if ($tipoSeleccionado && $tipoSeleccionado2) {
+                    $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ? AND Periodo = ?");
+                    $stmt->bind_param("ss", $tipoSeleccionado, $tipoSeleccionado2);
+                    $stmt->execute();
+                    $resultado = $stmt->get_result();
+                } elseif ($tipoSeleccionado) {
+                    $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
+                    $stmt->bind_param("s", $tipoSeleccionado);
+                    $stmt->execute();
+                    $resultado = $stmt->get_result();
+                } elseif ($tipoSeleccionado2) {
+                    $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
+                    $stmt->bind_param("s", $tipoSeleccionado2);
+                    $stmt->execute();
+                    $resultado = $stmt->get_result();
+                } else {
+                    $resultado = $conexioon->query("SELECT * FROM inscripciones");
+                }
+                while ($row = $resultado->fetch_assoc()) {
+                ?>
                 <tr>
                     <td><?php echo $row['id']; ?></td>
                     <td><?php echo $row['CURP']; ?></td>
@@ -113,10 +119,9 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                         </form>
                     </td>
                 </tr>
-            <?php } ?>
-        </tbody>
-    </table>
-</div>
-
-  </body>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</body>
 </html>

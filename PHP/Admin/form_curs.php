@@ -26,7 +26,7 @@
                        <input type="file" name="imagen" accept="image/*" required>
                        <br><br>
                        <input class="button" type="submit" name="agregar" placeholder="Agregar curso">
-                      <a href="Cursos.php"> <button >Regresar</button></a>
+                       <a href="Cursos.php" class="button">Regresar</a>
                     </form>
             </section>
             <?php
