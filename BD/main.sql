@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-10-2025 a las 00:39:47
+-- Tiempo de generación: 31-10-2025 a las 23:35:24
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
+-- Versión de PHP: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,6 +115,7 @@ CREATE TABLE `users` (
   `ID` int(6) NOT NULL,
   `Nombre` varchar(100) DEFAULT NULL,
   `Correo` varchar(100) DEFAULT NULL,
+  `Contraseña` varchar(15) NOT NULL,
   `Municipio` varchar(50) DEFAULT NULL,
   `Telefono` varchar(15) DEFAULT NULL,
   `Taller` varchar(100) DEFAULT NULL,
@@ -126,8 +127,8 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`ID`, `Nombre`, `Correo`, `Municipio`, `Telefono`, `Taller`, `Estado`, `Notificacion`) VALUES
-(1, 'Acali Alexander hernandez escalona', 'alex1108hdz@gmail.com', 'Almoloya de Juarez', '7262461963', 'Carpinteria', 0, '');
+INSERT INTO `users` (`ID`, `Nombre`, `Correo`, `Contraseña`, `Municipio`, `Telefono`, `Taller`, `Estado`, `Notificacion`) VALUES
+(1, 'Acali Alexander hernandez escalona', 'alex1108hdz@gmail.com', '', 'Almoloya de Juarez', '7262461963', 'Carpinteria', 0, '');
 
 -- --------------------------------------------------------
 
@@ -140,6 +141,7 @@ CREATE TABLE `usuarios_admin` (
   `Nombre` varchar(100) NOT NULL,
   `Apellidos` varchar(100) NOT NULL,
   `Correo` varchar(250) NOT NULL,
+  `Contraseña` varchar(10) NOT NULL,
   `Tipo` varchar(20) NOT NULL DEFAULT 'Normal'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -147,8 +149,8 @@ CREATE TABLE `usuarios_admin` (
 -- Volcado de datos para la tabla `usuarios_admin`
 --
 
-INSERT INTO `usuarios_admin` (`id`, `Nombre`, `Apellidos`, `Correo`, `Tipo`) VALUES
-(1, 'Juan', 'Garcia Mendez', 'Alguien@ejemplo.com', 'Administrador');
+INSERT INTO `usuarios_admin` (`id`, `Nombre`, `Apellidos`, `Correo`, `Contraseña`, `Tipo`) VALUES
+(1, 'Juan', 'Garcia Mendez', 'Alguien@ejemplo.com', '', 'Administrador');
 
 --
 -- Índices para tablas volcadas
@@ -250,7 +252,7 @@ ALTER TABLE `archivos`
 -- Filtros para la tabla `imagenes_cursos`
 --
 ALTER TABLE `imagenes_cursos`
-  ADD CONSTRAINT `imagenes_cursos_ibfk_1` FOREIGN KEY (`curso_id`) REFERENCES `cursos` (`ID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `imagenes_cursos_ibfk_1` FOREIGN KEY (`curso_id`) REFERENCES `cursos` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
