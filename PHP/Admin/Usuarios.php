@@ -16,30 +16,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
   ⓧ
 </button>
 
-    <div class="contenedor">
-        
-        <div class="filtro">
-            <section>
-                <form method="GET" action="">
-                    <select name="opciones_usuario" onchange="this.form.submit()">
-                        <option value="" disabled selected hidden>Tipo</option>
-                        <option value="Administrador" <?php if($tipoSeleccionado == "Administrador") echo "selected"; ?>>Administrador</option>
-                        <option value="Normal" <?php if($tipoSeleccionado == "Normal") echo "selected"; ?>>Normal</option>
-                    </select>
-                </form>
-            </section>
-        </div>
-
-        <div class="formulario">
-            <form action="Buscar.php" method="GET" class="buscar">
-                <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
-                <button type="submit">
-                    <img src="lupa16PX.png" alt="">
-                </button>   
-            </form>
-        </div>   
-    </div>
-
+    
     <div class="contenedor">
         <div class="filtro">
             <section>
@@ -115,47 +92,6 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
             </tbody>
         </table>
     </div>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre<br>(Completo)</th>
-                <th>Apellidos</th>
-                <th>Correo</th>
-                <th>Tipo</th>
-                <th>Acciones</th>
-                
-            </tr>
-        </thead>
-
-        <tbody>
-        <?php
-            if ($tipoSeleccionado) {
-                $stmt = $conexioon->prepare("SELECT * FROM usuarios_admin WHERE Tipo = ?");
-                $stmt->bind_param("s", $tipoSeleccionado);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } else {
-                $resultado = $conexioon->query("SELECT * FROM usuarios_admin");
-            }
-
-            while ($row = $resultado->fetch_assoc()) {
-        ?>   
-            <tr>
-                <td><?php echo $row['id']; ?></td>
-                <td><?php echo $row['Nombre']; ?></td>
-                <td><?php echo $row['Apellidos']; ?></td>
-                <td><?php echo $row['Correo']; ?></td>
-                <td><?php echo $row['Tipo']; ?></td>
-                <td>
-                    <button><a href="Editar.php?id=<?php echo $row['id']; ?>">Modificar</a> </button>
-                    <button><a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');">Eliminar</a></button>
-                </td>
-            </tr>
-        <?php } ?>
-        </tbody>
-    </table>
-</div>
-
+   
 </body>
 </html>

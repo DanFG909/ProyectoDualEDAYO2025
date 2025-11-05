@@ -27,9 +27,11 @@
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
         <br><br>
        
-        <a href="index.php">
-            Inicio
-        </a>
+        <button class="botones">
+            <a href="index.php">
+                Inicio
+            </a>
+        </button>
         <br><br>
 
         <div>
@@ -44,11 +46,11 @@
                    );
                  }
             </script>
-             <button onclick="mostrarPagina2()">Interesados</button>
+             <button onclick="mostrarPagina2()" class= "botones">Interesados</button>
 
             
         </div>
-        <br><br>
+        <br>
 
         <div>
             <script>
@@ -62,11 +64,11 @@
                    );
                  }
             </script>
-             <button onclick="mostrarPagina()">Inscripciones</button>
+             <button onclick="mostrarPagina()" class="botones">Inscripciones</button>
 
         </div>
 
-        <br><br>
+        <br>
 
         <div>
             <script> 
@@ -80,7 +82,7 @@
                    );
                  }
             </script>
-             <button onclick="mostrarPagina3()">Usuarios</button>
+             <button onclick="mostrarPagina3()" class= "botones" >Usuarios</button>
 
             
         </div>
@@ -107,21 +109,13 @@
                 Contacto
         </a></button>
 
-        <br>
-
-                Contacto
-        </a></button>
-
-        <br>
-
-        <a href="cerrar_sesion">
-            Cerrar Sesion
-        </a>
+        <br><br>
+        
         <button class="botones"><a href="cerrar_sesion">
                 Cerrar Sesion
         </a></button>
         
-        <br>
+        <br><br>
         
         <a href="Perfiles.php">
         <button class="botones"><a href="Perfiles.php">
