@@ -71,7 +71,9 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 
     <div class="tabla">
         <h2>Usuarios Registrados</h2>
-
+         <div>
+            <a href="form_user.php"><button >Agregar usuarios </button></a>
+        </div>
         <table border="1">
             <thead>
                 <tr>
