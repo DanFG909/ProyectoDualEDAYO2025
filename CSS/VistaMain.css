@@ -57,8 +57,8 @@ aside {
     width: auto;
     padding: 20px;
     box-sizing: border-box;
-    /* dejar espacio a la izquierda para el menú flotante */
-    margin-left: 200px; /* ancho del menú (200) + margen */
+   
+    margin-left: 200px; 
 }
 
 aside #contenedor {
