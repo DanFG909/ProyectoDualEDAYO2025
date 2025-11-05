@@ -34,7 +34,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 
         <button type="submit">Filtrar</button>
 
-        <a href="inscripciones.php">
+        <a href="VistaMain.php">
             <button type="button">Borrar Filtros</button>
         </a>
     </form>
