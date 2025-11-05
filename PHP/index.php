@@ -8,14 +8,14 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  
- <link rel="stylesheet" href="../../../CSS/vista.css">
+ <link rel="stylesheet" href="/ProyectoDualEDAYO2025/CSS/Style_VistaInfo.css">
 
 </head>
 <body>
   <!-- Encabezado -->
   <header class="encabezado">
     <div class="logo">
-      <img src="../../../Images/logo.png" alt="Logo EDAYO">
+      <img src="/ProyectoDualEDAYO2025/Images/logo.png" alt="Logo EDAYO">
       <div class="texto">
         <h2>EXPOAPRENDE</h2>
         <p>EDAYO ZINACANTEPEC</p>
@@ -37,7 +37,7 @@
       <a href="#" class="boton">¡Infórmate Ya!</a>
     </div>
     <div class="hero-img">
-      <img src="../../../Images/edayo.jpg" alt="EDAYO Imagen">
+      <img src="/ProyectoDualEDAYO2025/Images/edayo.jpg" alt="EDAYO Imagen">
     </div>
   </section>
 
@@ -52,28 +52,28 @@
     <div class="cursos-contenedor">
 
       <div class="curso">
-        <img src="../../../Images/cea-logo.png" alt="Curso 1">
+        <img src="/ProyectoDualEDAYO2025/Images/cea-logo.png" alt="Curso 1">
         <p>CEA</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
       </div>
       
       <div class="curso">
-        <img src="../../../Images/cem-logo.png" alt="Curso 2">
+        <img src="/ProyectoDualEDAYO2025/Images/cem-logo.png" alt="Curso 2">
         <p>CEM</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
       </div>
       
       <div class="curso">
-        <img src="../../../Images/cae-logo.png" alt="Curso 3">
+        <img src="/ProyectoDualEDAYO2025/Images/cae-logo.png" alt="Curso 3">
         <p>CAE</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
       </div>
 
       <div class="curso">
-        <img src="../../../Images/escolarizado-logo.png" alt="Curso 4">
+        <img src="/ProyectoDualEDAYO2025/Images/escolarizado-logo.png" alt="Curso 4">
         <p>Escolarizado</p>
         <br>
        <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
@@ -93,7 +93,7 @@
   <div class="grid-cursos">
     <?php
       $sql = "SELECT * FROM cursos_disponibles";
-      $resultado = $conn->query($sql);
+      $resultado = $conexion->query($sql);
 
       if ($resultado->num_rows > 0) {
         while($curso = $resultado->fetch_assoc()) {
@@ -109,7 +109,7 @@
         echo "<p>No hay cursos disponibles.</p>";
       }
 
-      $conn->close();
+      $conexion->close();
     ?>
   </div>
     </section>
