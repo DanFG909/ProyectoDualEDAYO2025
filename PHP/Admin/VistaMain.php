@@ -27,9 +27,11 @@
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
         <br><br>
        
-        <a href="index.php">
-            Inicio
-        </a>
+        <button class="botones">
+            <a href="index.php">
+                Inicio
+            </a>
+        </button>
         <br><br>
 
         <div>
@@ -44,11 +46,11 @@
                    );
                  }
             </script>
-             <button onclick="mostrarPagina2()">Interesados</button>
+             <button onclick="mostrarPagina2()" class= "botones">Interesados</button>
 
-            <div id="contenedor2" style="margin-top:20px;"></div>
+            
         </div>
-        <br><br>
+        <br>
 
         <div>
             <script>
@@ -58,16 +60,15 @@
                     .then(response => response.text())
                     .then(html => {
                     document.getElementById('contenedor').innerHTML = html;
-                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
             </script>
-             <button onclick="mostrarPagina()">Inscripciones</button>
+             <button onclick="mostrarPagina()" class="botones">Inscripciones</button>
 
         </div>
 
-        <br><br>
+        <br>
 
         <div>
             <script> 
@@ -76,14 +77,14 @@
                     fetch('Usuarios.php')
                     .then(response => response.text())
                     .then(html => {
-                    document.getElementById('contenedor3').innerHTML = html;
+                    document.getElementById('contenedor').innerHTML = html;
                     }
                    );
                  }
             </script>
-             <button onclick="mostrarPagina3()">Usuarios</button>
+             <button onclick="mostrarPagina3()" class= "botones" >Usuarios</button>
 
-            <div id="contenedor3" style="margin-top:20px;"></div>
+            
         </div>
         <br>
 
@@ -101,7 +102,7 @@
                  }
             </script>
              <button onclick="mostrarPagina4()" class="botones">Cursos</button>
-            <div id="contenedor4"></div>
+           
             </div>
          <br>
         <button class="botones"><a href="Contacto.php">
@@ -109,22 +110,23 @@
         </a></button>
 
         <br><br>
-
-        <a href="cerrar_sesion">
-            Cerrar Sesion
-        </a>
+        
+        <button class="botones"><a href="cerrar_sesion">
+                Cerrar Sesion
+        </a></button>
         
         <br><br>
         
         <a href="Perfiles.php">
+        <button class="botones"><a href="Perfiles.php">
             Perfiles
         </a>
+            </a>
+        </button>
     </section>
 
     <aside>
         <div id="contenedor"></div>
-        
-      
     </aside>
     
 
