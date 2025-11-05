@@ -16,30 +16,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
   ⓧ
 </button>
 
-    <div class="contenedor">
-        
-        <div class="filtro">
-            <section>
-                <form method="GET" action="">
-                    <select name="opciones_usuario" onchange="this.form.submit()">
-                        <option value="" disabled selected hidden>Tipo</option>
-                        <option value="Administrador" <?php if($tipoSeleccionado == "Administrador") echo "selected"; ?>>Administrador</option>
-                        <option value="Normal" <?php if($tipoSeleccionado == "Normal") echo "selected"; ?>>Normal</option>
-                    </select>
-                </form>
-            </section>
-        </div>
-
-        <div class="formulario">
-            <form action="Buscar.php" method="GET" class="buscar">
-                <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
-                <button type="submit">
-                    <img src="lupa16PX.png" alt="">
-                </button>   
-            </form>
-        </div>   
-    </div>
-
+    
     <div class="contenedor">
         <div class="filtro">
             <section>
@@ -71,7 +48,9 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 
     <div class="tabla">
         <h2>Usuarios Registrados</h2>
-
+         <div>
+            <a href="form_user.php"><button >Agregar usuarios </button></a>
+        </div>
         <table border="1">
             <thead>
                 <tr>

@@ -1,191 +1,129 @@
+<?php include('Conexion.php'); ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ICATI</title>
-    <link rel="stylesheet" href="../CSS/Menu.css">
-    <style>
-  :root {
-  --rojo-oscuro: #7A0000;
-  --rojo-medio: #C8102E;
-  --dorado: #E0B94D;
-  --amarillo-suave: #FDF5C9;
-  --gris-fondo: #F5F5F7;
-  --gris-texto: #2E2E2E;
-  --blanco: #FFFFFF;
-  --sombra: rgba(0, 0, 0, 0.15);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDAYO Zinacantepec</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+ 
+ <link rel="stylesheet" href="/ProyectoDualEDAYO2025/CSS/Style_VistaInfo.css">
 
-/* Estilo general */
-body {
-  font-family: "Poppins", "Segoe UI", Roboto, sans-serif;
-  line-height: 1.7;
-  background: var(--gris-fondo);
-  color: var(--gris-texto);
-  padding: 2.5rem;
-  margin: 0;
-}
-
-/* Contenedor principal */
-.container {
-  max-width: 950px;
-  margin: auto;
-  background: var(--blanco);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px var(--sombra);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-}
-
-/* Encabezado */
-header {
-  background: linear-gradient(120deg, var(--rojo-oscuro), var(--rojo-medio));
-  color: var(--blanco);
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border-bottom: 6px solid var(--dorado);
-  position: relative;
-  overflow: hidden;
-}
-
-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top right, rgba(255,255,255,0.15), transparent 70%);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.2rem;
-  letter-spacing: 0.7px;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
-  animation: aparecer 1s ease-out;
-}
-
-/* Secciones */
-section {
-  padding: 2rem 2.5rem;
-  animation: fadeIn 0.6s ease both;
-}
-
-h2 {
-  color: var(--rojo-oscuro);
-  border-left: 6px solid var(--dorado);
-  padding-left: 12px;
-  margin-bottom: 1rem;
-  font-size: 1.35rem;
-  position: relative;
-}
-
-h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 40px;
-  height: 3px;
-  background: var(--rojo-medio);
-  border-radius: 3px;
-}
-
-p {
-  margin: 0.5rem 0 1.5rem;
-  text-align: justify;
-}
-
-/* Listas */
-ul {
-  margin: 0.8rem 0 0 1.5rem;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 0.7rem;
-  position: relative;
-  padding-left: 10px;
-}
-
-li::before {
-  content: "•";
-  color: var(--rojo-medio);
-  font-weight: bold;
-  position: absolute;
-  left: -12px;
-}
-
-/* Pie de página */
-footer {
-  background: var(--rojo-oscuro);
-  color: var(--amarillo-suave);
-  text-align: center;
-  padding: 1.2rem;
-  font-size: 0.95rem;
-  letter-spacing: 0.4px;
-  border-top: 4px solid var(--dorado);
-  box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Destacar palabras */
-strong {
-  color: var(--rojo-medio);
-  font-weight: 600;
-}
-
-/* Animaciones suaves */
-@keyframes aparecer {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-  </style>
 </head>
 <body>
-    <h1><center>Instituto de Capacitacion y Adiestramiento para el Trabajo Industrial - ICATI</center></h1>
-
-    <div class="navbar">
-      <div class="dropdown">
-        <a href="Icati.php">Inicio</a>
-      </div> 
-      <div class="dropdown">
-        <button class="dropbtn">Cursos
-        </button>
-        <div class="dropdown-content">
-          <a href="Cursos.php"><img src="#" alt="">Cursos CEA</a>
-          <a href="Inscripcion_Curso.php"><img src="#" alt="">Registrarme a un curso</a>
-          <a href="Mis_Cursos.php"><img src="#" alt="">Mis cursos</a>
-        </div>
-      </div> 
-      <div class="dropdown">
-        <button class="dropbtn">Tablas
-        </button>
-        <div class="dropdown-content">
-          <a hre9f="TablaProblematicas.php"><img src="Imagenes/Tabla.svg" alt=""><img src="Imagenes/Registro.svg" alt=""> Tabla de Logros</a>
-        </div>
-      </div> 
-      <div class="dropdown">
-        <a href="Crear_cuenta.php">Iniciar Sesion</a>
-      </div> 
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="/ProyectoDualEDAYO2025/Images/logo.png" alt="Logo EDAYO">
+      <div class="texto">
+        <h2>EXPOAPRENDE</h2>
+        <p>EDAYO ZINACANTEPEC</p>
+      </div>
     </div>
 
+    <a href="#" class="login">Acerca de EDAYO</a>
+    <a href="#" class="login">Talleres</a>
+    <a href="#" class="login">Contactanos</a>
+    <a href="#" class="login">Iniciar Sesión</a>
 
-  <div class="container">
+    
+  </header>
+
+  <!-- Textoo -->
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Expo Aprende<br>EDAYO Zinacantepec.</h1>
+      <a href="#" class="boton">¡Infórmate Ya!</a>
+    </div>
+    <div class="hero-img">
+      <img src="/ProyectoDualEDAYO2025/Images/edayo.jpg" alt="EDAYO Imagen">
+    </div>
+  </section>
+
+  <!-- modalidad -->
+  <section class="cursos">
+      
+    <h2>Acerca EDAYO Zinacantepec</h2>
+    <p >
+      Información sobre EDAYO y las opciones de aprendizaje disponibles para la comunidad.
+    </p>
+    <br>
+    <div class="cursos-contenedor">
+
+      <div class="curso">
+        <img src="/ProyectoDualEDAYO2025/Images/cea-logo.png" alt="Curso 1">
+        <p>CEA</p>
+        <br>
+       <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
+      </div>
+      
+      <div class="curso">
+        <img src="/ProyectoDualEDAYO2025/Images/cem-logo.png" alt="Curso 2">
+        <p>CEM</p>
+        <br>
+       <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
+      </div>
+      
+      <div class="curso">
+        <img src="/ProyectoDualEDAYO2025/Images/cae-logo.png" alt="Curso 3">
+        <p>CAE</p>
+        <br>
+       <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
+      </div>
+
+      <div class="curso">
+        <img src="/ProyectoDualEDAYO2025/Images/escolarizado-logo.png" alt="Curso 4">
+        <p>Escolarizado</p>
+        <br>
+       <p>Reparación de equipos: Diagnóstico y reparación de fallas en dispositivos electrónicos.</p>
+      </div>
+
+    </div>
+  </section>
+
+  
+  <section class="disp">
+    
+     <main class="contenido">
+    <section class="cursos-disp">
+
+   <h1>Cursos Disponibles</h1>
+
+  <div class="grid-cursos">
+    <?php
+      $sql = "SELECT * FROM cursos_disponibles";
+      $resultado = $conexion->query($sql);
+
+      if ($resultado->num_rows > 0) {
+        while($curso = $resultado->fetch_assoc()) {
+          echo '
+          <div class="class">
+            <img src="'.$curso['Imagen'].'" alt="'.$curso['Nombre'].'">
+            <h2>'.$curso['Nombre'].'</h2>
+            <p>'.$curso['Descripcion'].'</p>
+            <span><b>Duración:</b> '.$curso['Duracion'].'</span>
+          </div>';
+        }
+      } else {
+        echo "<p>No hay cursos disponibles.</p>";
+      }
+
+      $conexion->close();
+    ?>
+  </div>
+    </section>
+  </main>
+
+  </section>
+
+  <section class="icati">
+     <div class="container">
     <header>
       <h1>Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI)</h1>
     </header>
 
-    <section id="definicion">
+    <section id="info">
       <h2>¿Qué es el ICATI?</h2>
       <p>
         El <strong>Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI)</strong>
@@ -196,7 +134,7 @@ strong {
       </p>
     </section>
 
-    <section id="propositos">
+    <section id="info">
       <h2>Propósitos del ICATI</h2>
       <ul>
         <li>Proporcionar servicios de capacitación para y en el trabajo con base en las necesidades productivas de la región.</li>
@@ -206,7 +144,7 @@ strong {
       </ul>
     </section>
 
-    <section id="mision">
+    <section id="info">
       <h2>Misión</h2>
       <p>
         Proporcionar servicios de capacitación laboral de calidad que contribuyan al desarrollo de competencias y habilidades en la población mexiquense,
@@ -214,7 +152,7 @@ strong {
       </p>
     </section>
 
-    <section id="vision">
+    <section id="info">
       <h2>Visión</h2>
       <p>
         Ser un organismo líder en la formación y capacitación laboral, reconocido por la calidad y pertinencia de sus programas,
@@ -222,7 +160,7 @@ strong {
       </p>
     </section>
 
-    <section id="objetivo-general">
+    <section id="info">
       <h2>Objetivo General</h2>
       <p>
         Brindar capacitación integral que permita a las personas adquirir o actualizar conocimientos, habilidades y actitudes,
@@ -234,5 +172,42 @@ strong {
       <p><em>Fuente: Catálogo de Cursos CEA 2025 — ICATI, Gobierno del Estado de México.</em></p>
     </footer>
   </div>
+  </section>
+  
+  <footer class="footer">
+                    <ul class="social-icon">
+                        <li class="icon-elem">
+                            <a href="" class="icon">
+                             <ion-icon name="location-outline"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="icon-elem">
+                            <a href="" class="icon">
+                              <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="icon-elem">
+                            <a href="" class="icon">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="menu">
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Inicio</a>
+                        </li>
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Informacion</a>
+                        </li>
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Contacto</a>
+                        </li>
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Cursos</a>
+                        </li>
+                    </ul>
+                    <p class="text">| EDAYO Zinacantepe</p>
+                </footer>
 </body>
 </html>
