@@ -1,4 +1,4 @@
-   
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,6 @@ body {
   background-color: #fdf2f4;
   color: #111;
 }
-
 
 .encabezado {
   background-color: #ffffff;
@@ -50,7 +49,6 @@ body {
   text-decoration: none;
   margin-left: 160px;
 }
-
 
 .hero {
   background-color: #7a1522;
@@ -102,7 +100,6 @@ body {
   border-radius: 6px;
 }
 
-
 .cursos {
   background-color: #6e0d1a;
   color: white;
@@ -113,7 +110,6 @@ body {
 .cursos h2 {
   margin-bottom: 40px;
 }
-
 .cursos-contenedor {
   display: flex;
   justify-content: center;
@@ -127,7 +123,7 @@ body {
   padding: 20px;
   border-radius: 10px;
   width: 300px;
-  height: 250px;
+  height: 360px;
   text-align: center;
   transition: transform 0.3s;
 }
@@ -243,16 +239,15 @@ transform: translateY(-10px);
     font-size: 20px;
 }
 
-/*cursos disp*/
+/*cursos disponibls*/
 .cursos-disp {
   background: linear-gradient(180deg, #ffffff 0%, #8d1d3d 100%);
   padding: 50px 20px;
+ 
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-
-
 
 .cursos-disp h1 {
   display: inline-block;
@@ -265,7 +260,6 @@ transform: translateY(-10px);
   letter-spacing: 1px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-
 
 .grid-cursos {
   display: grid;
@@ -309,3 +303,111 @@ transform: translateY(-10px);
   color: #b32424;
   font-size: 16px;
 }
+
+
+.icati {
+  --bg: linear-gradient(180deg, #f6fbff 0%, #eef6ff 100%);
+  border-radius: 90px;
+  font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #000000;
+  background: var(--bg);
+  padding: 36px 100px;
+}
+
+
+.icati .container {
+  max-width: 9800px;
+  margin: 0 auto;
+ border-radius: 30px;
+  
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgb(98, 5, 8);
+}
+
+
+.icati header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.icati header h1 {
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--accent);
+}
+
+
+.icati section[id="info"] {
+  padding: 16px 0;
+  border-top: 1px dashed rgba(18,48,66,0.05);
+}
+
+
+.icati section[id="info"] h2 {
+  margin: 0 0 8px 0;
+  font-size: 40px;
+  color: #7a0b0b;
+  font-weight: 700;
+}
+
+
+.icati section[id="info"] p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 20px;
+}
+
+
+.icati section[id="info"] ul {
+  margin: 8px 0 12px 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.icati section[id="info"] ul li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 20px;
+}
+
+
+.icati section[id="info"] ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: rgba(15,111,178,0.06);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+
+.icati section[id="info"] p strong {
+  color: #3f0815;
+  font-weight: 700;
+}
+
+.icati footer {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(18,48,66,0.04);
+  font-size: 0.85rem;
+  color: #6a7a86;
+  text-align: right;
+}
+
