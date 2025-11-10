@@ -26,13 +26,6 @@
         <H3>Bienvenido Usuario</H3>
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
         <br><br>
-       
-        <button class="botones">
-            <a href="index.php">
-                Inicio
-            </a>
-        </button>
-        <br><br>
 
         <div>
             <script>
@@ -104,12 +97,9 @@
              <button onclick="mostrarPagina4()" class="botones">Cursos</button>
            
             </div>
-         <br>
-        <button class="botones"><a href="Contacto.php">
-                Contacto
-        </a></button>
+        
 
-        <br><br>
+        <br>
         
         <button class="botones"><a href="cerrar_sesion">
                 Cerrar Sesion
@@ -117,7 +107,7 @@
         
         <br><br>
         
-        <a href="Perfiles.php">
+        <a href="Perfil.php">
         <button class="botones"><a href="Perfiles.php">
             Perfiles
         </a>

@@ -46,7 +46,7 @@
         $contraseña= $_POST['cont'];
         $rol=$_POST['Administrador'];
 
-        $insertar="INSERT INTO usuarios_admin (Nombre,Apellidos,Correo,Rol) VALUES ('$nombre', '$apellido', '$contraseña' , '$rol') ";
+        $insertar="INSERT INTO usuarios_admin (Nombre,Apellidos,Correo,Tipo) VALUES ('$nombre', '$apellido', '$contraseña' , '$rol') ";
         $sql=mysqli_query($conexion, $insertar);
         if(!$sql) {
             die("Error al insertar usuario: " . mysqli_error($conexion));
