@@ -28,7 +28,7 @@
              <br>
               <input class="button" name="Registrar" type="submit" value="Registrar">
             </form>
-              <a href="Usuarios.php"><button >Regresar</button></a>
+              <a href="VistaMain.php"><button >Regresar</button></a>
         </section>
         <?php 
         include("conexion.php");
@@ -46,11 +46,11 @@
         $_SESSION['ultimo_registro'] = time();
         $nombre= $_POST['nomb'];
         $apellido= $_POST['apell'];
-
+        $correo = $_POST['correo'];
         $contraseña= $_POST['cont'];
         $rol=$_POST['Administrador'];
 
-        $insertar="INSERT INTO usuarios_admin (Nombre,Apellidos,Correo,Tipo) VALUES ('$nombre', '$apellido', '$contraseña' , '$rol') ";
+        $insertar="INSERT INTO usuarios_admin (Nombre,Apellidos,Correo,Contraseña, Tipo) VALUES ('$nombre', '$apellido', '$correo' ,'$contraseña' , '$rol') ";
         $sql=mysqli_query($conexion, $insertar);
         if(!$sql) {
             die("Error al insertar usuario: " . mysqli_error($conexion));
