@@ -99,10 +99,10 @@
         while($curso = $resultado->fetch_assoc()) {
           echo '
           <div class="class">
-            <img src="'.$curso['Imagen'].'" alt="'.$curso['Nombre'].'">
-            <h2>'.$curso['Nombre'].'</h2>
-            <p>'.$curso['Descripcion'].'</p>
-            <span><b>Duración:</b> '.$curso['Duracion'].'</span>
+            <img src="'.$curso['imagen'].'" alt="'.$curso['nombre'].'">
+            <h2>'.$curso['nombre'].'</h2>
+            <p>'.$curso['descripcion'].'</p>
+            <span><b>duración:</b> '.$curso['duracion'].'</span>
           </div>';
         }
       } else {

@@ -17,8 +17,8 @@
              <label>Apeliido(s)</label>
              <input class="controls" type="text" name="apell" id="apell" placeholder="Ingrese sus apellidos por favor" >
              <br>
-             <label>Correo electronico</label>
-             <input class="controls" type="text" name="correo" id="correo" placeholder="Ingrese su correo electronico por favor" >
+             <label>Correo</label>
+             <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" >
              <br>
              <label>Contraseña</label>
              <input class="controls" type="password" name="cont" id="cont" placeholder="Ingrese una Contraseña" >
@@ -48,6 +48,7 @@
         $_SESSION['ultimo_registro'] = time();
         $nombre= $_POST['nomb'];
         $apellido= $_POST['apell'];
+
         $contraseña= $_POST['cont'];
         $Correo= $_POST['correo'];
         $rol=$_POST['rol'];
