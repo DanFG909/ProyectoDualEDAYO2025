@@ -94,6 +94,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
             </tbody>
         </table>
     </div>
-   
+</div>
+
 </body>
 </html>

@@ -1,11 +1,14 @@
 <?php 
-$conexioon = new mysqli("localhost", "root", "", "main");
+$conexion = new mysqli("localhost", "root", "", "main");
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
+}
 
-$tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
+$tipoSeleccionado  = $_GET['opciones_modalidad'] ?? '';
 $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,111 +17,109 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 </head>
 <body>
 
-    <button onclick="window.parent.cerrarContenedor('contenedor')">
+    <button onclick="window.parent.cerrarContenedor('contenedor')" aria-label="Cerrar ventana">
         ⓧ
     </button>
 
     <form method="GET" action="">
-        <select name="opciones_periodo">
-            <option value="" disabled selected hidden>Periodos</option>
+        <label for="periodo">Periodo:</label>
+        <select id="periodo" name="opciones_periodo">
+            <option value="" disabled selected hidden>Selecciona un periodo</option>
             <option value="Mensual" <?php if($tipoSeleccionado2 == "Mensual") echo "selected"; ?>>Mensual</option>
             <option value="Anual" <?php if($tipoSeleccionado2 == "Anual") echo "selected"; ?>>Anual</option>
         </select>
 
-        <select name="opciones_modalidad">
-            <option value="" disabled selected hidden>Modalidad</option>
+        <label for="modalidad">Modalidad:</label>
+        <select id="modalidad" name="opciones_modalidad">
+            <option value="" disabled selected hidden>Selecciona una modalidad</option>
             <option value="CEA" <?php if($tipoSeleccionado == "CEA") echo "selected"; ?>>CEA</option>
             <option value="CEM" <?php if($tipoSeleccionado == "CEM") echo "selected"; ?>>CEM</option>
             <option value="CAE" <?php if($tipoSeleccionado == "CAE") echo "selected"; ?>>CAE</option>
         </select>
 
         <button type="submit">Filtrar</button>
-
-        <a href="inscripciones.php">
-            <button type="button">Borrar Filtros</button>
-        </a>
+        <a href="VistaMain.php" class="btn-reset">Borrar Filtros</a>
     </form>
 
-
-   <div>
+    <div>
         <form action="Buscar_ins.php" method="GET">
-            <input type="text" name="buscar_input" placeholder="Buscar por nombre, CURP, etc.">
+            <label for="buscar_input">Buscar:</label>
+            <input type="text" id="buscar_input" name="buscar_input" placeholder="Nombre, CURP, etc.">
             <button type="submit">Buscar</button>
         </form>
         <a href="form_desc.php">
-            <button>Descargar</button>
+            <button type="button">Descargar</button>
         </a>
     </div>
 
     <div>
-
         <h2>Usuarios Inscritos</h2>
-
-    <table border="1">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>CURP</th>
-                <th>Nombre<br>(Completo)</th>
-                <th>Correo</th>
-                <th>Teléfono</th>
-                <th>Periodo</th>
-                <th>Modalidad</th>
-                <th>Forma de pago</th>
-                <th>Documentos</th>
-                <th>Estatus</th>
-                <th>Notificación</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($tipoSeleccionado && $tipoSeleccionado2) {
-                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ? AND Periodo = ?");
-                $stmt->bind_param("ss", $tipoSeleccionado, $tipoSeleccionado2);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } elseif ($tipoSeleccionado) {
-                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
-                $stmt->bind_param("s", $tipoSeleccionado);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } elseif ($tipoSeleccionado2) {
-                $stmt = $conexioon->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
-                $stmt->bind_param("s", $tipoSeleccionado2);
-                $stmt->execute();
-                $resultado = $stmt->get_result();
-            } else {
-                $resultado = $conexioon->query("SELECT * FROM inscripciones");
-            }
-
-            while ($row = $resultado->fetch_assoc()) {
-            ?>
+        <table class="tabla-inscripciones">
+            <thead>
                 <tr>
-                    <td><?php echo $row['id']; ?></td>
-                    <td><?php echo $row['CURP']; ?></td>
-                    <td><?php echo $row['Nombre']; ?></td>
-                    <td><?php echo $row['Correo']; ?></td>
-                    <td><?php echo $row['Telefono']; ?></td>
-                    <td><?php echo $row['Periodo']; ?></td>
-                    <td><?php echo $row['Modalidad']; ?></td>
-                    <td><?php echo $row['Forma_de_Pago']; ?></td>
-                    <td><?php echo $row['Documentos']; ?></td>
-                    <td>
-                        <?php if ($row['Estatus'] == 0) { ?>
-                            <form method="GET" action="Validacion.php">
-                                <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                <button type="submit">Validar</button>
-                            </form>
-                        <?php } else { ?>
-                            <span style="color: green; font-size: 24px;">✓</span>
-                        <?php } ?>
-                    </td>
-                    <td>
-                        <form action="Notificacion_inscripciones" method="post" onsubmit="return confirm('Enviar Notficacion a <?php echo htmlspecialchars(addslashes($r['Nombre'])); ?> )">
-                            <input type="hidden" >
-                        </form>
-                    </td>
+                    <th>ID</th>
+                    <th>CURP</th>
+                    <th>Nombre (Completo)</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Periodo</th>
+                    <th>Modalidad</th>
+                    <th>Forma de pago</th>
+                    <th>Documentos</th>
+                    <th>Estatus</th>
+                    <th>Notificación</th>
                 </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($tipoSeleccionado && $tipoSeleccionado2) {
+                    $stmt = $conexion->prepare("SELECT * FROM inscripciones WHERE Modalidad = ? AND Periodo = ?");
+                    $stmt->bind_param("ss", $tipoSeleccionado, $tipoSeleccionado2);
+                    $stmt->execute();
+                    $resultado = $stmt->get_result();
+                } elseif ($tipoSeleccionado) {
+                    $stmt = $conexion->prepare("SELECT * FROM inscripciones WHERE Modalidad = ?");
+                    $stmt->bind_param("s", $tipoSeleccionado);
+                    $stmt->execute();
+                    $resultado = $stmt->get_result();
+                } elseif ($tipoSeleccionado2) {
+                    $stmt = $conexion->prepare("SELECT * FROM inscripciones WHERE Periodo = ?");
+                    $stmt->bind_param("s", $tipoSeleccionado2);
+                    $stmt->execute();
+                    $resultado = $stmt->get_result();
+                } else {
+                    $resultado = $conexion->query("SELECT * FROM inscripciones");
+                }
+                while ($row = $resultado->fetch_assoc()) {
+                ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['CURP']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Nombre']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Correo']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Telefono']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Periodo']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Modalidad']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Forma_de_Pago']); ?></td>
+                        <td><?php echo htmlspecialchars($row['Documentos']); ?></td>
+                        <td>
+                            <?php if ($row['Estatus'] == 0) { ?>
+                                <form method="GET" action="Validacion.php">
+                                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
+                                    <button type="submit">Validar</button>
+                                </form>
+                            <?php } else { ?>
+                                <span style="color: green; font-size: 24px;">✓</span>
+                            <?php } ?>
+                        </td>
+                        <td>
+                            <form action="Notificacion_inscripciones.php" method="post" 
+                                  onsubmit="return confirm('¿Enviar notificación a <?php echo htmlspecialchars($row['Nombre']); ?>?')">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
+                                <button type="submit">Notificar</button>
+                            </form>
+                        </td>
+                    </tr>
                 <?php } ?>
             </tbody>
         </table>
