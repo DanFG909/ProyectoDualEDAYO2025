@@ -17,6 +17,18 @@ include("conexion.php");
             panel.style.display = (select.value === "Transferencia") ? "block" : "none";
         }
     </script>
+    <style>
+        .info-curso {
+            border: 1px solid #d4b00e;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            background-color: #7F0D31;
+        }
+        h3 {
+            color: #d4b00e;
+        }
+    </style>
 </head>
 <body>
 <section>
@@ -41,9 +53,9 @@ include("conexion.php");
     <label>Periodo:</label>
     <select name="periodo" id="periodo" required>
         <option value="">Seleccione un periodo</option>
-        <option value="Enero-Abril 2025">Enero - Abril 2025</option>
-        <option value="Mayo-Agosto 2025">Mayo - Agosto 2025</option>
-        <option value="Septiembre-Diciembre 2025">Septiembre - Diciembre 2025</option>
+        <option value="Enero-Abril ">Enero - Abril </option>
+        <option value="Mayo-Agosto ">Mayo - Agosto </option>
+        <option value="Septiembre-Diciembre ">Septiembre - Diciembre </option>
     </select>
     <br>
 
@@ -85,8 +97,9 @@ include("conexion.php");
          <option value="Inglés">Inglés</option>
          <option value="Mecánica automotriz">Mecánica automotriz</option>
     </select>
-    <br>
-
+    
+    <div id="especificaciones"></div>
+    
     <label>Forma de Pago:</label>
     <select name="forma_pago" id="forma_pago" onchange="mostraPanel('panel1', this)" required>
         <option value="">Seleccione una forma de pago</option>

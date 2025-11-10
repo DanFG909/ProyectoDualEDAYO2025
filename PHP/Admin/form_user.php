@@ -24,7 +24,9 @@
              <input class="controls" type="password" name="cont" id="cont" placeholder="Ingrese una Contraseña" >
              <br>
              <label style="color:white; background-color: #000000ff;   width: 30%;   height: 30px;">Seleccione el rol del usuario</label>
-             <input type="checkbox" id="Administrador" name="Administrador">Administrador
+             <input type="radio" name="rol" value="Administrador"> Administrador
+             <input type="radio" name="rol" value="Usuario" checked> Usuario
+
              <br>
               <input class="button" name="Registrar" type="submit" value="Registrar">
             </form>
@@ -46,11 +48,11 @@
         $_SESSION['ultimo_registro'] = time();
         $nombre= $_POST['nomb'];
         $apellido= $_POST['apell'];
-        $correo = $_POST['correo'];
         $contraseña= $_POST['cont'];
-        $rol=$_POST['Administrador'];
-
-        $insertar="INSERT INTO usuarios_admin (Nombre,Apellidos,Correo,Contraseña, Tipo) VALUES ('$nombre', '$apellido', '$correo' ,'$contraseña' , '$rol') ";
+        $Correo= $_POST['correo'];
+        $rol=$_POST['rol'];
+       
+        $insertar="INSERT INTO usuarios_admin (Nombre,Apellidos,Correo,Contraseña,Tipo) VALUES ('$nombre', '$apellido','$Correo', '$contraseña' , '$rol') ";
         $sql=mysqli_query($conexion, $insertar);
         if(!$sql) {
             die("Error al insertar usuario: " . mysqli_error($conexion));
