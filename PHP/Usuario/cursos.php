@@ -55,7 +55,7 @@ $result = $conn->query($sql);
             <div class='curso'>
               <img src='{$curso['imagen']}' alt='{$curso['nombre']}'>
               <h3>{$curso['nombre']}</h3>
-              <form action='inscribirse.php' method='POST'>
+              <form action='ProyectoDualEDAYO2025/PHP/Formulario_inscripcion.php' method='POST'>
                 <input type='hidden' name='curso_id' value='{$curso['id']}'>
                 <button type='submit'>Inscribirse</button>
               </form>

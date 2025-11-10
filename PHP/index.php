@@ -23,7 +23,7 @@
     </div>
 
     <a href="#" class="login">Acerca de EDAYO</a>
-    <a href="#" class="login">Talleres</a>
+    <a href="ProyectoDualEDAYO2025/PHP/Usuario/cursos.php" class="login">Inscribirse</a>
     <a href="#" class="login">Contactanos</a>
     <a href="#" class="login">Iniciar Sesión</a>
 

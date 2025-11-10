@@ -102,7 +102,7 @@ input[type="checkbox"] {
   border-radius: 10px;
   animation: fadeIn 0.4s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-image: url('panel.png');
+  background-image: url('ProyectoDualEDAYO2025/Images/panel.png');
   background-size: cover;
 }
 
@@ -116,7 +116,7 @@ input[type="checkbox"] {
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s ease;
-  background-image: url('boton.jpg');
+  background-image: url('ProyectoDualEDAYO2025/Images/boton.jpg');
   background-size: cover;
 }
 
