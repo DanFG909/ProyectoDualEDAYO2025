@@ -26,7 +26,7 @@ $result = $conn->query($sql);
   
   <header class="encabezado">
     <div class="logo">
-      <img src="ProyectoDualEDAYO2025/images/logo.png" alt="Logo EDAYO">
+      <img src="ProyectoDualEDAYO2025/Images/logo.png" alt="Logo EDAYO">
       <div class="texto">
         <h2>EXPOAPRENDE</h2>
         <p>EDAYO ZINACANTEPEC</p>
