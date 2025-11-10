@@ -8,12 +8,12 @@ const dataCursos = {
         materiales: "Cuaderno, bolígrafos, computadora (opcional).",
         dias: "Lunes y Miércoles"
     },
-    "Carpinteria": {
+    "Carpintería": {
         descripcion: "Técnicas básicas de carpintería, uso de herramientas y armado de muebles.",
         materiales: "Guantes, gafas de protección, cinta métrica, madera.",
         dias: "Martes y Jueves"
     },
-    "Creacion y confeccion de prendas": {
+    "Creación y confección de prendas": {
         descripcion: "Aprende a diseñar, cortar y confeccionar prendas de vestir utilizando técnicas básicas de costura y patronaje.",
         materiales: "Máquina de coser (opcional), tela de práctica, hilo, tijeras, cinta métrica, alfileres, lápiz para marcar tela.",
         dias: "Martes y Viernes"
@@ -28,27 +28,27 @@ const dataCursos = {
         materiales: "Kit de maquillaje básico, espejo, peines, tijeras.",
         dias: "Miércoles y Sábados"
     },
-    "Fotografia": {
+    "Fotografía": {
         descripcion: "Técnicas básicas de fotografía, manejo de cámaras y edición digital.",
         materiales: "Cámara digital o smartphone, computadora con software de edición.",
         dias: "Viernes y Sábados"
     },
-    "Gastronomia": {
+    "Gastronomía": {
         descripcion: "Aprende cocina nacional e internacional, técnicas culinarias y presentación de platos.",
         materiales: "Mandil, cuchillo, tabla para picar, ingredientes semanales.",
         dias: "Sábados"
     },
-    "Hojalateria y pintura": {
+    "Hojalatería y pintura": {
         descripcion: "Técnicas de reparación y pintura de carrocerías automotrices.",
         materiales: "Lijadora, compresor, pinturas, mascarilla de protección.",
         dias: "Martes y Jueves"
     },
-    "Ingles": {
+    "Inglés": {
         descripcion: "Curso de inglés desde nivel básico hasta intermedio, enfocado en comunicación oral y escrita.",
         materiales: "Cuaderno, diccionario, audífonos (opcional).",
         dias: "Martes y Jueves"
     },
-    "Mecanica automotriz": {
+    "Mecánica automotriz": {
         descripcion: "Fundamentos de mecánica automotriz, diagnóstico y mantenimiento básico.",
         materiales: "Guantes, herramientas básicas de mecánica.",
         dias: "Lunes, Miércoles y Viernes"
