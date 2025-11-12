@@ -31,10 +31,10 @@
          </select>
          <br>
           <label>Ingrese su Telefono:</label>
-         <input class="controls" type="text"name="Telefono" id="Telefono" placeholder="Ingrese su Telefono " required>
+         <input class="controls" type="tel"name="Telefono" id="Telefono" placeholder="Ingrese su Telefono " required>
          <br>
           <label>Ingrese su Correo:</label>
-         <input class="controls" type="text"name="Correo" id="Corre" placeholder="Ingrese su Correo Electronico " required>
+         <input class="controls" type="email"name="Correo" id="Corre" placeholder="Ingrese su Correo Electronico " required>
          <br>
           <label>Seleccione un Curso :</label>
           <select name="Actividad" id="curso" onchange="mostrarEspecificaciones()">

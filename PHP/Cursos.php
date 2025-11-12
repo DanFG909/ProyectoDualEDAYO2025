@@ -280,7 +280,7 @@
 
 </div>
 
-<a href="Inscripcion_Curso.php" class="enlace">¿Deseas inscribirte a alguno de nuestros cursos?</a>
+<a href="Formulario_inscripcion.php" class="enlace">¿Deseas inscribirte a alguno de nuestros cursos?</a>
 
 <script>
   function toggleLista(element) {
