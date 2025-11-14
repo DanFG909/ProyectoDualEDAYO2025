@@ -23,7 +23,7 @@
     </div>
 
     <a href="#" class="login">Acerca de EDAYO</a>
-    <a href="#" class="login">Talleres</a>
+    <a href="ProyectoDualEDAYO2025/PHP/Usuario/cursos.php" class="login">Inscribirse</a>
     <a href="#" class="login">Contactanos</a>
     <a href="#" class="login">Iniciar Sesión</a>
 
@@ -90,7 +90,7 @@
 
    <h1>Cursos Disponibles</h1>
 
-  <div class="grid-cursos">
+  <div class="grid-cursos" id="talleres">
     <?php
       $sql = "SELECT * FROM cursos_disponibles";
       $resultado = $conexion->query($sql);
@@ -102,7 +102,6 @@
             <img src="'.$curso['imagen'].'" alt="'.$curso['nombre'].'">
             <h2>'.$curso['nombre'].'</h2>
             <p>'.$curso['descripcion'].'</p>
-            <span><b>duración:</b> '.$curso['duracion'].'</span>
           </div>';
         }
       } else {

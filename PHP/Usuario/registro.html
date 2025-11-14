@@ -129,49 +129,82 @@
         }
         
 
+        .input-container > select {
+            width: 100%;
+            padding: 17px 15px 17px 15px;
+            margin-bottom: 25px;
+            border: 1px solid #d7a94b;
+            border-radius: 60px;
+            outline: none;
+            background-color: transparent;
+            color: white;
+
+        }
+
     </style>
 </head>
 <body>
 
     <div class="login-container">
         <div class="header">
-            <img src="images/logo.png" alt="Logo Expoaprende">
+            <img src="../../Images/logo.png" alt="Logo Expoaprende">
         </div>
 
-        <div class="form-content">
+            <section>
+                <form action="AccionRegistro.php" method="POST">
+                
+            <div class="form-content">
 
-              <div class="input-container">
+            <div class="input-container">
                 <h2>Nombre</h2>
-                <input type="text" name="name" placeholder="Nombre">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre">
                 <i class="fa-solid fa-user"></i>
-                </div>
-
-            <div class="input-container">
-            <h2>Correo Electrónico</h2>
-            <input type="email" placeholder="ingrese su correo">
-            <i class="fa-solid fa-envelope"></i>
             </div>
 
             <div class="input-container">
-            <h2>Contraseña</h2>
-            <input type="password" placeholder="ingrese su contraseña">
-            <i class="fa-solid fa-lock"></i>
+                <h2>Correo Electrónico</h2>
+                <input type="email" id="correo" name="correo" placeholder="ingrese su correo">
+                <i class="fa-solid fa-envelope"></i>
             </div>
 
+            <div class="input-container">
+                <h2>Contraseña</h2>
+                <input type="password" id="contraseña" name="contraseña" placeholder="ingrese su contraseña">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+        
             <div class="input-container">
                 <h2>Teléfono</h2>
-                <input type="tel" name="phone" placeholder="Teléfono">
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
                 <i class="fa-solid fa-phone"></i>
             </div>
 
-            <button class="btn">Ingresar</button>
+            <div class="input-container">
+                <h2>Seleccione su municipio de procedencia:</h2>
+                    <select id="municipio" name="municipio" required class="input-container">
+                        <option value="Almoloya de Juarez">Almoloya de Juarez</option>
+                        <option value="Zinacantepec">Zinacantepec</option>
+                        <option value="Temoaya">Temoaya</option>
+                        <option value="San Mateo Atenco">San Mateo Atenco</option>
+                        <option value="Tecaxic">Tecaxic</option>
+                        <option value="Metepec">Metepec</option>
+                        <option value="Otzolotepec">Otzolotepec</option>
+                        <option value="Calimaya">Calimaya</option>
+                        <option value="Chapultepec">Chapultepec</option>
+                        <option value="Tenango del Valle">Tenango del Valle</option>
+                    </select>
+            </div>
+
+            <input type="submit" class="btn" value="Registrarse">
 
             <div class="extra-links">
                 <a href="#">¿Olvidaste tu contraseña?</a>
-                
             </div>
+
         </div>
     </div>
+</form>
+</section>
 
 </body>
 </html>

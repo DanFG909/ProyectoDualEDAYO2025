@@ -30,7 +30,7 @@
              <br>
               <input class="button" name="Registrar" type="submit" value="Registrar">
             </form>
-              <a href="Usuarios.php"><button >Regresar</button></a>
+              <a href="VistaMain.php"><button >Regresar</button></a>
         </section>
         <?php 
         include("conexion.php");

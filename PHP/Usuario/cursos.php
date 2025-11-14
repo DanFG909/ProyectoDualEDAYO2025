@@ -26,7 +26,7 @@ $result = $conn->query($sql);
   
   <header class="encabezado">
     <div class="logo">
-      <img src="ProyectoDualEDAYO2025/images/logo.png" alt="Logo EDAYO">
+      <img src="ProyectoDualEDAYO2025/Images/logo.png" alt="Logo EDAYO">
       <div class="texto">
         <h2>EXPOAPRENDE</h2>
         <p>EDAYO ZINACANTEPEC</p>
@@ -55,7 +55,7 @@ $result = $conn->query($sql);
             <div class='curso'>
               <img src='{$curso['imagen']}' alt='{$curso['nombre']}'>
               <h3>{$curso['nombre']}</h3>
-              <form action='inscribirse.php' method='POST'>
+              <form action='ProyectoDualEDAYO2025/PHP/Formulario_inscripcion.php' method='POST'>
                 <input type='hidden' name='curso_id' value='{$curso['id']}'>
                 <button type='submit'>Inscribirse</button>
               </form>

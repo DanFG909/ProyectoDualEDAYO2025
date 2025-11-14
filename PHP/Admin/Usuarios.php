@@ -46,6 +46,12 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
         </div>
     </div>
 
+    <div>
+        <button>
+            <a href="PDF/UsuariosPDF.php" target="_blank">Imprimir PDF</a>
+        </button>
+    </div>
+
     <div class="tabla">
         <h2>Usuarios Registrados</h2>
          <div>

@@ -51,6 +51,22 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
             <button type="button">Descargar</button>
         </a>
     </div>
+    <div>
+     <a href="expertar_excel.php?
+     opciones_modalidad=<?php echo urlencode($tipoSeleccionado); ?>&
+     opciones_periodo=<?php echo urlencode($tipoSeleccionado2); ?>&
+     buscar_input=<?php echo isset($_GET['buscar_input']) ? urlencode($_GET['buscar_input']) : ''; ?>
+     ">
+    <button type="button">Descargar Excel</button>
+</a>
+
+</div>
+
+    <div>
+        <button>
+            <a href="PDF/InscripcionesPDF.php" target="_blank">Imprimir PDF</a>
+        </button>
+    </div>
 
     <div>
         <h2>Usuarios Inscritos</h2>

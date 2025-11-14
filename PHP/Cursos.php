@@ -18,7 +18,7 @@
     <button class="dropbtn">Cursos</button>
     <div class="dropdown-content">
       <a href="Cursos.php">Cursos CEA</a>
-      <a href="Inscripcion_Curso.php">Registrarme a un curso</a>
+      <a href="Formulario_inscripcion.php">Registrarme a un curso</a>
       <a href="Mis_Cursos.php">Mis cursos</a>
     </div>
   </div>
@@ -280,7 +280,7 @@
 
 </div>
 
-<a href="Inscripcion_Curso.php" class="enlace">¿Deseas inscribirte a alguno de nuestros cursos?</a>
+<a href="Formulario_inscripcion.php" class="enlace">¿Deseas inscribirte a alguno de nuestros cursos?</a>
 
 <script>
   function toggleLista(element) {
