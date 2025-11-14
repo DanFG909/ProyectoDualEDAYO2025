@@ -82,7 +82,9 @@ class GenerarPDF {
                   <caption>Documentos registrados</caption>
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>
+                      NO. <br> Curso
+                      </th>
                       <th>Nombre</th>
                       <th>Informacion</th>
                       <th>Modalidad</th>
