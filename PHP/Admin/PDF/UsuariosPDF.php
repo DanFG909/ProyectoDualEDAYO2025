@@ -85,7 +85,7 @@ class GenerarPDF {
                   <caption>Documentos registrados</caption>
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>NO. de Usuario</th>
                       <th>Nombre</th>
                       <th>Apellidos</th>
                       <th>Correo</th>
