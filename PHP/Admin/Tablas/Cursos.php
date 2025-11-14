@@ -51,14 +51,6 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
     <h2>Cursos Registrados</h2>
 
     <div>
-        <form action="Metodos/Buscar.php" method="GET">
-            <label for="buscar_persona">Buscar persona:</label>
-            <input type="text" id="buscar_persona" name="buscar_input" placeholder="Buscar por nombre o apellidos">
-            <button type="submit">Buscar</button>
-        </form>
-    </div>
-
-    <div>
         <button>
             <a href="../PDF/CursosPDF.php" target="_blank">Imprimir PDF</a>
         </button>

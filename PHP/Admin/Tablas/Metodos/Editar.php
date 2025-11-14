@@ -1,5 +1,4 @@
 <?php
-include("conexion.php");
 $conexioon = new mysqli("localhost","root","","main");
 
 if (isset($_GET['id'])) {
