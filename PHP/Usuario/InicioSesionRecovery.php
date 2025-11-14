@@ -1,12 +1,12 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . 'vendor/autoload.php';
 include(__DIR__ . '/conexion.php'); // archivo de conexión a la base de datos
 
 use Brevo\Client\Api\TransactionalEmailsApi;
 use Brevo\Client\Model\SendSmtpEmail;
 
 // API Key de Brevo
-$apiKey = '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';
+$apiKey = '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';
 
 if (!isset($_POST['correo'])) {
     die("Por favor ingresa un correo.");
