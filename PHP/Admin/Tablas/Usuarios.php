@@ -8,7 +8,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Usuarios</title>
-    <link rel="stylesheet" href="../../CSS/Estilo_usuarios.css">
+    <link rel="stylesheet" href="../../../CSS/Estilo_usuarios.css">
 </head>
 <body>
 
@@ -31,12 +31,12 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
         
         <div>
             <button>
-                <a href="form_user.php">Agregar</a> 
+                <a href="../form_user.php">Agregar</a> 
             </button>
         </div>
 
         <div class="formulario">
-            <form action="Buscar.php" method="GET" class="buscar">
+            <form action="Metodos/Buscar.php" method="GET" class="buscar">
                 <input type="text" name="buscar_input" placeholder="Buscar por nombre, Apellidos etc.">
                 <button type="submit">
                     <img src="lupa16PX.png" alt="">
@@ -47,14 +47,14 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 
     <div>
         <button>
-            <a href="PDF/UsuariosPDF.php" target="_blank">Imprimir PDF</a>
+            <a href="../PDF/UsuariosPDF.php" target="_blank">Imprimir PDF</a>
         </button>
     </div>
 
     <div class="tabla">
         <h2>Usuarios Registrados</h2>
          <div>
-            <a href="form_user.php"><button >Agregar usuarios </button></a>
+            <a href="../form_user.php"><button >Agregar usuarios </button></a>
         </div>
         <table border="1">
             <thead>
@@ -90,10 +90,10 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                         <td><?php echo $row['Tipo']; ?></td>
                         <td>
                             <button class="editar">
-                                <a href="Editar.php?id=<?php echo $row['id']; ?>"> ✏️ </a> 
+                                <a href="Metodos/Editar.php?id=<?php echo $row['id']; ?>"> ✏️ </a> 
                             </button>
                             <button class="borrar">
-                                <a href="Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');"> 🗑 </a>
+                                <a href="Metodos/Eliminar.php?id=<?php echo $row['id']; ?>" onclick="return confirm('¿Eliminar este registro?');"> 🗑 </a>
                             </button>
                         </td>
                     </tr>
