@@ -14,6 +14,6 @@ if ($resultado) {
         header("Location: vistausuario"); // Redireccion
         
     } else {
-        echo "Error al agregar el usuario" . $conexion->error;
+        echo "Error al agregar el usuario" . $conn->error;
     }
 ?>
