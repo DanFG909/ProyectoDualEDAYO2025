@@ -54,7 +54,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 
     <div>
         <button>
-            <a href="PDF/methodPDF.php" target="_blank">Imprimir PDF</a>
+            <a href="PDF/InscripcionesPDF.php" target="_blank">Imprimir PDF</a>
         </button>
     </div>
 

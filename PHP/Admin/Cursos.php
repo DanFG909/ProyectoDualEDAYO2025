@@ -59,6 +59,12 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
     </div>
 
     <div>
+        <button>
+            <a href="PDF/CursosPDF.php" target="_blank">Imprimir PDF</a>
+        </button>
+    </div>
+
+    <div>
         <h2>Listado de cursos</h2>
 
         <table class="tabla-cursos">
