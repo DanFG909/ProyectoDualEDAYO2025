@@ -48,7 +48,6 @@
         $_SESSION['ultimo_registro'] = time();
         $nombre= $_POST['nomb'];
         $apellido= $_POST['apell'];
-
         $contraseña= $_POST['cont'];
         $Correo= $_POST['correo'];
         $rol=$_POST['rol'];
