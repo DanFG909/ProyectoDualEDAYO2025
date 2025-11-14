@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . 'vendor/autoload.php';
 include(__DIR__ . '/conexion.php'); // archivo de conexión a la base de datos
 
 use Brevo\Client\Api\TransactionalEmailsApi;
