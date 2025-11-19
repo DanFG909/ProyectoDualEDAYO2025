@@ -1,11 +1,11 @@
 <?php
 session_start();
-include('conexion.php');
+include('Conexion.php');
 
 $correo = $_POST['correo'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM usuarios WHERE correo = ?";
+$sql = "SELECT * FROM users WHERE Correo = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $correo);
 $stmt->execute();
