@@ -12,7 +12,6 @@
     <div class="form-wrapper">
       <form action="InicioSesionProcess.php" method="POST">
       <div class="close-wrapper">
-      <button class="close" onclick="window.location.href='Icati.php'">&times;</button>
       </div>
         <fieldset>
           <legend>Iniciar Sesión</legend>

@@ -23,13 +23,21 @@
     </div>
 
     <a href="#" class="login">Acerca de EDAYO</a>
-    <a href="ProyectoDualEDAYO2025/PHP/Usuario/cursos.php" class="login">Inscribirse</a>
+  <button type='button' class='login openModal'>Inscribirse</button><script src="/ProyectoDualEDAYO2025/JS/method.js"></script>
+
     <a href="#" class="login">Contactanos</a>
     <a href="#" class="login">Iniciar Sesión</a>
 
     
   </header>
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span><script src="/ProyectoDualEDAYO2025/JS/method.js"></script>
 
+        <!-- aquí se carga el formulario -->
+        <?php include(__DIR__ . "/Usuario/Inicio_Sesion.php"); ?>
+    </div>
+</div>
   <!-- Textoo -->
   <section class="hero">
     <div class="hero-texto">
