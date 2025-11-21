@@ -316,42 +316,19 @@ transform: translateY(-10px);
   color: #b32424;
   font-size: 16px;
 }
-/* ====== MODAL ====== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(2px);
-}
-
-/* Contenedor interno */
-.modal-content {
-    background-color: #7F0D31;
-    border: 3px solid #d4b00e;
-    color: #f1f1f1;
-    width: 90%;
-    max-width: 500px;
-    margin: 8% auto;
-    padding: 20px;
-    border-radius: 12px;
-    text-shadow: 1px 1px #1a0101;
-    box-shadow: 0 0 20px black;
-}
-
-/* Botón cerrar (X) */
-.close {
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    color: #d4b00e;
-    cursor: pointer;
-}
-
-.close:hover {
+.usuario-logeado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     color: white;
+    font-weight: bold;
+}
+
+.usuario-logeado .cerrar {
+    color: #ff5757;
+    text-decoration: none;
+}
+
+.usuario-logeado .cerrar:hover {
+    text-decoration: underline;
 }

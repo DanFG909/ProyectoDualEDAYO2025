@@ -1,0 +1,119 @@
+/* Fondo del modal */
+.modal {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* Tarjeta moderna */
+.modal-card {
+    background: #7a1c30; /* tu paleta */
+    width: 420px;
+    padding: 35px 40px;
+    border-radius: 22px;
+    border: 3px solid #dbb872;
+    color: #fdfaf6;
+    position: relative;
+
+    /* SOMBRA moderna */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+
+    /* Animación moderna */
+    animation: popupShow 0.25s ease-out;
+}
+
+/* Animación */
+@keyframes popupShow {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Botón de cerrar */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #dbb872;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.close:hover {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* Título */
+.title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+/* Etiquetas */
+label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 15px;
+    display: block;
+}
+
+/* Inputs modernos */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border-radius: 10px;
+    background: #fdf2f4;
+    border: 1px solid #eea3b3;
+    color: #3d0f19;
+    font-size: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+input:focus {
+    border-color: #e5718a;
+    box-shadow: 0 0 8px rgba(229,113,138,0.5);
+    outline: none;
+}
+
+/* Botón moderno */
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 14px;
+    font-size: 17px;
+    border: none;
+    background: #e5718a;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.25s;
+}
+button:hover {
+    background: #882035;
+    transform: scale(1.03);
+}
+
+/* Enlace moderno */
+.recover {
+    display: block;
+    margin-top: 12px;
+    text-align: center;
+    color: #dbb872;
+    text-decoration: none;
+    font-size: 14px;
+}
+.recover:hover {
+    text-decoration: underlin
+}

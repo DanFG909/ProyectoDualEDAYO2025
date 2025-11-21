@@ -1,4 +1,5 @@
-<?php include('Conexion.php'); ?>
+<?php include('Conexion.php'); 
+session_start();?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -26,14 +27,24 @@
   <button type='button' class='login openModal'>Inscribirse</button><script src="/ProyectoDualEDAYO2025/JS/method.js"></script>
 
     <a href="#" class="login">Contactanos</a>
-    <a href="#" class="login">Iniciar Sesión</a>
+   <?php
+if (isset($_SESSION['usuario'])) {
+    echo '
+        <div class="login usuario-logeado">
+            Hola, '.$_SESSION['usuario'].' 
+            <a href="/ProyectoDualEDAYO2025/Usuario/logout.php" class="cerrar">Cerrar sesión</a>
+        </div>
+    ';
+} else {
+    echo '<a href="#" class="login openModal">Iniciar Sesión</a>';
+}
+?>
 
     
   </header>
   <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span><script src="/ProyectoDualEDAYO2025/JS/method.js"></script>
-
         <!-- aquí se carga el formulario -->
         <?php include(__DIR__ . "/Usuario/Inicio_Sesion.php"); ?>
     </div>
