@@ -26,7 +26,7 @@
         <H3>Bienvenido Usuario</H3>
         <img src="../../Images/Perfilprovisional.png" alt="" class="Perfil">
         <br><br>
-
+<!--
         <div>
             <script>
                 function mostrarPagina2() {
@@ -44,12 +44,12 @@
             
         </div>
         <br>
-
+    -->
         <div>
             <script>
                 function mostrarPagina() {
                     window.parent.cerrarContenedor('contenedor')
-                    fetch('Inscripciones.php')
+                    fetch('Tablas/Inscripciones.php')
                     .then(response => response.text())
                     .then(html => {
                     document.getElementById('contenedor').innerHTML = html;
@@ -67,7 +67,7 @@
             <script> 
                 function mostrarPagina3() {
                     window.parent.cerrarContenedor('contenedor')
-                    fetch('Usuarios.php')
+                    fetch('Tablas/Usuarios.php')
                     .then(response => response.text())
                     .then(html => {
                     document.getElementById('contenedor').innerHTML = html;
@@ -86,7 +86,7 @@
             <script>
                 function mostrarPagina4() {
                     window.parent.cerrarContenedor('contenedor')
-                    fetch('Cursos.php')
+                    fetch('Tablas/Cursos.php')
                     .then(response => response.text())
                     .then(html => {
                     document.getElementById('contenedor').innerHTML = html;
