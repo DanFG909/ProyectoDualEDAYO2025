@@ -86,7 +86,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                         <td><?php echo $row['Nombre']; ?></td>
                         <td><?php echo $row['Apellidos']; ?></td>
                         <td><?php echo $row['Correo']; ?></td>
-                        <td><?php echo $row['Clave']?></td>
+                        <td><?php echo $row['Contraseña']?></td>
                         <td><?php echo $row['Tipo']; ?></td>
                         <td>
                             <button class="editar">
