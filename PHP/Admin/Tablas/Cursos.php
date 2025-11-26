@@ -46,7 +46,14 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
         <button type="submit">Buscar</button>
     </form>
 </div>
+<div>
+    <a href="Excel/excel_cursos.php?opciones_modalidad=<?php echo urlencode($tipoSeleccionado); ?>&buscar_input=<?php echo isset($_GET['buscar_input']) ? urlencode($_GET['buscar_input']) : ''; ?>">
+    <button type="button">Descargar Excel</button>
+</a>
 
+</a>
+
+</div>
 <div>
     <h2>Cursos Registrados</h2>
 
