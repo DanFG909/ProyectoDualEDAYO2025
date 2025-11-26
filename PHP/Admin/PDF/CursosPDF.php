@@ -37,7 +37,7 @@ class GenerarPDF {
         <html lang="es">
         <head>
             <meta charset="UTF-8">
-            <title>Documentos</title>
+            <title>Tabla | Cursos</title>
             <style>
                 table {
                     width: 100%;
