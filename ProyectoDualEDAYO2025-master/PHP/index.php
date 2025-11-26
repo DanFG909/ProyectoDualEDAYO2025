@@ -8,14 +8,14 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
  
- <link rel="stylesheet" href="/ProyectoDualEDAYO2025/CSS/Style_VistaInfo.css">
+ <link rel="stylesheet" href="/ProyectoDualEDAYO2025-master/CSS/Style_VistaInfo.css">
 
 </head>
 <body>
   <!-- Encabezado -->
   <header class="encabezado">
     <div class="logo">
-      <img src="/ProyectoDualEDAYO2025/Images/logo.png" alt="Logo EDAYO">
+      <img src="/ProyectoDualEDAYO2025-master/Images/logo.png" alt="Logo EDAYO">
       <div class="texto">
         <h2>EXPOAPRENDE</h2>
         <p>EDAYO ZINACANTEPEC</p>
@@ -37,7 +37,7 @@
       <a href="#" class="boton">¡Infórmate Ya!</a>
     </div>
     <div class="hero-img">
-      <img src="/ProyectoDualEDAYO2025/Images/edayo.jpg" alt="EDAYO Imagen">
+      <img src="/ProyectoDualEDAYO2025-master/Images/edayo.jpg" alt="EDAYO Imagen">
     </div>
   </section>
 
@@ -52,7 +52,7 @@
     <div class="cursos-contenedor">
 
       <div class="curso">
-        <img src="/ProyectoDualEDAYO2025/Images/cea-logo.png" alt="Curso 1">
+        <img src="/ProyectoDualEDAYO2025-master/Images/cea-logo.png" alt="Curso 1">
         <p>CEA</p>
         <br>
         <p>Para beneficiar a las comunidades mexiquenses, el ICATI ofrece cursos que desarrollan los 
@@ -60,7 +60,7 @@
         incorporarse al mercado laboral por medio del empleo o autoempleo formales.</p>  </div>
       
       <div class="curso">
-        <img src="/ProyectoDualEDAYO2025/Images/cem-logo.png" alt="Curso 2">
+        <img src="/ProyectoDualEDAYO2025-master/Images/cem-logo.png" alt="Curso 2">
         <p>CEM</p>
         <br>
       <p>La de Capacitación Emprendedora ofrece una ruta de servicios de capacitación y
@@ -69,7 +69,7 @@
          fomentando el autoempleo y el empleo formal.</p> </div>
       
       <div class="curso">
-        <img src="/ProyectoDualEDAYO2025/Images/cae-logo.png" alt="Curso 3">
+        <img src="/ProyectoDualEDAYO2025-master/Images/cae-logo.png" alt="Curso 3">
         <p>CAE</p>
         <br>
        <p>Para impulsar la productividad de las empresas en el ICATI, 
@@ -78,7 +78,7 @@
         con el desarrollo económico de los mexiquenses</p> </div>
 
       <div class="curso">
-        <img src="/ProyectoDualEDAYO2025/Images/escolarizado-logo.png" alt="Curso 4">
+        <img src="/ProyectoDualEDAYO2025-master/Images/escolarizado-logo.png" alt="Curso 4">
         <p>Escolarizado</p>
         <br>
        <p>El Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI), 
@@ -89,7 +89,7 @@
   </section>
 
   
-  <section class="disp">
+ <section class="disp">
     
      <main class="contenido">
     <section class="cursos-disp">
@@ -115,13 +115,18 @@
         echo "<p>No hay cursos disponibles.</p>";
       }
 
-      $conexion->close();
+     $conexion->close(); 
     ?>
   </div>
     </section>
   </main>
 
   </section>
+    
+
+ <main class="contenido">
+
+
 
   <section class="icati">
      <div class="container">
@@ -173,7 +178,6 @@
         favoreciendo su incorporación, permanencia o promoción en el ámbito laboral, y coadyuvando al fortalecimiento del desarrollo productivo y social del estado.
       </p>
     </section>
-
     <footer>
       <p><em>Fuente: Catálogo de Cursos CEA 2025 — ICATI, Gobierno del Estado de México.</em></p>
     </footer>

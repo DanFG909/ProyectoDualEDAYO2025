@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-10-2025 a las 23:35:24
+-- Tiempo de generación: 14-11-2025 a las 19:22:03
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -64,6 +64,34 @@ INSERT INTO `cursos` (`id`, `Nombre`, `Informacion`, `Modalidad`, `fecha_creacio
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `cursos_disponibles`
+--
+
+CREATE TABLE `cursos_disponibles` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `descripcion` text DEFAULT NULL,
+  `activo` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cursos_disponibles`
+--
+
+INSERT INTO `cursos_disponibles` (`id`, `nombre`, `imagen`, `descripcion`, `activo`) VALUES
+(1, 'Carpintería', 'ProyectoDualEDAYO2025/Images/carpinteria.jpeg', 'Curso de técnicas básicas y avanzadas de carpintería.', 1),
+(2, 'Electricidad', 'ProyectoDualEDAYO2025/Images/electricidad.jpeg', 'Aprende a realizar instalaciones eléctricas seguras.', 1),
+(3, 'Fotografía', 'ProyectoDualEDAYO2025/Images/fotografia.jpeg', 'Captura momentos con técnicas profesionales.', 1),
+(4, 'Electrónica', 'ProyectoDualEDAYO2025/Images/electronica.jpeg', 'Conoce los fundamentos de los circuitos y componentes.', 1),
+(5, 'Serigrafía', 'ProyectoDualEDAYO2025/Images/serigrafia.jpeg', 'Diseña y estampa sobre diferentes materiales.', 1),
+(6, 'Gastronomía', 'ProyectoDualEDAYO2025/Images/gastronomia.jpeg', 'Aprende cocina nacional e internacional.', 1),
+(7, 'Prendas', 'ProyectoDualEDAYO2025/Images/prendas.jpg', 'Curso de confección y diseño de prendas.', 1),
+(8, 'Inglés', 'ProyectoDualEDAYO2025/Images/ingles.jpg', 'Aprende inglés desde nivel básico hasta avanzado.', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `imagenes_cursos`
 --
 
@@ -119,6 +147,7 @@ CREATE TABLE `users` (
   `Municipio` varchar(50) DEFAULT NULL,
   `Telefono` varchar(15) DEFAULT NULL,
   `Taller` varchar(100) DEFAULT NULL,
+  `codigo_recuperacion` varchar(10) DEFAULT NULL,
   `Estado` tinyint(1) DEFAULT NULL,
   `Notificacion` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -127,8 +156,11 @@ CREATE TABLE `users` (
 -- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `users` (`ID`, `Nombre`, `Correo`, `Contraseña`, `Municipio`, `Telefono`, `Taller`, `Estado`, `Notificacion`) VALUES
-(1, 'Acali Alexander hernandez escalona', 'alex1108hdz@gmail.com', '', 'Almoloya de Juarez', '7262461963', 'Carpinteria', 0, '');
+INSERT INTO `users` (`ID`, `Nombre`, `Correo`, `Contraseña`, `Municipio`, `Telefono`, `Taller`, `codigo_recuperacion`, `Estado`, `Notificacion`) VALUES
+(1, 'Acali Alexander hernandez escalona', 'alex1108hdz@gmail.com', '', 'Almoloya de Juarez', '7262461963', 'Carpinteria', NULL, 0, ''),
+(2, 'DanielF', 'danielfg788@gmail.com', 'unodostres', NULL, '7226409468', NULL, NULL, NULL, ''),
+(3, 'David', 'soydavid@gmail.com', 'dostrescuatro', '', '7226409466', NULL, NULL, NULL, ''),
+(4, 'Chema', 'soychema@gmail.com', '2345', 'Chapultepec', '7226456354', NULL, NULL, NULL, '');
 
 -- --------------------------------------------------------
 
@@ -150,7 +182,12 @@ CREATE TABLE `usuarios_admin` (
 --
 
 INSERT INTO `usuarios_admin` (`id`, `Nombre`, `Apellidos`, `Correo`, `Contraseña`, `Tipo`) VALUES
-(1, 'Juan', 'Garcia Mendez', 'Alguien@ejemplo.com', '', 'Administrador');
+(3, 'Chema', 'Aviles', 'soychema@gmail.com', '', 'Administrador'),
+(6, 'Daniel', 'Flores', 'soydaniel003', '', 'on'),
+(7, 'Acali', 'Hernández', 'soyacali001', '', ''),
+(8, 'Señor Aleps', 'Silva', 'soyalex0089', '', ''),
+(9, 'Acali2', 'Escalona', 'soyacali056', '', 'on'),
+(10, 'Daniel', 'Flores', '05576', '', 'on');
 
 --
 -- Índices para tablas volcadas
@@ -167,6 +204,12 @@ ALTER TABLE `archivos`
 -- Indices de la tabla `cursos`
 --
 ALTER TABLE `cursos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `cursos_disponibles`
+--
+ALTER TABLE `cursos_disponibles`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -215,6 +258,12 @@ ALTER TABLE `cursos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de la tabla `cursos_disponibles`
+--
+ALTER TABLE `cursos_disponibles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de la tabla `imagenes_cursos`
 --
 ALTER TABLE `imagenes_cursos`
@@ -230,13 +279,13 @@ ALTER TABLE `inscripciones`
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios_admin`
 --
 ALTER TABLE `usuarios_admin`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas

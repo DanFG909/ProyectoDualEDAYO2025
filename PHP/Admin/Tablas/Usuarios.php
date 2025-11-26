@@ -1,6 +1,7 @@
 <?php 
 $conexioon = new mysqli("localhost", "root", "", "main");
 $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,9 +13,9 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
 </head>
 <body>
 
-<button onclick="window.parent.cerrarContenedor('contenedor')">
-  ⓧ
-</button>
+    <button onclick="window.parent.cerrarContenedor('contenedor')">
+    ⓧ
+    </button>
 
     <div class="contenedor">
         <div class="filtro">
@@ -86,7 +87,7 @@ $tipoSeleccionado = $_GET['opciones_usuario'] ?? '';
                         <td><?php echo $row['Nombre']; ?></td>
                         <td><?php echo $row['Apellidos']; ?></td>
                         <td><?php echo $row['Correo']; ?></td>
-                        <td><?php echo $row['Clave']?></td>
+                        <td><?php echo $row['Contraseña']?></td>
                         <td><?php echo $row['Tipo']; ?></td>
                         <td>
                             <button class="editar">

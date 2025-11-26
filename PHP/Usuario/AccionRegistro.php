@@ -11,9 +11,9 @@ $query = "INSERT INTO users (Nombre, Correo, Contraseña, Telefono, Municipio) V
 $resultado = $conn->query($query);
 
 if ($resultado) {
-        header("Location: vistausuario"); // Redireccion
+        header("Location: /ProyectoDualEDAYO2025/PHP/index.php"); // Redireccion
         
     } else {
-        echo "Error al agregar el usuario" . $conexion->error;
+        echo "Error al agregar el usuario" . $conn->error;
     }
 ?>
