@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-    <link href="../../CSS/Style_user.css" rel="stylesheet">
+    <link href="../../../CSS/Style_user.css" rel="stylesheet">
 
         <title>Agregar usuario</title>
         
@@ -30,7 +30,7 @@
              <br>
               <input class="button" name="Registrar" type="submit" value="Registrar">
             </form>
-              <a href="VistaMain.php"><button >Regresar</button></a>
+              <a href="../Tablas/VistaMain.php"><button >Regresar</button></a>
         </section>
         <?php 
         include("conexion.php");

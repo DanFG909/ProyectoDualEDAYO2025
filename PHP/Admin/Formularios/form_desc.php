@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link href="../../CSS/Style_desc.css" rel="stylesheet">
+    <link href="../../../CSS/Style_desc.css" rel="stylesheet">
     <title>Descargar archivos</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         </select>
 
         <button type="submit">Descargar</button>
-       <a href="Inscripciones.php"> <button>Regresar</button></a>
+       <a href="../Tablas/Inscripciones.php"> <button>Regresar</button></a>
 
     </form>
 </section>

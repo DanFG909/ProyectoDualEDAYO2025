@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <link href="../../CSS/Style_user.css" rel="stylesheet">
+        <link href="../../../CSS/Style_user.css" rel="stylesheet">
         <title>Actualizar usuario</title>
         <?php
         $id =$_GET['id'];
@@ -34,7 +34,7 @@
              <br>
               <input class="button" name="Actualizar" type="submit" value="Actualizar">
             </form>
-              <a href="Usuarios.php"><button >Regresar</button></a>
+              <a href="../Tablas/Usuarios.php"><button >Regresar</button></a>
         </section>
         <?php 
         include("conexion.php");
