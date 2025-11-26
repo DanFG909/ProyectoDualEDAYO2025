@@ -55,11 +55,15 @@ $result = $conn->query($sql);
             <div class='curso'>
               <img src='{$curso['imagen']}' alt='{$curso['nombre']}'>
               <h3>{$curso['nombre']}</h3>
+
                 <input type='hidden' name='curso_id' value='{$curso['id']}'>
-             <button type='button' class='openModal'>Inscribirse</button><script src='/ProyectoDualEDAYO2025/JS/method.js'></script>
-
-
+                <button id='openModal'>Inscribirse</button>
             </div>
+  <!-- Modal general -->
+<div id='myModal' class='modal'>
+    <?php include('ProyectoDualEDAYO2025/PHP/Formulario_inscripcion.php'); ?>
+</div>
+<script src='/ProyectoDualEDAYO2025/JS/method.js'></script>
 
             ";
         }
@@ -70,14 +74,6 @@ $result = $conn->query($sql);
 
     </div>
   </section>
- <div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span><script src="/ProyectoDualEDAYO2025/JS/method.js"></script>
-
-        <!-- aquí se carga el formulario -->
-        <?php include(__DIR__ . "/../Formulario_inscripcion.php"); ?>
-    </div>
-</div>
 
   <!-- Footer -->
   <footer class="footer">

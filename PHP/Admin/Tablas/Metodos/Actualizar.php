@@ -1,5 +1,4 @@
 <?php
-include("conexion.php");
 $conexioon = new mysqli("localhost","root","","main");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -22,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error al actualizar el registro.";
     }
 
-    header("Location: VistaMain.php");
+    header("Location: ../Usuarios.php");
     exit();
 }
 ?>

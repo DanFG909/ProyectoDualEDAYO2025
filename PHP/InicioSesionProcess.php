@@ -1,11 +1,11 @@
 <?php
 session_start();
-include('Conexion.php');
+include('conexion.php');
 
-$correo = $_POST['correo'];
-$password = $_POST['password'];
+$correo = $_POST['Correo'];
+$password = $_POST['Contraseña'];
 
-$sql = "SELECT * FROM users WHERE correo = ?";
+$sql = "SELECT * FROM users WHERE Correo = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $correo);
 $stmt->execute();
@@ -13,8 +13,8 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $usuario = $result->fetch_assoc();
-    if (password_verify($password, $usuario['password'])) {
-        $_SESSION['usuario'] = $usuario['nombre'];
+    if (password_verify($password, $usuario['Contraeña'])) {
+        $_SESSION['Nombre'] = $usuario['Nombre'];
         header("Location: index.php");
         exit();
     } else {
