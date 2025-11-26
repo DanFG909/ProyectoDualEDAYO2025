@@ -13,7 +13,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tabla Inscripciones</title>
-    <link rel="stylesheet" href="../../CSS/Inscripciones.css">
+    <link rel="stylesheet" href="../../../CSS/Inscripciones.css">
 </head>
 <body>
 
@@ -38,21 +38,21 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
         </select>
 
         <button type="submit">Filtrar</button>
-        <a href="VistaMain.php" class="btn-reset">Borrar Filtros</a>
+        <a href="../VistaMain.php" class="btn-reset">Borrar Filtros</a>
     </form>
 
     <div>
-        <form action="Buscar_ins.php" method="GET">
+        <form action="Metodos/Buscar_ins.php" method="GET">
             <label for="buscar_input">Buscar:</label>
             <input type="text" id="buscar_input" name="buscar_input" placeholder="Nombre, CURP, etc.">
             <button type="submit">Buscar</button>
         </form>
-        <a href="form_desc.php">
+        <a href="../form_desc.php">
             <button type="button">Descargar</button>
         </a>
     </div>
     <div>
-     <a href="expertar_excel.php?
+     <a href="../expertar_excel.php?
      opciones_modalidad=<?php echo urlencode($tipoSeleccionado); ?>&
      opciones_periodo=<?php echo urlencode($tipoSeleccionado2); ?>&
      buscar_input=<?php echo isset($_GET['buscar_input']) ? urlencode($_GET['buscar_input']) : ''; ?>
@@ -64,7 +64,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 
     <div>
         <button>
-            <a href="PDF/InscripcionesPDF.php" target="_blank">Imprimir PDF</a>
+            <a href="../PDF/InscripcionesPDF.php" target="_blank">Imprimir PDF</a>
         </button>
     </div>
 
@@ -120,7 +120,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                         <td><?php echo htmlspecialchars($row['Documentos']); ?></td>
                         <td>
                             <?php if ($row['Estatus'] == 0) { ?>
-                                <form method="GET" action="Validacion.php">
+                                <form method="GET" action="Metodos/Validacion.php">
                                     <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
                                     <button type="submit">Validar</button>
                                 </form>
@@ -129,7 +129,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
                             <?php } ?>
                         </td>
                         <td>
-                            <form action="Notificacion_inscripciones.php" method="post" 
+                            <form action="../Notificacion_inscripciones.php" method="post" 
                                   onsubmit="return confirm('¿Enviar notificación a <?php echo htmlspecialchars($row['Nombre']); ?>?')">
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($row['id']); ?>">
                                 <button type="submit">Notificar</button>

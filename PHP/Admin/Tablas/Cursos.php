@@ -35,12 +35,12 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 </div> 
 
 <div>
-    <a href="form_curs.php" class="btn">Agregar cursos</a>
-    <a href="form_edit_c.php" class="btn">Editar cursos</a>
+    <a href="../form_curs.php" class="btn">Agregar cursos</a>
+    <a href="../form_edit_c.php" class="btn">Editar cursos</a>
 </div>
 
 <div>
-    <form action="Buscar_Curso.php" method="GET">
+    <form action="Metodos/Buscar_Curso.php" method="GET">
         <label for="buscar_input">Buscar curso:</label>
         <input type="text" id="buscar_input" name="buscar_input" placeholder="Buscar por nombre o ID">
         <button type="submit">Buscar</button>
@@ -58,7 +58,7 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
     <h2>Cursos Registrados</h2>
 
     <div>
-        <form action="Buscar.php" method="GET">
+        <form action="Metodos/Buscar.php" method="GET">
             <label for="buscar_persona">Buscar persona:</label>
             <input type="text" id="buscar_persona" name="buscar_input" placeholder="Buscar por nombre o apellidos">
             <button type="submit">Buscar</button>
@@ -67,7 +67,7 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
 
     <div>
         <button>
-            <a href="PDF/CursosPDF.php" target="_blank">Imprimir PDF</a>
+            <a href="../PDF/CursosPDF.php" target="_blank">Imprimir PDF</a>
         </button>
     </div>
 
@@ -105,9 +105,9 @@ $tipoSeleccionado = $_GET['opciones_modalidad'] ?? '';
                     <td><?php echo htmlspecialchars($row['Modalidad']); ?></td>
                     <td><?php echo htmlspecialchars($row['fecha_creacion']); ?></td>
                     <td>
-                        <a href="form_info_c.php?id=<?php echo htmlspecialchars($row['id']); ?>">Ver Información</a>
-                        <a href="form_edit_c.php?id=<?php echo htmlspecialchars($row['id']); ?>">Modificar</a> 
-                        <a href="Eliminar.php?id=<?php echo htmlspecialchars($row['id']); ?>" 
+                        <a href="../form_edit_c.php?id=<?php echo htmlspecialchars($row['id']); ?>">Ver Información</a>
+                        <a href="../form_edit_c.php?id=<?php echo htmlspecialchars($row['id']); ?>">Modificar</a> 
+                        <a href="Metodos/Eliminar.php?id=<?php echo htmlspecialchars($row['id']); ?>" 
                            onclick="return confirm('¿Eliminar este registro?');">Eliminar</a>
                     </td>
                 </tr>
