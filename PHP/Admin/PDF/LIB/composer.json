@@ -1,0 +1,15 @@
+{
+    "name": "edayoproject/pdf",
+    "description": "Generador de PDF con Dompdf para ProyectoDualEDAYO2025",
+    "type": "project",
+    "require": {
+        "dompdf/dompdf": "^3.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Edayoproject\\Pdf\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
