@@ -52,7 +52,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
         </a>
     </div>
     <div>
-     <a href="../expertar_excel.php?
+     <a href="expertar_excel.php?
      opciones_modalidad=<?php echo urlencode($tipoSeleccionado); ?>&
      opciones_periodo=<?php echo urlencode($tipoSeleccionado2); ?>&
      buscar_input=<?php echo isset($_GET['buscar_input']) ? urlencode($_GET['buscar_input']) : ''; ?>
@@ -64,7 +64,7 @@ $tipoSeleccionado2 = $_GET['opciones_periodo'] ?? '';
 
     <div>
         <button>
-            <a href="../PDF/InscripcionesPDF.php" target="_blank">Imprimir PDF</a>
+            <a href="PDF/InscripcionesPDF.php" target="_blank">Imprimir PDF</a>
         </button>
     </div>
 
