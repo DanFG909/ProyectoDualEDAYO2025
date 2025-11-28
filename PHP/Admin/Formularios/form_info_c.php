@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="../../CSS/Style_curs.css" rel="stylesheet">
+    <link href="../../../CSS/Style_curs.css" rel="stylesheet">
     <title>Detalles del Curso</title>
 
     <?php
@@ -50,7 +50,7 @@
             <label>Información del curso</label><br>
             <input type="text" value="<?= htmlspecialchars($curso['Informacion']) ?>" readonly><br><br>
 
-            <a href="Cursos.php" class="button">Regresar</a>
+            <a href="../Tablas/Cursos.php" class="button">Regresar</a>
         </form>
     </section>
 </body>

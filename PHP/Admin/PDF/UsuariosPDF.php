@@ -82,7 +82,7 @@ class GenerarPDF {
         <body>
             <div class="table-responsive">
                 <table>
-                  <caption>Documentos registrados</caption>
+                  <caption>Tabla: Usuarios</caption>
                   <thead>
                     <tr>
                       <th>NO. de Usuario</th>

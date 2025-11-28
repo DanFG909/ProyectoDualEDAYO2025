@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link href="../../CSS/Style_curs.css" rel="stylesheet">
+    <link href="../../../CSS/Style_curs.css" rel="stylesheet">
     <title>Actualizar curso</title>
     <?php
      include("conexion.php");
@@ -31,7 +31,7 @@
         <input type="file" name="imagen" accept="image/*">
         <br><br>
         <input class="button" type="submit" name="actualizar" value="Actualizar curso">
-         <a href="Cursos.php" class="button">Regresar</a>
+         <a href="../Tablas/Cursos.php" class="button">Regresar</a>
     </form>
 </section>
 

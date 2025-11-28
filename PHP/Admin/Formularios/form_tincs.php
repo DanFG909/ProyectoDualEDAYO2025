@@ -8,9 +8,9 @@ include("conexion.php");
     <meta charset="UTF-8">
     <title>Registro a cursos</title>
     <link rel="shortcut icon" href="../Images/logo.jpg" type="image/jpeg">
-    <link href="../../CSS/Style3.css" rel="stylesheet">
-    <script src="../../JS/desc.js"></script>
-    <script src="../../JS/Mostrar_Panel.js"></script>
+    <link href="../../../CSS/Style3.css" rel="stylesheet">
+    <script src="../../../JS/desc.js"></script>
+    <script src="../../../JS/Mostrar_Panel.js"></script>
     <script>
         function mostraPanel(id, select) {
             const panel = document.getElementById(id);
