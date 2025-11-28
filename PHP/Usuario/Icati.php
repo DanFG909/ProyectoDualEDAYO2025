@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICATI</title>
-    <link rel="stylesheet" href="CSS/Menu.css">
+    <link rel="stylesheet" href="../../CSS/Menu.css">
     <style>
     :root {
       --rojo-oscuro: #8B0000;
@@ -94,25 +94,6 @@
     <h1><center>Instituto de Capacitacion y Adiestramiento para el Trabajo Industrial - ICATI</center></h1>
 
     <div class="navbar">
-      <div class="dropdown">
-        <a href="Icati.php">Inicio</a>
-      </div> 
-      <div class="dropdown">
-        <button class="dropbtn">Cursos
-        </button>
-        <div class="dropdown-content">
-          <a href="Cursos.php"><img src="#" alt="">Cursos CEA</a>
-          <a href="Inscripcion_Curso.php"><img src="#" alt="">Registrarme a un curso</a>
-          <a href="Mis_Cursos.php"><img src="#" alt="">Mis cursos</a>
-        </div>
-      </div> 
-      <div class="dropdown">
-        <button class="dropbtn">Tablas
-        </button>
-        <div class="dropdown-content">
-          <a hre9f="TablaProblematicas.php"><img src="Imagenes/Tabla.svg" alt=""><img src="Imagenes/Registro.svg" alt=""> Tabla de Logros</a>
-        </div>
-      </div> 
       <div class="dropdown">
         <a href="Inicio_Sesion.php">Iniciar Sesion</a>
       </div> 

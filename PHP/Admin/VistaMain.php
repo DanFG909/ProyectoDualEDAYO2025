@@ -101,18 +101,13 @@
 
         <br>
         
-        <button class="botones"><a href="cerrar_sesion">
+        <button class="botones"><a href="Ingreso_Usuario.php">
                 Cerrar Sesion
         </a></button>
         
         <br><br>
         
-        <a href="Perfil.php">
-        <button class="botones"><a href="Perfiles.php">
-            Perfiles
-        </a>
-            </a>
-        </button>
+       
     </section>
 
     <aside>

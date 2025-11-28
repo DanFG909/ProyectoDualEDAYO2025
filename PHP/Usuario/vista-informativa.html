@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EDAYO Zinacantepec</title>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="/JS/mostrar.js">
+    <link rel="stylesheet" href="/CSS/vista.css">
+    <style>
+      
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fdf2f4;
+  color: #111;
+}
+
+.encabezado {
+  background-color: #ffffff;
+  padding: 20px 50px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 130px;
+  height: 70px;
+  margin-right: 15px;
+}
+
+.logo .texto h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #8a3c3c;
+  letter-spacing: 1px;
+}
+
+.logo .texto p {
+  margin: 0;
+  color: #a86f6f;
+  font-size: 13px;
+}
+
+.login {
+  color: #7a1522;
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 160px;
+}
+
+.hero {
+  background-color: #7a1522;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 10%;
+  flex-wrap: wrap;
+}
+
+.hero-texto {
+  flex: 1;
+  min-width: 10px;
+}
+
+.hero-texto h1 {
+  font-size: 4em;
+  margin-bottom: 10px;
+}
+
+.hero-texto p {
+  margin-bottom: 15px;
+}
+
+.boton {
+  background-color: #fff;
+  color: #6f1d34;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.boton:hover {
+  background-color: #9b2e4d;
+  color: white;
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img img {
+  width: 600px;
+  border-radius: 6px;
+}
+
+.cursos {
+  background-color: #6e0d1a;
+  color: white;
+  text-align: center;
+  padding: 50px 10%;
+}
+
+.cursos h2 {
+  margin-bottom: 40px;
+}
+.cursos-contenedor {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.curso {
+  background-color: #fff;
+  color: #4a121e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  height: 360px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.curso:hover {
+  transform: scale(1.05);
+}
+
+.curso img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.acerca {
+  background-color: white;
+  text-align: center;
+  padding: 60px 10%;
+}
+
+.acerca h2 {
+  color: #6f1d34;
+  margin-bottom: 20px;
+}
+
+.descripcion {
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.imagenes-acerca {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.img-acerca img {
+  width: 200px;
+  border-radius: 8px;
+}
+
+.footer{
+    position: relative;
+    width: 100%;
+    background-color: #8a6d3b;
+    min-height: 100px;
+    display: flex;
+    padding: 20px 50px;
+    justify-content: center;
+    align-items: center;
+  flex-direction: column;
+
+}
+
+.social-icon{
+display: flex;
+justify-content: center;
+align-items: center;
+position: relative;
+margin: 10px 5px;
+flex-wrap: wrap;
+
+
+}
+
+.icon-elem{
+    list-style: none;
+}
+
+.icon{
+    color: #f9f9f9;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.icon:hover{
+transform: translateY(-10px);
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 1px 0;
+    flex-wrap: wrap;
+}
+.menu-elem{
+    list-style: none;
+}
+.menu-icon{
+    color: white;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.75;
+    transition: 0.3s;
+}
+
+.menu-icon:hover{
+    opacity: 1;
+}
+
+.text{
+    color: white;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+/*cursos disponibls*/
+.cursos-disp {
+  background: linear-gradient(180deg, #ffffff 0%, #8d1d3d 100%);
+  padding: 50px 20px;
+ 
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cursos-disp h1 {
+  display: inline-block;
+  background-color: #b32424;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 10px;
+  font-size: 24px;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.grid-cursos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 50px;
+  justify-items: center;
+  max-width: 1000px;
+
+  margin-right: 10px;
+  margin-left: 250px;
+  z-index: 1;
+  position: relative;
+}
+
+
+.class {
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  height: 350px;
+  width: 300px;
+}
+
+.class:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.class img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.class p {
+  margin: 15px 0;
+  font-weight: 600;
+  color: #b32424;
+  font-size: 16px;
+}
+
+
+.icati {
+  --bg: linear-gradient(180deg, #f6fbff 0%, #eef6ff 100%);
+  border-radius: 90px;
+  font-family: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #000000;
+  background: var(--bg);
+  padding: 36px 100px;
+}
+
+
+.icati .container {
+  max-width: 9800px;
+  margin: 0 auto;
+ border-radius: 30px;
+  
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid rgb(98, 5, 8);
+}
+
+
+.icati header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.icati header h1 {
+  font-size: 30px;
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--accent);
+}
+
+
+.icati section[id="info"] {
+  padding: 16px 0;
+  border-top: 1px dashed rgba(18,48,66,0.05);
+}
+
+
+.icati section[id="info"] h2 {
+  margin: 0 0 8px 0;
+  font-size: 40px;
+  color: #7a0b0b;
+  font-weight: 700;
+}
+
+
+.icati section[id="info"] p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 20px;
+}
+
+
+.icati section[id="info"] ul {
+  margin: 8px 0 12px 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+.icati section[id="info"] ul li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 20px;
+}
+
+
+.icati section[id="info"] ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: rgba(15,111,178,0.06);
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+
+.icati section[id="info"] p strong {
+  color: #3f0815;
+  font-weight: 700;
+}
+
+.icati footer {
+  margin-top: 18px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(18,48,66,0.04);
+  font-size: 0.85rem;
+  color: #6a7a86;
+  text-align: right;
+}
+
+
+    </style>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header class="encabezado">
+    <div class="logo">
+      <img src="images/logo.png" alt="Logo EDAYO">
+      <div class="texto">
+        <h2>EXPOAPRENDE</h2>
+        <p>EDAYO ZINACANTEPEC</p>
+      </div>
+    </div>
+
+    <a href="#" class="login">Acerca de EDAYO</a>
+    <a href="#" class="login">Talleres</a>
+    <a href="#" class="login">Contactanos</a>
+    <a href="#" class="login">Iniciar Sesión</a>
+
+    
+  </header>
+
+  <!-- Textoo -->
+  <section class="hero">
+    <div class="hero-texto">
+      <h1>Expo Aprende<br>EDAYO Zinacantepec.</h1>
+      <a href="#" class="boton">¡Infórmate Ya!</a>
+    </div>
+    <div class="hero-img">
+      <img src="images/edayo.jpg" alt="EDAYO Imagen">
+    </div>
+  </section>
+
+  <!-- info d cursos d dayo -->
+  <section class="cursos">
+      
+    <h2>Acerca EDAYO Zinacantepec</h2>
+    <p >
+      Información sobre EDAYO y las opciones de aprendizaje disponibles para la comunidad.
+    </p>
+    <br>
+    <div class="cursos-contenedor">
+
+      <div class="curso">
+        <img src="images/cea-logo.png" alt="Curso 1">
+        <p>CEA</p>
+        <br>
+       <p>ara beneficiar a las comunidades mexiquenses, el ICATI ofrece cursos que desarrollan los 
+        conocimientos y habilidades de las personas que requieren capacitarse en corto tiempo para 
+        incorporarse al mercado laboral por medio del empleo o autoempleo formales.</p>
+      </div>
+      
+      <div class="curso">
+        <img src="images/cem-logo.png" alt="Curso 2">
+        <p>CEM</p>
+        <br>
+       <p>La de Capacitación Emprendedora ofrece una ruta de servicios de capacitación y
+         vinculación a los egresados del IACTI y al público en general que desee obtener conocimientos
+         gerenciales, así como herramientas técnicas para diseñar o implementar un proyecto productivo, 
+         fomentando el autoempleo y el empleo formal.</p>
+      </div>
+      
+      <div class="curso">
+        <img src="images/cae-logo.png" alt="Curso 3">
+        <p>CAE</p>
+        <br>
+       <p>Para impulsar la productividad de las empresas en el ICATI, 
+        ofrece cursos diseñados para satisfacer las necesidades de los 
+        sectores privado, público y social, con la finalidad de contribuir 
+        con el desarrollo económico de los mexiquenses</p>
+      </div>
+
+      <div class="curso">
+        <img src="images/escolarizado-logo.png" alt="Curso 4">
+        <p>Escolarizado</p>
+        <br>
+       <p>El Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI), 
+        tiene como objetivo brindar capacitación para el trabajo, en el trabajo, para comunidades, 
+        para organizaciones y dependencias</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!--cursos n base d dtos-->
+<section class="disp">
+  <h2>CURSOS DISPONIBLES</h2>
+  <div class="contenedor-cursos" id="contenedor-cursos"></div>
+</section>
+
+
+  <!--acerca del icati-->
+
+  <section class="icati">
+     <div class="container">
+    <header>
+      <h1>Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI)</h1>
+    </header>
+
+    <section id="info">
+      <h2>¿Qué es el ICATI?</h2>
+      <p>
+        El <strong>Instituto de Capacitación y Adiestramiento para el Trabajo Industrial (ICATI)</strong>
+        es un organismo público descentralizado del Gobierno del Estado de México,
+        dedicado a la formación, capacitación y adiestramiento laboral de la población.
+        Su labor busca fortalecer las competencias técnicas y profesionales de las personas,
+        para facilitar su inserción o permanencia en el mercado laboral y promover el desarrollo económico del estado.
+      </p>
+    </section>
+
+    <section id="info">
+      <h2>Propósitos del ICATI</h2>
+      <ul>
+        <li>Proporcionar servicios de capacitación para y en el trabajo con base en las necesidades productivas de la región.</li>
+        <li>Fomentar la competitividad laboral mediante el desarrollo de habilidades técnicas y humanas.</li>
+        <li>Impulsar la formación de capital humano calificado para fortalecer el desarrollo económico y social.</li>
+        <li>Promover oportunidades de superación personal y profesional en la población mexiquense.</li>
+      </ul>
+    </section>
+
+    <section id="info">
+      <h2>Misión</h2>
+      <p>
+        Proporcionar servicios de capacitación laboral de calidad que contribuyan al desarrollo de competencias y habilidades en la población mexiquense,
+        con el propósito de mejorar su desempeño, productividad y condiciones de vida, fortaleciendo al mismo tiempo la economía del Estado de México.
+      </p>
+    </section>
+
+    <section id="info">
+      <h2>Visión</h2>
+      <p>
+        Ser un organismo líder en la formación y capacitación laboral, reconocido por la calidad y pertinencia de sus programas,
+        su innovación pedagógica y su impacto positivo en la empleabilidad y el desarrollo sostenible del Estado de México.
+      </p>
+    </section>
+
+    <section id="info">
+      <h2>Objetivo General</h2>
+      <p>
+        Brindar capacitación integral que permita a las personas adquirir o actualizar conocimientos, habilidades y actitudes,
+        favoreciendo su incorporación, permanencia o promoción en el ámbito laboral, y coadyuvando al fortalecimiento del desarrollo productivo y social del estado.
+      </p>
+    </section>
+
+    <footer>
+      <p><em>Fuente: Catálogo de Cursos CEA 2025 — ICATI, Gobierno del Estado de México.</em></p>
+    </footer>
+  </div>
+  </section>
+  <!--pie de página-->
+  <footer class="footer">
+                    <ul class="social-icon">
+                        <li class="icon-elem">
+                            <a href="" class="icon">
+                             <ion-icon name="location-outline"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="icon-elem">
+                            <a href="" class="icon">
+                              <ion-icon name="logo-instagram"></ion-icon>
+                            </a>
+                        </li>
+                        <li class="icon-elem">
+                            <a href="" class="icon">
+                                <ion-icon name="logo-facebook"></ion-icon>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <ul class="menu">
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Inicio</a>
+                        </li>
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Informacion</a>
+                        </li>
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Contacto</a>
+                        </li>
+                        <li class="menu-elem">
+                            <a href="" class="menu-icon">Cursos</a>
+                        </li>
+                    </ul>
+                    <p class="text">| EDAYO Zinacantepe</p>
+                </footer>
+
+                <script>
+                  document.addEventListener('DOMContentLoaded', () =>{
+                    const contenedor = document.getElementById('contenedor-cursos');
+
+                    fetch('obtenerCursos.php')
+                    .then(res => res.json())
+                    .then(cursos => {
+                      cursos.forEach(c => {
+                        const card = document.createElement('div');
+                        card.className = 'curso';
+                        card.innerHTML = `
+                        <img src="images/${c.imagen}" alt="${c.nombre}">
+          <h3>${c.nombre}</h3>
+          <p>${c.descripcion ?? ''}</p>
+
+        `;
+        contenedor.appendChild(card);
+                      })
+                    })
+                  })
+                </script>
+</body>
+</html>

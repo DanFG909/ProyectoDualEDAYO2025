@@ -3,15 +3,14 @@ include "Conexion.php";
 
 $name= $_POST['nombre'];
 $corr= $_POST['correo'];
-$passw= $_POST['contraseña'];
-$tel= $_POST['telefono'];
-$municipio= $_POST['municipio'];
+$passw = password_hash($_POST['contraseña'], PASSWORD_DEFAULT);
 
-$query = "INSERT INTO users (Nombre, Correo, Contraseña, Telefono, Municipio) VALUES ('$name', '$corr', '$passw', '$tel', '$municipio')";
+
+$query = "INSERT INTO usuarios (nombre, correo, password) VALUES ('$name', '$corr', '$passw')";
 $resultado = $conn->query($query);
 
 if ($resultado) {
-        header("Location: /ProyectoDualEDAYO2025/PHP/index.php"); // Redireccion
+        header("Location: Cursos.php"); // Redireccion
         
     } else {
         echo "Error al agregar el usuario" . $conn->error;

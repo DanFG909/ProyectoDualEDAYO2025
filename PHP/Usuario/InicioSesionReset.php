@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Restablecer Contraseña</title>
-  <link rel="stylesheet" href="CSS/Inicio_Sesion.css">
+  <link rel="stylesheet" href="../../CSS/Inicio_Sesion.css">
 </head>
 <body>
   <div id="modalForm" class="modal" style="display: flex;">

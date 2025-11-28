@@ -5,7 +5,7 @@ include('Conexion.php');
 $correo = $_POST['correo'];
 $password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE correo = ?";
+$sql = "SELECT * FROM usuarios WHERE correo = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $correo);
 $stmt->execute();
@@ -15,7 +15,7 @@ if ($result->num_rows > 0) {
     $usuario = $result->fetch_assoc();
     if (password_verify($password, $usuario['password'])) {
         $_SESSION['usuario'] = $usuario['nombre'];
-        header("Location: index.php");
+        header("Location: cursos.php");
         exit();
     } else {
         $_SESSION['error'] = "Contraseña incorrecta.";

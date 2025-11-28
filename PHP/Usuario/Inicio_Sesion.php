@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Iniciar Sesión</title>
-  <link rel="stylesheet" href="../CSS/Inicio_Sesion.css">
+  <link rel="stylesheet" href="../../CSS/Inicio_Sesion.css">
 </head>
 <body>
 
@@ -33,6 +33,9 @@
 
           <center style="margin-top: 15px;">
             <a href="InicioSesionRecuperar.php">¿Olvidaste tu contraseña?</a>
+          </center>
+          <center style="margin-top: 15px;">
+            <a href="registro.html">¿Aun no tienes cuenta?</a>
           </center>
 
           <?php if(isset($_SESSION['error'])): ?>
