@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Fondo oscuro semitransparente */
+body{
+    background-image: url('../Images/edayo.jpg');
+    font-size: larger;
+}
+#modalForm {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Reset general */
+.modal .form-wrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+}
+
+/* Contenedor */
+.modal .form-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 70px;
+}
+
+/* Caja del formulario */
+.modal .form-wrapper form {
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 50px 40px 35px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Botón cerrar (Salir) */
+.modal .form-wrapper .close {
+    background: linear-gradient(135deg, #d62828, #a4161a);
+  position:absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 15px;
+  font-weight:bolder;
+  cursor: pointer;
+  border: none;
+}
+
+.modal .form-wrapper .close:hover {
+    background: linear-gradient(135deg, #a4161a, #780000);
+  color: #ffffff;
+}
+
+/* Título (Legend) */
+.modal .form-wrapper legend {
+  font-weight: 800;
+  font-size: 2em;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #111;
+}
+
+/* Etiquetas e inputs */
+.modal .form-wrapper label,
+.modal .form-wrapper input,
+.modal .form-wrapper button {
+  display: block;
+  width: 100%;
+  font-size: 1.05em;
+}
+
+.modal .form-wrapper h6 {
+  display: block;
+  width: 100%;
+  font-size: 0.5em;
+}
+
+/* Inputs */
+.modal .form-wrapper input {
+  border: none;
+  border-bottom: 3px solid #888;
+  background: #fff;
+  padding: 0.7em;
+  border-radius: 6px;
+  margin-bottom: 1em;
+  transition: all 0.3s ease;
+}
+
+.modal .form-wrapper input:focus {
+  outline: none;
+  border-bottom: 3px solid #d10000;
+}
+
+.modal .form-wrapper input:hover {
+  border-bottom: 3px solid #a00000;
+}
+
+/* Placeholders */
+.modal .form-wrapper input::placeholder {
+  font-weight: 500;
+  color: #888;
+}
+
+/* Asterisco rojo */
+.modal .form-wrapper label::before,
+.modal .form-wrapper h5::before,
+.modal .form-wrapper h6::before {
+  content: "* ";
+  font-weight: bold;
+  color: red;
+}
+
+/* Botón de ingresar */
+.modal .form-wrapper button {
+  background: linear-gradient(135deg, #d62828, #a4161a);
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 0.7em;
+  font-size: 1.1em;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+.modal .form-wrapper button:hover {
+  background: linear-gradient(135deg, #a4161a, #780000);
+  transform: scale(1.03);
+}
+
+/* Campos en columna */
+.modal .form-wrapper .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Centrado del enlace de recuperación */
+.modal .form-wrapper a {
+  text-align: center;
+  display: block;
+  color: #b30000;
+  font-size: 0.95em;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.modal .form-wrapper a:hover {
+  text-decoration: underline;
+}
