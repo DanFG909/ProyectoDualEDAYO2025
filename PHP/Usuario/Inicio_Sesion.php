@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Iniciar Sesión</title>
-  <link rel="stylesheet" href="CSS/Inicio_Sesion.css">
+  <link rel="stylesheet" href="../CSS/Inicio_Sesion.css">
 </head>
 <body>
 
